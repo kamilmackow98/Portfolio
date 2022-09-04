@@ -1,0 +1,21 @@
+{
+  "path-intellisense.mappings": {
+    "@pages": "${workspaceFolder}/pages",
+    "@organisms": "${workspaceFolder}/components/organisms",
+    "@molecules": "${workspaceFolder}/components/molecules",
+    "@atoms": "${workspaceFolder}/components/atoms",
+    "@icons": "${workspaceFolder}/components/icons",
+    "@components": "${workspaceFolder}/components",
+    "@data": "${workspaceFolder}/data",
+    "@utils": "${workspaceFolder}/utils",
+    "@context": "${workspaceFolder}/context",
+    "@images": "${workspaceFolder}/public/assets/images",
+    "@fonts": "${workspaceFolder}/public/assets/fonts",
+    "@assets": "${workspaceFolder}/public/assets",
+    "@styles": "${workspaceFolder}/styles",
+    "@": "${workspaceFolder}"
+  },
+  "path-intellisense.autoTriggerNextSuggestion": true,
+  "typescript.suggest.paths": false,
+  "javascript.suggest.paths": false,
+}
