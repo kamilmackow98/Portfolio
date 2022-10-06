@@ -1,4 +1,4 @@
-import Nav from '@organisms/Nav'
+import Nav from '@molecules/Nav'
 import classNames from 'classnames'
 import React, { ReactNode } from 'react'
 
