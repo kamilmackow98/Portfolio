@@ -2,12 +2,12 @@ import Link from 'next/link'
 import { ReactNode } from 'react'
 import { UrlObject } from 'url'
 
-interface NavLinkProps {
+interface Props {
   href: string | UrlObject
   children?: ReactNode
 }
 
-function NavLink(props: NavLinkProps) {
+function NavLink(props: Props) {
   const { href, children } = props
 
   return (
