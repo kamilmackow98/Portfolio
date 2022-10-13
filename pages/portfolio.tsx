@@ -1,10 +1,14 @@
 import ProjectCard from '@organisms/ProjectCard'
 import { getProjects } from '@utils/mdx'
-import { NextPage } from 'next'
-import React from 'react'
+import { GetStaticProps, NextPage } from 'next'
+import { Project } from 'types'
 
-const Portfolio: NextPage = ({ projects }: any) => {
-  const renderProjects = projects.map((project: any) => (
+interface Props {
+  projects: Omit<Project, 'code'>[]
+}
+
+const Portfolio: NextPage<Props> = ({ projects }) => {
+  const renderProjects = projects.map((project) => (
     <ProjectCard key={project.slug} project={project} />
   ))
 
@@ -18,7 +22,7 @@ const Portfolio: NextPage = ({ projects }: any) => {
 
 export default Portfolio
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const projects = getProjects()
 
   return {

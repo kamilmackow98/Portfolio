@@ -1,11 +1,11 @@
 import Link from 'next/link'
+import { Project } from 'types'
 
 interface Props {
-  project: any
+  project: Omit<Project, 'code'>
 }
 
-const ProjectCard = (props: Props) => {
-  const { project } = props
+const ProjectCard = ({ project }: Props) => {
   const { frontmatter, slug } = project
 
   return (

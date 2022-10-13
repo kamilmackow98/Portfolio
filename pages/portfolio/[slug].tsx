@@ -1,10 +1,16 @@
 import NavLink from '@atoms/NavLink'
 import { getProject, getProjects } from '@utils/mdx'
 import { getMDXComponent } from 'mdx-bundler/client'
-import { NextPage } from 'next'
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import { ParsedUrlQuery } from 'querystring'
 import { useMemo } from 'react'
+import { Project as ProjectType } from 'types'
 
-const Project: NextPage = ({ code, frontmatter }: any) => {
+interface Props extends ProjectType {}
+
+const Project: NextPage<Props> = (project: Props) => {
+  const { code, frontmatter } = project
+
   const Component = useMemo(() => getMDXComponent(code), [code])
 
   return (
@@ -21,16 +27,32 @@ const Project: NextPage = ({ code, frontmatter }: any) => {
 
 export default Project
 
-export const getStaticProps = async ({ params }: any) => {
-  const project = await getProject(params.slug)
+interface Params extends ParsedUrlQuery {
+  slug: string
+}
+
+export const getStaticProps: GetStaticProps<Props, Params> = async (
+  context,
+) => {
+  const { params } = context
+
+  if (params && params.slug && typeof params.slug === 'string') {
+    const project = await getProject(params.slug)
+
+    return {
+      props: { ...project },
+    }
+  }
 
   return {
-    props: { ...project },
+    notFound: true, // Should be OK - https://nextjs.org/docs/api-reference/data-fetching/get-static-props#notfound
   }
 }
 
-export const getStaticPaths = async () => {
-  const paths = getProjects().map(({ slug }) => ({ params: { slug } }))
+export const getStaticPaths: GetStaticPaths<Params> = async () => {
+  const paths = getProjects().map(({ slug }) => ({
+    params: { slug },
+  }))
 
   return {
     paths,
