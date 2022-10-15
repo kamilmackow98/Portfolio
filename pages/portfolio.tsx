@@ -9,7 +9,13 @@ interface Props {
 
 const Portfolio: NextPage<Props> = ({ projects }) => {
   const renderProjects = projects.map((project) => (
-    <ProjectCard key={project.slug} project={project} />
+    <div key={project.slug}>
+      <hr />
+      <br />
+      <ProjectCard key={project.slug} project={project} />
+      <br />
+      <br />
+    </div>
   ))
 
   return (

@@ -1,5 +1,10 @@
 export type ProjectFrontMatter = {
   title: string
+  tags: string[]
+  excerpt: string
+  date: string
+  isPublished: boolean
+  priority: number
 }
 
 export type Project = {
