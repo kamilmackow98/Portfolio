@@ -1,6 +1,6 @@
 import NavLink from '@atoms/NavLink'
 
-function Nav() {
+function Navigation() {
   return (
     <nav>
       <NavLink href="/">Home</NavLink>
@@ -10,4 +10,4 @@ function Nav() {
   )
 }
 
-export default Nav
+export default Navigation

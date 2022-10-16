@@ -1,8 +1,9 @@
-import Nav from '@molecules/Nav'
-import { pageMotion } from '@utils/motionVariants'
 import { AnimatePresence, motion } from 'framer-motion'
+import { pageMotion } from '@utils/motionVariants'
 import { useRouter } from 'next/router'
-import React, { ReactNode } from 'react'
+import Navigation from './Navigation'
+import Footer from './Footer'
+import { ReactNode } from 'react'
 
 interface LayoutProps {
   children: ReactNode
@@ -13,7 +14,7 @@ function Layout({ children }: LayoutProps) {
 
   return (
     <>
-      <Nav />
+      <Navigation />
       <AnimatePresence mode="wait">
         <motion.main
           className="lg:container mt-28 md:mt-48 mx-auto"
@@ -24,6 +25,7 @@ function Layout({ children }: LayoutProps) {
           exit="exit"
         >
           {children}
+          <Footer />
         </motion.main>
       </AnimatePresence>
     </>
