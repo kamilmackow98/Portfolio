@@ -20,7 +20,8 @@ const ProjectCard = ({ project }: Props) => {
   return (
     <>
       <h3>{title}</h3>
-      <p>{excerpt}</p>
+      <p dangerouslySetInnerHTML={{ __html: excerpt }} /> 
+      {/* TODO : Improve this /\ */}
       {renderTags}
       <p>{date}</p>
       <Link href={`portfolio/${slug}`}>Learn More</Link>

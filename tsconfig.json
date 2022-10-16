@@ -17,9 +17,9 @@
     "baseUrl": ".",
     "paths": {
       "@pages/*": ["pages/*"],
-      "@organisms/*": ["components/organisms/*"],
-      "@molecules/*": ["components/molecules/*"],
-      "@atoms/*": ["components/atoms/*"],
+      "@organisms/*": ["components/common/organisms/*"],
+      "@molecules/*": ["components/common/molecules/*"],
+      "@atoms/*": ["components/common/atoms/*"],
       "@icons/*": ["components/icons/*"],
       "@components/*": ["components/*"],
       "@data/*": ["data/*"],
