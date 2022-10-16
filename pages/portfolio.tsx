@@ -1,3 +1,4 @@
+import CustomHead from '@atoms/CustomHead'
 import ProjectCard from '@organisms/ProjectCard'
 import { getProjects } from '@utils/mdx'
 import { GetStaticProps, NextPage } from 'next'
@@ -20,6 +21,7 @@ const Portfolio: NextPage<Props> = ({ projects }) => {
 
   return (
     <>
+      <CustomHead title='Portfolio' />
       <h2>Portfolio</h2>
       {renderProjects}
     </>

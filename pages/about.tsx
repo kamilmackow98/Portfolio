@@ -1,7 +1,13 @@
-import { NextPage } from "next"
+import CustomHead from '@atoms/CustomHead'
+import { NextPage } from 'next'
 
 const About: NextPage = () => {
-  return <div>About page</div>
+  return (
+    <>
+      <CustomHead title="About" />
+      About page
+    </>
+  )
 }
 
 export default About

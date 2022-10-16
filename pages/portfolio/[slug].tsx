@@ -1,3 +1,4 @@
+import CustomHead from '@atoms/CustomHead'
 import NavLink from '@atoms/NavLink'
 import { getProject, getProjects } from '@utils/mdx'
 import { getMDXComponent } from 'mdx-bundler/client'
@@ -10,18 +11,20 @@ interface Props extends ProjectType {}
 
 const Project: NextPage<Props> = (project: Props) => {
   const { code, frontmatter } = project
+  const { title, excerpt } = frontmatter
 
   const Component = useMemo(() => getMDXComponent(code), [code])
 
   return (
-    <div>
-      <h1>{frontmatter.title}</h1>
+    <>
+      <CustomHead title={`${title} | Portfolio`} description={excerpt} />
+      <h1>{title}</h1>
       <Component
         components={{
           NavLink,
         }}
       />
-    </div>
+    </>
   )
 }
 
