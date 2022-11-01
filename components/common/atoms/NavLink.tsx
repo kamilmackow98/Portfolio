@@ -11,7 +11,7 @@ function NavLink(props: Props) {
   const { href, children } = props
 
   return (
-    <Link href={href}>
+    <Link scroll={false} href={href}>
       <a>{children}</a>
     </Link>
   )
