@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import CustomHead from '@atoms/CustomHead'
+import DiscoButton from '@atoms/DiscoButton'
 
 const Home: NextPage = () => {
   return (
@@ -15,14 +16,14 @@ const Home: NextPage = () => {
           </p>
 
           <div id="home-buttons-wrapper">
-            <button>Check my work</button>
+            <DiscoButton>Check my work</DiscoButton>
             <div>OR</div>
-            <button>Learn about me</button>
+            <DiscoButton variant="blue" backwards>
+              Learn about me
+            </DiscoButton>
           </div>
 
-          <div id="resume-wrapper">
-
-          </div>
+          <div id="resume-wrapper"></div>
         </div>
 
         <div className="placeholder">
