@@ -1,0 +1,28 @@
+:root {
+  --primary: #ffcc66;
+  --primary-variant: #ffae57;
+  --primary80: rgba(255, 204, 102, 0.8);
+  --secondary: #80d4ff;
+  --secondary80: rgb(128, 212, 255, 0.8);
+  --secondary60: rgb(128, 212, 255, 0.6);
+  --secondary-variant: #5ccfe6;
+  --tertiary: #bae67e;
+  --tertiary-variant: #cc6e91;
+  --theme-dark: #212733;
+  --theme-dark-variant: #1a1f28;
+  --theme-lighter-dark: #343e50;
+  --theme-dark60: #98a4bc;
+  --theme-text-color: #7a8ba9;
+
+  --theme-selection: #bacff5;
+
+  --z-index-right-panel: -999;
+  --z-index-mobile-nav: 99;
+  --z-index-main-nav: 99;
+
+  --z-index-hamburger: 888;
+  --z-index-modal: 999;
+  --z-index-loader: 9999;
+
+  /* TODO : Add typography / fonts variables */
+}

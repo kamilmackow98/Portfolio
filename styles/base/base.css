@@ -1,0 +1,22 @@
+html {
+  overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+}
+
+html,
+body,
+#__next,
+main {
+  flex-direction: column;
+  display: flex;
+  flex: 1;
+
+  min-height: 100%;
+}
+
+footer {
+  margin-top: auto;
+}
