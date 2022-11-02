@@ -1,4 +1,4 @@
-import NavLink from '@atoms/NavLink'
+import NoScrollLink from '@atoms/NoScrollLink'
 
 function Navigation() {
   return (
@@ -6,9 +6,9 @@ function Navigation() {
       <div className="lg:container mx-auto flex justify-between">
         <div>Logo</div>
         <div className="flex">
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/about">About</NavLink>
-          <NavLink href="/portfolio">Portfolio</NavLink>
+          <NoScrollLink href="/">Home</NoScrollLink>
+          <NoScrollLink href="/about">About</NoScrollLink>
+          <NoScrollLink href="/portfolio">Portfolio</NoScrollLink>
           <div id="links-separator">...</div>
           <button>Contact</button>
         </div>
