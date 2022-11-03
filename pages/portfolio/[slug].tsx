@@ -1,5 +1,4 @@
 import CustomHead from '@atoms/CustomHead'
-import NavLink from '@atoms/NavLink'
 import { getProject, getProjects } from '@utils/mdx'
 import { getMDXComponent } from 'mdx-bundler/client'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
@@ -19,11 +18,7 @@ const Project: NextPage<Props> = (project: Props) => {
     <>
       <CustomHead title={`${title} | Portfolio`} description={excerpt} />
       <h1>{title}</h1>
-      <Component
-        components={{
-          NavLink,
-        }}
-      />
+      <Component components={{}} />
     </>
   )
 }
