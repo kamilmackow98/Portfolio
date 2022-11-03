@@ -7,10 +7,10 @@ interface Props extends LinkProps {
 }
 
 const NoScrollLink = (props: Props) => {
-  const { className, children } = props
+  const { className, children, ...rest } = props
 
   return (
-    <Link scroll={false} {...props}>
+    <Link scroll={false} {...rest}>
       <a className={className}>{children}</a>
     </Link>
   )
