@@ -1,28 +1,73 @@
 :root {
-  --primary: #ffcc66;
-  --primary-variant: #ffae57;
-  --primary80: rgba(255, 204, 102, 0.8);
-  --secondary: #80d4ff;
-  --secondary80: rgb(128, 212, 255, 0.8);
-  --secondary60: rgb(128, 212, 255, 0.6);
-  --secondary-variant: #5ccfe6;
-  --tertiary: #bae67e;
-  --tertiary-variant: #cc6e91;
+  /* ------------------------------------------ */
+  /* ----| Primary color and its variants |---- */
+  /* ------------------------------------------ */
+
+  --theme-primary: #ffcc66;
+  --theme-primary--variant: #ffae57;
+
+  --theme-primary--20: rgba(255, 204, 102, 0.2);
+  --theme-primary--40: rgba(255, 204, 102, 0.4);
+  --theme-primary--60: rgba(255, 204, 102, 0.6);
+  --theme-primary--80: rgba(255, 204, 102, 0.8);
+
+  /* -------------------------------------------- */
+  /* ----| Secondary color and its variants |---- */
+  /* -------------------------------------------- */
+
+  --theme-secondary: #80d4ff;
+  --theme-secondary--variant: #5ccfe6;
+
+  --theme-secondary--20: rgb(128, 212, 255, 0.2);
+  --theme-secondary--40: rgb(128, 212, 255, 0.4);
+  --theme-secondary--60: rgb(128, 212, 255, 0.6);
+  --theme-secondary--80: rgb(128, 212, 255, 0.8);
+
+  /* ------------------------------------------- */
+  /* ----| Tertiary color and its variants |---- */
+  /* ------------------------------------------- */
+
+  --theme-tertiary: #bae67e;
+  --theme-tertiary--variant: #cc6e91;
+
+  --theme-tertiary--20: rgba(186, 230, 126, 0.2);
+  --theme-tertiary--40: rgba(186, 230, 126, 0.4);
+  --theme-tertiary--60: rgba(186, 230, 126, 0.6);
+  --theme-tertiary--80: rgba(186, 230, 126, 0.8);
+
+  /* --------------------------------------- */
+  /* ----| Dark color and its variants |---- */
+  /* --------------------------------------- */
+
   --theme-dark: #212733;
-  --theme-dark-variant: #1a1f28;
-  --theme-lighter-dark: #343e50;
-  --theme-dark60: #98a4bc;
-  --theme-text-color: #7a8ba9;
+  --theme-dark--variant: #1a1f28;
 
-  --theme-selection: #bacff5;
+  --theme-dark--bright: #343e50;
+  --theme-dark--brightest: #98a4bc;
 
-  --z-index-right-panel: -999;
+  /* -------------------------------------------- */
+  /* ----| Text color, text selection, etc. |---- */
+  /* -------------------------------------------- */
+
+  --theme-text--color: #7a8ba9;
+  --theme-text--selection: #bacff5;
+
+  /* -------------------------------- */
+  /* ----| Fonts and typograpgy |---- */
+  /* -------------------------------- */
+
+  /* TODO : Add typography / fonts variables */
+
+  /* ---------------------------------------- */
+  /* ----| Position, display and layout |---- */
+  /* ---------------------------------------- */
+
+  --z-index-home-placeholder: -99;
+
   --z-index-mobile-nav: 99;
   --z-index-main-nav: 99;
 
-  --z-index-hamburger: 888;
-  --z-index-modal: 999;
-  --z-index-loader: 9999;
-
-  /* TODO : Add typography / fonts variables */
+  --z-index-hamburger: 777;
+  --z-index-loader: 999;
+  --z-index-modal: 888;
 }
