@@ -1,0 +1,24 @@
+.disco-link {
+  position: relative;
+}
+
+.disco-link svg {
+  position: absolute;
+  z-index: -1;
+
+  height: 100%;
+  width: 100%;
+
+  left: 0;
+  top: 0;
+
+  & path {
+    transition: all 200ms ease;
+  }
+}
+
+.disco-link:hover {
+  & svg path {
+    fill-opacity: 0.12;
+  }
+}
