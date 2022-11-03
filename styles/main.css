@@ -4,3 +4,5 @@
 
 @import 'base/variables.css';
 @import 'base/base.css';
+
+@import 'components/index.css'

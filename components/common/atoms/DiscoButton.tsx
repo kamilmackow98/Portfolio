@@ -12,7 +12,7 @@ const DiscoButton = (props: Props) => {
     variant === 'blue' ? '#80d4ff' : '#ffcc66',
   )
 
-  const classes = classNames('disco-btn', className)
+  const classes = classNames('disco-button', className)
   const renderBackwards = backwards ? (
     <svg
       xmlns="http://www.w3.org/2000/svg"
