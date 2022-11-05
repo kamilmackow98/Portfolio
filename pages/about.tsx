@@ -9,8 +9,10 @@ const About: NextPage = () => {
         <section id="about-who">
           <div className="placeholder" />
           <div className="content">
-            <h2>Who am I</h2>
-            <p>
+            <h2 className="text-white theme-font--heading font-extrabold font-text--fat tracking-wide">
+              Who am I
+            </h2>
+            <p className="font-medium leading-relaxed">
               I&#39;m a Junior Web Developer and my goal is to master front-end
               development because, long story short, I really like it. And even
               if the back-end is not an alien technology to me, I simply enjoy
@@ -23,8 +25,10 @@ const About: NextPage = () => {
         <section id="about-why">
           <div className="placeholder" />
           <div className="content">
-            <h2>Why me</h2>
-            <p>
+            <h2 className="text-white theme-font--heading font-extrabold font-text--fat tracking-wide">
+              Why me
+            </h2>
+            <p className="font-medium leading-relaxed">
               I enjoy learning and discovering new things, technologies or
               tools. It helps me a lot to grow as a developer and constantly
               improve at my job so that I can provide the best possible
@@ -40,8 +44,10 @@ const About: NextPage = () => {
         <section id="about-what">
           <div className="placeholder" />
           <div className="content">
-            <h2>What I use</h2>
-            <p>
+            <h2 className="text-white theme-font--heading font-extrabold font-text--fat tracking-wide">
+              What I use
+            </h2>
+            <p className="font-medium leading-relaxed">
               I use a set of modern tools that help me develop better and more
               secure apps. I choose libraries and frameworks that solve existing
               problems faster and more efficiently, but also provide a great
