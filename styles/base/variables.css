@@ -56,7 +56,21 @@
   /* ----| Fonts and typograpgy |---- */
   /* -------------------------------- */
 
-  /* TODO : Add typography / fonts variables */
+  --theme-font--reading: 'Hind Madurai', sans-serif;
+  --theme-font--heading: 'Kanit', sans-serif;
+
+  --font-unit: 1rem;
+  --font-text: var(--font-unit); /* 16px */
+
+  --font-text--fat: calc(var(--font-unit) * 1.5); /* 24px */
+  --font-text--xxl: calc(var(--font-unit) * 1.375); /* 22px */
+  --font-text--xl: calc(var(--font-unit) * 1.25); /* 20px */
+  --font-text--lg: calc(var(--font-unit) * 1.125); /* 18px */
+
+  --font-text--md: calc(var(--font-unit) * 0.9375); /* 15px */
+  --font-text--sm: calc(var(--font-unit) * 0.875); /* 14px */
+  --font-text--xs: calc(var(--font-unit) * 0.8125); /* 13px */
+  --font-text--xxs: calc(var(--font-unit) * 0.75); /* 12px */
 
   /* ---------------------------------------- */
   /* ----| Position, display and layout |---- */
