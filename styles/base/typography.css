@@ -9,35 +9,35 @@
 /* Bigger than 16px */
 
 .font-text--fat {
-  font-size: var(--font-text--fat);
+  font-size: var(--font-text--fat); /* 24px */
 }
 
 .font-text--xxl {
-  font-size: var(--font-text--xxl);
+  font-size: var(--font-text--xxl); /* 22px */
 }
 
 .font-text--xl {
-  font-size: var(--font-text--xl);
+  font-size: var(--font-text--xl); /* 20px */
 }
 
 .font-text--lg {
-  font-size: var(--font-text--lg);
+  font-size: var(--font-text--lg); /* 18px */
 }
 
 /* Smaller than 16px */
 
 .font-text--md {
-  font-size: var(--font-text--md);
+  font-size: var(--font-text--md); /* 15px */
 }
 
 .font-text--sm {
-  font-size: var(--font-text--sm);
+  font-size: var(--font-text--sm); /* 14px */
 }
 
 .font-text--xs {
-  font-size: var(--font-text--xs);
+  font-size: var(--font-text--xs); /* 13px */
 }
 
 .font-text--xxs {
-  font-size: var(--font-text--xxs);
+  font-size: var(--font-text--xxs); /* 12px */
 }
