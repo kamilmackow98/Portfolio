@@ -3,6 +3,7 @@ html {
 }
 
 body {
+  font-family: var(--theme-font--reading);
   width: 100vw;
 }
 

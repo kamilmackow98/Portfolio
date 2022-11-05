@@ -1,0 +1,41 @@
+/* ---------------------------------------- */
+/* ----| Fonts and typograpgy classes |---- */
+/* ---------------------------------------- */
+
+.theme-font--heading {
+  font-family: var(--theme-font--heading);
+}
+
+.theme-font--reading {
+  font-family: var(--theme-font--reading);
+}
+
+/* Bigger than 16px */
+
+.font-text--fat {
+  font-size: var(--font-text--fat);
+}
+.font-text--xxl {
+  font-size: var(--font-text--xxl);
+}
+.font-text--xl {
+  font-size: var(--font-text--xl);
+}
+.font-text--lg {
+  font-size: var(--font-text--lg);
+}
+
+/* Smaller than 16px */
+
+.font-text--md {
+  font-size: var(--font-text--md);
+}
+.font-text--sm {
+  font-size: var(--font-text--sm);
+}
+.font-text--xs {
+  font-size: var(--font-text--xs);
+}
+.font-text--xxs {
+  font-size: var(--font-text--xxs);
+}
