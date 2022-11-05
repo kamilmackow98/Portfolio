@@ -1,5 +1,16 @@
 .disco-link {
+  font-family: var(--theme-font--heading), sans-serif;
+  font-size: var(--font-text--xxs);
+  text-transform: uppercase;
+  font-weight: 700;
+
   position: relative;
+
+  color: var(--theme-primary);
+
+  &.blue {
+    color: var(--theme-secondary);
+  }
 }
 
 .disco-link svg {
