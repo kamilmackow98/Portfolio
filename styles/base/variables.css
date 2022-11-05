@@ -76,6 +76,8 @@
   /* ----| Position, display and layout |---- */
   /* ---------------------------------------- */
 
+  --theme-main-background: var(--theme-dark);
+
   --z-index-home-placeholder: -99;
 
   --z-index-mobile-nav: 99;

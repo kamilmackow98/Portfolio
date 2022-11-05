@@ -4,7 +4,24 @@ html {
 
 body {
   font-family: var(--theme-font--reading);
+  color: var(--theme-text--color);
   width: 100vw;
+
+  background-color: var(--theme-main-background);
+  background-image: radial-gradient(
+    100% 185% at 100% 0%,
+    #313b4d 0%,
+    #242c3a 40%,
+    #1a1f28 100%
+  );
+
+  /* background-image: url(/assets/img/bg-circle-ac58c9d3.svg),
+    radial-gradient(
+      105% 185% at 105% -5%,
+      #303f5a 0%,
+      #232d3f 40%,
+      #0f1117 100%
+    ); */
 }
 
 html,
