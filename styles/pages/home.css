@@ -1,0 +1,12 @@
+#home-page {
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+}
+
+#home-page .content {
+  overflow-x: hidden;
+
+  & #description {
+    max-width: 460px;
+  }
+}
