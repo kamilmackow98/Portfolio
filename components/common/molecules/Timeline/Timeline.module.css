@@ -1,0 +1,29 @@
+.container {
+  position: relative;
+
+  &::before {
+    transform: translateX(-50%);
+    left: -10%;
+    top: 0;
+
+    position: absolute;
+    content: '';
+
+    height: 100%;
+    width: 3px;
+
+    background-image: linear-gradient(
+      transparent,
+      var(--theme-secondary),
+      transparent
+    );
+  }
+}
+
+@media screen(lg) {
+  .container {
+    &::before {
+      left: 50%;
+    }
+  }
+}
