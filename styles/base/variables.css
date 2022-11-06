@@ -18,10 +18,10 @@
   --theme-secondary: #80d4ff;
   --theme-secondary--variant: #5ccfe6;
 
-  --theme-secondary--20: rgb(128, 212, 255, 0.2);
-  --theme-secondary--40: rgb(128, 212, 255, 0.4);
-  --theme-secondary--60: rgb(128, 212, 255, 0.6);
-  --theme-secondary--80: rgb(128, 212, 255, 0.8);
+  --theme-secondary--20: rgba(128, 212, 255, 0.2);
+  --theme-secondary--40: rgba(128, 212, 255, 0.4);
+  --theme-secondary--60: rgba(128, 212, 255, 0.6);
+  --theme-secondary--80: rgba(128, 212, 255, 0.8);
 
   /* ------------------------------------------- */
   /* ----| Tertiary color and its variants |---- */
@@ -43,6 +43,8 @@
   --theme-dark--variant: #1a1f28;
 
   --theme-dark--bright: #343e50;
+  --theme-dark--bright-30: rgba(52, 62, 80, 0.3);
+
   --theme-dark--brightest: #98a4bc;
 
   /* -------------------------------------------- */
@@ -50,6 +52,8 @@
   /* -------------------------------------------- */
 
   --theme-text--color: #7a8ba9;
+  --theme-text--color-30: rgba(122, 139, 169, 0.3);
+
   --theme-text--selection: #bacff5;
 
   /* -------------------------------- */
@@ -77,6 +81,8 @@
   /* ---------------------------------------- */
 
   --theme-main-background: var(--theme-dark);
+  --theme-disco-background: var(--theme-dark--bright-30);
+  --theme-disco-border: var(--theme-text--color-30);
 
   --z-index-home-placeholder: -99;
 
