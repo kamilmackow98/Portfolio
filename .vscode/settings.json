@@ -18,4 +18,14 @@
   "path-intellisense.autoTriggerNextSuggestion": true,
   "typescript.suggest.paths": false,
   "javascript.suggest.paths": false,
+  "workbench.colorCustomizations": {
+    "sash.hoverBorder": "#ffc78a",
+    "statusBar.background": "#ffae57",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#ff9524",
+    "statusBarItem.remoteBackground": "#ffae57",
+    "statusBarItem.remoteForeground": "#15202b"
+  },
+  "peacock.color": "#FFAE57",
+  "postcss.validate": false 
 }
