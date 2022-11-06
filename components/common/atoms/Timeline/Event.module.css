@@ -1,0 +1,43 @@
+.wrapper {
+  position: relative;
+}
+
+.memento {
+  background-color: var(--theme-disco-background);
+  border-color: var(--theme-disco-border);
+  border-width: 1px;
+}
+
+.separator {
+  transform: translate3d(-50%, 1rem, 0);
+  position: absolute;
+  z-index: 1;
+  left: -10%;
+
+  box-shadow: 0 0 0.2rem 0 #fff;
+  background-color: #fff;
+  height: 0.5rem;
+  width: 0.5rem;
+
+  border-radius: 50%;
+}
+
+@media screen(lg) {
+  .wrapper {
+    text-align: right;
+
+    &:nth-child(odd) > span {
+      text-align: left;
+      order: 1;
+    }
+
+    &:nth-child(even) > div {
+      text-align: left;
+    }
+  }
+
+  .separator {
+    transform: translate3d(-50%, 0, 0);
+    left: 50%;
+  }
+}
