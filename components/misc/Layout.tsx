@@ -17,7 +17,7 @@ function Layout({ children }: LayoutProps) {
       <Navigation />
       <AnimatePresence mode="wait">
         <motion.main
-          className="lg:container mt-28 md:mt-48 mx-auto"
+          className="container mt-28 md:mt-48 mx-auto"
           variants={pageMotion}
           key={asPath}
           initial="initial"

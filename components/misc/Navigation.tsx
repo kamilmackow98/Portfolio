@@ -3,7 +3,7 @@ import NoScrollLink from '@atoms/NoScrollLink'
 function Navigation() {
   return (
     <nav>
-      <div className="lg:container mx-auto flex justify-between">
+      <div className="container mx-auto flex justify-between">
         <div>Logo</div>
         <div className="flex">
           <NoScrollLink href="/">Home</NoScrollLink>

@@ -20,8 +20,12 @@ module.exports = {
     extend: {},
     container: {
       padding: {
-        DEFAULT: '1rem',
+        // DEFAULT: '1rem',
+        // xs: '1rem',
+        sm: '2rem',
+        md: '4rem',
         lg: '2rem',
+        xl: '1rem',
         '2xl': '8rem',
       },
     },
