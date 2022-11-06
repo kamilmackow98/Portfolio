@@ -1,0 +1,13 @@
+.wrapper {
+  background-color: var(--theme-disco-background);
+  border-color: var(--theme-disco-border);
+  border-width: 1px;
+
+  transition: all 800ms cubic-bezier(0.25, 1, 0.35, 1);
+
+  &:hover {
+    border-color: var(--theme-secondary--80);
+    box-shadow: 0 0 8px 0 var(--theme-secondary--40),
+      0 0 12px 2px var(--theme-secondary--20);
+  }
+}
