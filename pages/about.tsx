@@ -1,10 +1,30 @@
 import CustomHead from '@atoms/CustomHead'
+import DiscoLink from '@atoms/DiscoLink'
+import CurrentEvent from '@atoms/Timeline/CurrentEvent'
 import TechUsed from '@molecules/TechUsed'
 import Timeline from '@molecules/Timeline/Timeline'
 import { NextPage } from 'next'
 import Image from 'next/image'
 
+const isOpenForOpp = process.env.isOpenForOpp === 'yes'
+
 const About: NextPage = () => {
+  const renderCurrentState = isOpenForOpp ? (
+    <CurrentEvent
+      className="mt-4 px-6 py-4 lg:px-8 lg:py-5 flex flex-col items-center"
+      event={data.currentPosition}
+    />
+  ) : (
+    <div className="flex flex-col items-center">
+      <h3 className="text-white theme-font--heading font-bold tracking-wide">
+        Your company?
+      </h3>
+      <DiscoLink href="/contact" className="px-6 py-3 mt-6">
+        Hire me
+      </DiscoLink>
+    </div>
+  )
+
   return (
     <>
       <CustomHead title="About" />
@@ -88,47 +108,62 @@ const About: NextPage = () => {
           <h2 className="text-white theme-font--heading font-bold font-text--fat tracking-wide">
             My experiences
           </h2>
-          <Timeline events={events} />
+          <Timeline events={data.events} />
+          <div className="text-white mt-6 theme-font--heading tracking-wide uppercase">
+            Today
+          </div>
+          {renderCurrentState}
         </section>
       </div>
     </>
   )
 }
 
-const events = [
-  {
-    id: '89528086-0e9b-4500-864b-86c67a4d0661',
-    title: "DUT Informatique [Associate's Degree]",
-    description: ['University Institute of Technology in Metz'],
-    dates: ['2017', '2019'],
+const data = {
+  events: [
+    {
+      id: '89528086-0e9b-4500-864b-86c67a4d0661',
+      title: "DUT Informatique [Associate's Degree]",
+      description: ['University Institute of Technology in Metz'],
+      dates: ['2017', '2019'],
+    },
+    {
+      id: '263fd381-7fca-432e-9bb1-557766a0032d',
+      title: 'Internship at 3d2lux',
+      description: ['Web development', 'JavaScript, PHP and WordPress'],
+      dates: ['04/2019', '06/2019'],
+    },
+    {
+      id: 'ee66c0e9-a7ca-4bdb-a7f0-07c38e40a38d',
+      title: 'Vocational Degree in Web Development',
+      description: ['University Institute of Technology in Metz'],
+      dates: ['2020', '2021'],
+    },
+    {
+      id: 'a4e33884-f614-4799-9aa3-cf21c335df4a',
+      title: 'Internship at Dingiso',
+      description: [
+        'Web development with Symfony',
+        'Mobile development with React Native',
+      ],
+      dates: ['04/2021', '08/2021'],
+    },
+    {
+      id: 'af2dd644-359a-4693-8640-32501871ad68',
+      title: 'Web Developer at Dingiso',
+      description: [
+        'Web development',
+        'JavaScript, PHP, WordPress and Symfony',
+      ],
+      dates: ['09/2021', '11/2021'],
+    },
+  ],
+  currentPosition: {
+    id: '0abc06b7-4a26-4745-acd9-77c89a729407',
+    title: 'Web Consultant at Bloomind',
+    description: ['Web development'],
+    dates: ['07/2022'],
   },
-  {
-    id: '263fd381-7fca-432e-9bb1-557766a0032d',
-    title: 'Internship at 3d2lux',
-    description: ['Web development', 'JavaScript, PHP and WordPress'],
-    dates: ['04/2019', '06/2019'],
-  },
-  {
-    id: 'ee66c0e9-a7ca-4bdb-a7f0-07c38e40a38d',
-    title: 'Vocational Degree in Web Development',
-    description: ['University Institute of Technology in Metz'],
-    dates: ['2020', '2021'],
-  },
-  {
-    id: 'a4e33884-f614-4799-9aa3-cf21c335df4a',
-    title: 'Internship at Dingiso',
-    description: [
-      'Web development with Symfony',
-      'Mobile development with React Native',
-    ],
-    dates: ['04/2021', '08/2021'],
-  },
-  {
-    id: 'af2dd644-359a-4693-8640-32501871ad68',
-    title: 'Web Developer at Dingiso',
-    description: ['Web development', 'JavaScript, PHP, WordPress and Symfony'],
-    dates: ['09/2021', '11/2021'],
-  },
-]
+}
 
 export default About
