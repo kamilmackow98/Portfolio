@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import CustomHead from '@atoms/CustomHead'
 import DiscoLink from '@atoms/DiscoLink'
+import clsx from 'clsx'
 
 const Home: NextPage = () => {
   return (
@@ -8,20 +9,38 @@ const Home: NextPage = () => {
       <CustomHead title="Home" />
       <div id="home-page" className="page-container">
         <div className="content">
-          <h1 className="theme-font--heading font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl leading-tight text-white">
+          <h1
+            className={clsx(
+              'theme-font--heading font-extrabold',
+              'text-4xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl',
+              'leading-tight text-white',
+            )}
+          >
             I build unique experiences
           </h1>
-          <p id="description" className="mt-10 font-medium leading-relaxed">
+          <p
+            id="description"
+            className={clsx('font-medium leading-relaxed', 'mt-10')}
+          >
             I&#39;m a Web Developer with a passion for UI and UX. Mainly focused
             on front-end development, I like to design user interfaces, create
             stunning websites and develop cutting-edge applications.
           </p>
 
-          <div id="home-buttons-wrapper" className="flex items-center mt-10">
+          <div
+            id="home-buttons-wrapper"
+            className={clsx('flex items-center', 'mt-10')}
+          >
             <DiscoLink className="px-6 py-4" href="/portfolio">
               Check my work
             </DiscoLink>
-            <div className="mx-6 theme-font--heading font-text--md font-bold text-white">
+            <div
+              className={clsx(
+                'theme-font--heading font-text--md font-bold',
+                'text-white',
+                'mx-6',
+              )}
+            >
               OR
             </div>
             <DiscoLink
@@ -39,7 +58,13 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <div className="placeholder hidden lg:flex items-center justify-center">
+        <div
+          className={clsx(
+            'placeholder',
+            'hidden',
+            'items-center justify-center lg:flex',
+          )}
+        >
           <div>Spinning circles.</div>
         </div>
       </div>

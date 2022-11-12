@@ -5,18 +5,27 @@ import TechUsed from '@molecules/TechUsed'
 import Timeline from '@molecules/Timeline/Timeline'
 import { NextPage } from 'next'
 import Image from 'next/image'
+import clsx from 'clsx'
 
 const isOpenForOpp = process.env.isOpenForOpp === 'yes'
 
 const About: NextPage = () => {
   const renderCurrentState = isOpenForOpp ? (
     <CurrentEvent
-      className="mt-4 flex flex-col items-center px-6 py-4 lg:px-8 lg:py-5"
+      className={clsx(
+        'flex flex-col items-center',
+        'mt-4 px-6 py-4 lg:px-8 lg:py-5',
+      )}
       event={data.currentPosition}
     />
   ) : (
     <div className="flex flex-col items-center">
-      <h3 className="theme-font--heading font-bold tracking-wide text-white">
+      <h3
+        className={clsx(
+          'theme-font--heading font-bold',
+          'tracking-wide text-white',
+        )}
+      >
         Your company?
       </h3>
       <DiscoLink href="/contact" className="mt-6 px-6 py-3">
@@ -30,7 +39,7 @@ const About: NextPage = () => {
       <CustomHead title="About" />
       <div id="about-page" className="page-container">
         <section
-          className="grid items-center justify-center lg:grid-cols-2"
+          className={clsx('grid lg:grid-cols-2', 'items-center justify-center')}
           id="about-who"
         >
           <Image
@@ -41,10 +50,20 @@ const About: NextPage = () => {
             priority
           />
           <div className="content mt-12 lg:mt-0">
-            <h2 className="theme-font--heading font-text--fat font-bold tracking-wide text-white">
+            <h2
+              className={clsx(
+                'theme-font--heading font-text--fat font-bold',
+                'tracking-wide text-white',
+              )}
+            >
               Who am I
             </h2>
-            <p className="mt-3 text-justify font-medium leading-relaxed lg:px-8">
+            <p
+              className={clsx(
+                'text-justify font-medium leading-relaxed',
+                'mt-3 lg:px-8',
+              )}
+            >
               I&#39;m a Junior Web Developer and my goal is to master front-end
               development because, long story short, I really like it. And even
               if the back-end is not an alien technology to me, I simply enjoy
@@ -55,20 +74,45 @@ const About: NextPage = () => {
         </section>
 
         <section
-          className="mt-24 grid items-center justify-center lg:grid-cols-2"
+          className={clsx(
+            'grid lg:grid-cols-2',
+            'items-center justify-center',
+            'mt-24',
+          )}
           id="about-why"
         >
-          <div className="content order-last mt-12 lg:order-first lg:mt-0">
-            <h2 className="theme-font--heading font-text--fat font-bold tracking-wide text-white">
+          <div
+            className={clsx(
+              'content',
+              'order-last lg:order-first',
+              'mt-12 lg:mt-0',
+            )}
+          >
+            <h2
+              className={clsx(
+                'theme-font--heading font-text--fat font-bold',
+                'tracking-wide text-white',
+              )}
+            >
               Why me
             </h2>
-            <p className="mt-3 text-justify font-medium leading-relaxed lg:px-8">
+            <p
+              className={clsx(
+                'text-justify font-medium leading-relaxed',
+                'mt-3 lg:px-8',
+              )}
+            >
               I enjoy learning and discovering new things, technologies or
               tools. It helps me a lot to grow as a developer and constantly
               improve at my job so that I can provide the best possible
               experience for everyone on the Web.
             </p>
-            <p className="mt-3 text-justify font-medium leading-relaxed lg:px-8">
+            <p
+              className={clsx(
+                'text-justify font-medium leading-relaxed',
+                'mt-3 lg:px-8',
+              )}
+            >
               Currently, I&#39;m working on improving my problem-solving skills
               and exploring 3D stuff and animations.
             </p>
@@ -84,15 +128,29 @@ const About: NextPage = () => {
         </section>
 
         <section
-          className="mt-24 grid items-center justify-center lg:grid-cols-2"
+          className={clsx(
+            'grid lg:grid-cols-2',
+            'items-center justify-center',
+            'mt-24',
+          )}
           id="about-what"
         >
           <TechUsed />
           <div className="content mt-12 lg:mt-0">
-            <h2 className="theme-font--heading font-text--fat font-bold tracking-wide text-white">
+            <h2
+              className={clsx(
+                'theme-font--heading font-text--fat font-bold',
+                'tracking-wide text-white',
+              )}
+            >
               What I use
             </h2>
-            <p className="mt-3 text-justify font-medium leading-relaxed lg:px-8">
+            <p
+              className={clsx(
+                'text-justify font-medium leading-relaxed',
+                'mt-3 lg:px-8',
+              )}
+            >
               I use a set of modern tools that help me develop better and more
               secure apps. I choose libraries and frameworks that solve existing
               problems faster and more efficiently, but also provide a great
@@ -102,14 +160,29 @@ const About: NextPage = () => {
         </section>
 
         <section
-          className="mt-24 flex flex-col items-center justify-center"
+          className={clsx(
+            'flex flex-col',
+            'items-center justify-center',
+            'mt-24',
+          )}
           id="about-timeline"
         >
-          <h2 className="theme-font--heading font-text--fat font-bold tracking-wide text-white">
+          <h2
+            className={clsx(
+              'theme-font--heading font-text--fat font-bold',
+              'tracking-wide text-white',
+            )}
+          >
             My experiences
           </h2>
           <Timeline events={data.events} />
-          <div className="theme-font--heading mt-6 uppercase tracking-wide text-white">
+          <div
+            className={clsx(
+              'theme-font--heading uppercase',
+              'tracking-wide text-white',
+              'mt-6',
+            )}
+          >
             Today
           </div>
           {renderCurrentState}
