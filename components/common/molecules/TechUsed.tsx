@@ -88,10 +88,13 @@ const TechUsed = () => {
     .map((t) => <TechBlock key={t.id} {...t} />)
 
   return (
-    <div id="tech" className="flex flex-col justify-center items-center">
+    <div
+      className="flex flex-col items-center justify-center overflow-hidden"
+      id="tech"
+    >
       <div className="flex">{renderTechFirstRow}</div>
-      <div className="flex mt-2">{renderTechSecondRow}</div>
-      <div className="flex mt-2">{renderTechThirdRow}</div>
+      <div className="mt-2 flex">{renderTechSecondRow}</div>
+      <div className="mt-2 flex">{renderTechThirdRow}</div>
     </div>
   )
 }
