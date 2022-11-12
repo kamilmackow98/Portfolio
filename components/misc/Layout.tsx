@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { pageMotion } from '@utils/motionVariants'
 import { useRouter } from 'next/router'
 import Navigation from './Navigation'
-import Footer from './Footer'
+import Footer from './Footer/Footer'
 import { ReactNode } from 'react'
 import clsx from 'clsx'
 
@@ -26,6 +26,7 @@ function Layout({ children }: LayoutProps) {
           key={asPath}
         >
           {children}
+          <span className="mt-24 block" />
           <Footer />
         </motion.main>
       </AnimatePresence>
