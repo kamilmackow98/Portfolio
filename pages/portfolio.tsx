@@ -10,20 +10,15 @@ interface Props {
 
 const Portfolio: NextPage<Props> = ({ projects }) => {
   const renderProjects = projects.map((project) => (
-    <div key={project.slug}>
-      <hr />
-      <br />
-      <ProjectCard key={project.slug} project={project} />
-      <br />
-      <br />
-    </div>
+    <ProjectCard key={project.slug} project={project} />
   ))
 
   return (
     <>
-      <CustomHead title='Portfolio' />
-      <h2>Portfolio</h2>
-      {renderProjects}
+      <CustomHead title="Portfolio" />
+      <div id="portfolio-page" className="page-container">
+        {renderProjects}
+      </div>
     </>
   )
 }
