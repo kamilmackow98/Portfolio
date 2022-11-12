@@ -11,15 +11,15 @@ const isOpenForOpp = process.env.isOpenForOpp === 'yes'
 const About: NextPage = () => {
   const renderCurrentState = isOpenForOpp ? (
     <CurrentEvent
-      className="mt-4 px-6 py-4 lg:px-8 lg:py-5 flex flex-col items-center"
+      className="mt-4 flex flex-col items-center px-6 py-4 lg:px-8 lg:py-5"
       event={data.currentPosition}
     />
   ) : (
     <div className="flex flex-col items-center">
-      <h3 className="text-white theme-font--heading font-bold tracking-wide">
+      <h3 className="theme-font--heading font-bold tracking-wide text-white">
         Your company?
       </h3>
-      <DiscoLink href="/contact" className="px-6 py-3 mt-6">
+      <DiscoLink href="/contact" className="mt-6 px-6 py-3">
         Hire me
       </DiscoLink>
     </div>
@@ -30,7 +30,7 @@ const About: NextPage = () => {
       <CustomHead title="About" />
       <div id="about-page" className="page-container">
         <section
-          className="grid lg:grid-cols-2 items-center justify-center"
+          className="grid items-center justify-center lg:grid-cols-2"
           id="about-who"
         >
           <Image
@@ -41,10 +41,10 @@ const About: NextPage = () => {
             priority
           />
           <div className="content mt-12 lg:mt-0">
-            <h2 className="text-white theme-font--heading font-bold font-text--fat tracking-wide">
+            <h2 className="theme-font--heading font-text--fat font-bold tracking-wide text-white">
               Who am I
             </h2>
-            <p className="mt-3 lg:px-8 font-medium leading-relaxed text-justify">
+            <p className="mt-3 text-justify font-medium leading-relaxed lg:px-8">
               I&#39;m a Junior Web Developer and my goal is to master front-end
               development because, long story short, I really like it. And even
               if the back-end is not an alien technology to me, I simply enjoy
@@ -55,20 +55,20 @@ const About: NextPage = () => {
         </section>
 
         <section
-          className="mt-24 grid lg:grid-cols-2 items-center justify-center"
+          className="mt-24 grid items-center justify-center lg:grid-cols-2"
           id="about-why"
         >
-          <div className="content mt-12 lg:mt-0 order-last lg:order-first">
-            <h2 className="text-white theme-font--heading font-bold font-text--fat tracking-wide">
+          <div className="content order-last mt-12 lg:order-first lg:mt-0">
+            <h2 className="theme-font--heading font-text--fat font-bold tracking-wide text-white">
               Why me
             </h2>
-            <p className="mt-3 lg:px-8 font-medium leading-relaxed text-justify">
+            <p className="mt-3 text-justify font-medium leading-relaxed lg:px-8">
               I enjoy learning and discovering new things, technologies or
               tools. It helps me a lot to grow as a developer and constantly
               improve at my job so that I can provide the best possible
               experience for everyone on the Web.
             </p>
-            <p className="mt-3 lg:px-8 font-medium leading-relaxed text-justify">
+            <p className="mt-3 text-justify font-medium leading-relaxed lg:px-8">
               Currently, I&#39;m working on improving my problem-solving skills
               and exploring 3D stuff and animations.
             </p>
@@ -84,15 +84,15 @@ const About: NextPage = () => {
         </section>
 
         <section
-          className="mt-24 grid lg:grid-cols-2 items-center justify-center"
+          className="mt-24 grid items-center justify-center lg:grid-cols-2"
           id="about-what"
         >
           <TechUsed />
           <div className="content mt-12 lg:mt-0">
-            <h2 className="text-white theme-font--heading font-bold font-text--fat tracking-wide">
+            <h2 className="theme-font--heading font-text--fat font-bold tracking-wide text-white">
               What I use
             </h2>
-            <p className="mt-3 lg:px-8 font-medium leading-relaxed text-justify">
+            <p className="mt-3 text-justify font-medium leading-relaxed lg:px-8">
               I use a set of modern tools that help me develop better and more
               secure apps. I choose libraries and frameworks that solve existing
               problems faster and more efficiently, but also provide a great
@@ -102,14 +102,14 @@ const About: NextPage = () => {
         </section>
 
         <section
-          className="mt-24 flex justify-center items-center flex-col"
+          className="mt-24 flex flex-col items-center justify-center"
           id="about-timeline"
         >
-          <h2 className="text-white theme-font--heading font-bold font-text--fat tracking-wide">
+          <h2 className="theme-font--heading font-text--fat font-bold tracking-wide text-white">
             My experiences
           </h2>
           <Timeline events={data.events} />
-          <div className="text-white mt-6 theme-font--heading tracking-wide uppercase">
+          <div className="theme-font--heading mt-6 uppercase tracking-wide text-white">
             Today
           </div>
           {renderCurrentState}
