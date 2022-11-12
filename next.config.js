@@ -5,6 +5,9 @@ const nextConfig = {
   env: {
     isOpenForOpp: process.env.OPEN_FOR_OPP,
   },
+  images: {
+    domains: ['picsum.photos'],
+  },
 }
 
 module.exports = nextConfig

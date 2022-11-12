@@ -1,5 +1,5 @@
 import CustomHead from '@atoms/CustomHead'
-import ProjectCard from '@organisms/ProjectCard'
+import ProjectCard from '@organisms/Portfolio/ProjectCard'
 import { getProjects } from '@utils/mdx'
 import { GetStaticProps, NextPage } from 'next'
 import { Project } from 'types'
