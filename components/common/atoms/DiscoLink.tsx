@@ -16,7 +16,7 @@ const DiscoLink = (props: Props) => {
   )
 
   const classes = classNames(
-    'disco-link',
+    'disco-link tracking-wide',
     variant === 'blue' && 'blue',
     className,
   )

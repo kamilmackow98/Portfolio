@@ -13,7 +13,7 @@ const DiscoButton = (props: Props) => {
   )
 
   const classes = classNames(
-    'disco-button',
+    'disco-button tracking-wide',
     variant === 'blue' && 'blue',
     className,
   )
