@@ -6,8 +6,6 @@ interface Props {
   events: EventType[]
 }
 
-const containerClasses = clsx(styles.container, 'mt-8 py-12 space-y-12')
-
 const Timeline = (props: Props) => {
   const { events } = props
 
@@ -16,7 +14,10 @@ const Timeline = (props: Props) => {
   ))
 
   return (
-    <div id="timeline-wrapper" className={containerClasses}>
+    <div
+      className={clsx(styles.container, 'mt-8 space-y-12 py-12')}
+      id="timeline-wrapper"
+    >
       {renderEvents}
     </div>
   )

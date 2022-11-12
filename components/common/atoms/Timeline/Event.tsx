@@ -9,18 +9,6 @@ export type Event = {
   dates: string[]
 }
 
-const wrapperClasses = clsx(
-  styles.wrapper,
-  'grid lg:grid-cols-2 lg:justify-center items-center lg:gap-28',
-)
-
-const mementoClasses = clsx(
-  styles.memento,
-  'px-6 py-4 mt-2 lg:px-8 lg:py-5 lg:mt-0 rounded max-w-[420px]',
-)
-
-const separatorClasses = clsx(styles.separator)
-
 interface Props extends Event {}
 
 const Event = (props: Props) => {
@@ -34,12 +22,36 @@ const Event = (props: Props) => {
   ))
 
   return (
-    <div className={wrapperClasses}>
-      <span className="text-white pl-6 lg:pl-0 theme-font--heading font-normal tracking-wide">
+    <div
+      className={clsx(
+        styles.wrapper,
+        'grid lg:grid-cols-2 lg:gap-28',
+        'items-center lg:justify-center',
+      )}
+    >
+      <span
+        className={clsx(
+          'theme-font--heading font-normal',
+          'tracking-wide text-white',
+          'pl-6 lg:pl-0',
+        )}
+      >
         {renderDates}
       </span>
-      <div className={mementoClasses}>
-        <h3 className="text-white theme-font--heading font-semibold font-text--lg tracking-wide mb-2 leading-snug">
+      <div
+        className={clsx(
+          styles.memento,
+          'mt-2 px-6 py-4 lg:mt-0 lg:px-8 lg:py-5',
+          'max-w-[420px] rounded',
+        )}
+      >
+        <h3
+          className={clsx(
+            'theme-font--heading font-text--lg font-semibold',
+            'leading-snug tracking-wide text-white',
+            'mb-2',
+          )}
+        >
           {title}
         </h3>
         {description.map((desc, i) => (
@@ -48,7 +60,7 @@ const Event = (props: Props) => {
           </div>
         ))}
       </div>
-      <span className={separatorClasses} />
+      <span className={styles.separator} />
     </div>
   )
 }

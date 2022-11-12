@@ -15,11 +15,6 @@ const DiscoLink = (props: Props) => {
     variant === 'blue' ? '#80d4ff' : '#ffcc66',
   )
 
-  const classes = clsx(
-    'disco-link tracking-wide',
-    variant === 'blue' && 'blue',
-    className,
-  )
   const renderBackwards = backwards ? (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +55,13 @@ const DiscoLink = (props: Props) => {
 
   return (
     <Link {...rest}>
-      <a className={classes}>
+      <a
+        className={clsx(
+          'disco-link tracking-wide',
+          variant === 'blue' && 'blue',
+          className,
+        )}
+      >
         {children}
         {renderBackwards}
       </a>

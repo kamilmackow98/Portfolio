@@ -14,6 +14,7 @@ import {
 import { CgFigma as FigmaIcon } from 'react-icons/cg'
 import { IconType } from 'react-icons'
 import TechBlock from '@atoms/TechBlock/TechBlock'
+import clsx from 'clsx'
 
 export type Tech = {
   id: string
@@ -89,7 +90,11 @@ const TechUsed = () => {
 
   return (
     <div
-      className="flex flex-col items-center justify-center overflow-hidden"
+      className={clsx(
+        'flex flex-col',
+        'items-center justify-center',
+        'overflow-hidden',
+      )}
       id="tech"
     >
       <div className="flex">{renderTechFirstRow}</div>

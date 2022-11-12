@@ -7,13 +7,8 @@ interface Props extends Tech {}
 const TechBlock = (props: Props) => {
   const { icon: Icon } = props
 
-  const classes = clsx(
-    styles['wrapper'],
-    'p-6 rounded peer peer-first:ml-2',
-  )
-
   return (
-    <div className={classes}>
+    <div className={clsx(styles.wrapper, 'peer rounded p-6 peer-first:ml-2')}>
       <Icon size={36} color="#80d4ff" />
     </div>
   )

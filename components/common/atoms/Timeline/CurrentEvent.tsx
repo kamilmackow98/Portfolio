@@ -14,11 +14,15 @@ const CurrentEvent = (props: Props) => {
     ...rest
   } = props
 
-  const classes = clsx(styles.wrapper, className)
-
   return (
-    <div className={classes} {...rest}>
-      <div className="mb-2 text-white theme-font--heading font-semibold font-text--lg tracking-wide">
+    <div className={clsx(styles.wrapper, className)} {...rest}>
+      <div
+        className={clsx(
+          'theme-font--heading font-text--lg font-semibold',
+          'tracking-wide text-white',
+          'mb-2',
+        )}
+      >
         {title}
       </div>
       <div className="theme-font--reading font-medium">{description}</div>

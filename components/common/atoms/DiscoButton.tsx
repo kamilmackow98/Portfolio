@@ -12,11 +12,6 @@ const DiscoButton = (props: Props) => {
     variant === 'blue' ? '#80d4ff' : '#ffcc66',
   )
 
-  const classes = clsx(
-    'disco-button tracking-wide',
-    variant === 'blue' && 'blue',
-    className,
-  )
   const renderBackwards = backwards ? (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +51,14 @@ const DiscoButton = (props: Props) => {
   )
 
   return (
-    <button className={classes} {...rest}>
+    <button
+      className={clsx(
+        'disco-button tracking-wide',
+        variant === 'blue' && 'blue',
+        className,
+      )}
+      {...rest}
+    >
       {children}
       {renderBackwards}
     </button>

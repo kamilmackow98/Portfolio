@@ -1,9 +1,10 @@
 import NoScrollLink from '@atoms/NoScrollLink'
+import clsx from 'clsx'
 
 function Navigation() {
   return (
     <nav>
-      <div className="container mx-auto flex justify-between">
+      <div className={clsx('container', 'flex justify-between', 'mx-auto')}>
         <div>Logo</div>
         <div className="flex">
           <NoScrollLink href="/">Home</NoScrollLink>
