@@ -1,6 +1,6 @@
-import classNames from 'classnames'
 import Link, { LinkProps } from 'next/link'
 import { ReactNode, useRef } from 'react'
+import clsx from 'clsx'
 
 interface Props extends LinkProps {
   children?: ReactNode
@@ -15,7 +15,7 @@ const DiscoLink = (props: Props) => {
     variant === 'blue' ? '#80d4ff' : '#ffcc66',
   )
 
-  const classes = classNames(
+  const classes = clsx(
     'disco-link tracking-wide',
     variant === 'blue' && 'blue',
     className,

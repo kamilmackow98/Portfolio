@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, useRef } from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   backwards?: boolean
@@ -12,7 +12,7 @@ const DiscoButton = (props: Props) => {
     variant === 'blue' ? '#80d4ff' : '#ffcc66',
   )
 
-  const classes = classNames(
+  const classes = clsx(
     'disco-button tracking-wide',
     variant === 'blue' && 'blue',
     className,

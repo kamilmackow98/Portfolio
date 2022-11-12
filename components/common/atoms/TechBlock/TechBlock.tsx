@@ -1,5 +1,5 @@
 import { Tech } from '@molecules/TechUsed'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import styles from './TechBlock.module.css'
 
 interface Props extends Tech {}
@@ -7,7 +7,7 @@ interface Props extends Tech {}
 const TechBlock = (props: Props) => {
   const { icon: Icon } = props
 
-  const classes = classNames(
+  const classes = clsx(
     styles['wrapper'],
     'p-6 rounded peer peer-first:ml-2',
   )

@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { Fragment } from 'react'
 import styles from './Event.module.css'
 
@@ -9,17 +9,17 @@ export type Event = {
   dates: string[]
 }
 
-const wrapperClasses = classNames(
+const wrapperClasses = clsx(
   styles.wrapper,
   'grid lg:grid-cols-2 lg:justify-center items-center lg:gap-28',
 )
 
-const mementoClasses = classNames(
+const mementoClasses = clsx(
   styles.memento,
   'px-6 py-4 mt-2 lg:px-8 lg:py-5 lg:mt-0 rounded max-w-[420px]',
 )
 
-const separatorClasses = classNames(styles.separator)
+const separatorClasses = clsx(styles.separator)
 
 interface Props extends Event {}
 

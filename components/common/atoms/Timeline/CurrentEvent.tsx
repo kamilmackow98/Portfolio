@@ -1,7 +1,7 @@
 import { HTMLAttributes } from 'react'
 import { Event } from './Event'
 import styles from './CurrentEvent.module.css'
-import classNames from 'classnames'
+import clsx from 'clsx'
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   event: Event
@@ -14,7 +14,7 @@ const CurrentEvent = (props: Props) => {
     ...rest
   } = props
 
-  const classes = classNames(styles.wrapper, className)
+  const classes = clsx(styles.wrapper, className)
 
   return (
     <div className={classes} {...rest}>
