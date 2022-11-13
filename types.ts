@@ -1,5 +1,6 @@
 export type ProjectFrontMatter = {
   title: string
+  link?: string
   tags: string[]
   excerpt: string
   date: string
