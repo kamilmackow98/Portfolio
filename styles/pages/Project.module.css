@@ -1,0 +1,80 @@
+.tags-separator {
+  background-color: var(--theme-disco-border);
+  height: 1px;
+  flex: 1;
+}
+
+.md-content {
+  & > *:not(h2, h3, h4, h5, h6) {
+    margin-right: auto !important;
+    margin-left: auto !important;
+    max-width: 40rem !important;
+  }
+
+  & > h3 {
+    font-family: var(--theme-font--reading);
+    font-size: var(--font-text--xl);
+    font-weight: 700;
+    color: #fff;
+
+    margin-bottom: 0.5rem;
+  }
+
+  /* Next.js wrapper for Image component */
+  & > span {
+    border-radius: 0.25rem !important;
+    display: block !important;
+  }
+
+  & > p {
+    font-family: var(--theme-font--reading);
+    text-align: justify;
+    margin-left: 12rem;
+
+    line-height: 1.625;
+    font-weight: 500;
+  }
+
+  & > p + p,
+  & > span + span {
+    margin-top: 1rem !important;
+  }
+
+  & > p + h3,
+  & > span + h3,
+  & > span + p,
+  & > p + span {
+    margin-top: 3rem !important;
+  }
+}
+
+@media screen(lg) {
+  .md-content {
+    & > h3 + p,
+    & > h3 + span {
+      margin-top: 4rem !important;
+    }
+
+    & > h3 {
+      font-size: var(--font-text--lg);
+      position: absolute;
+
+      margin-bottom: unset;
+    }
+
+    & > p + h3,
+    & > span + h3,
+    & > span + p,
+    & > p + span {
+      margin-top: 4rem !important;
+    }
+  }
+}
+
+@media screen(xl) {
+  .md-content {
+    & > h3 {
+      margin-left: 6rem;
+    }
+  }
+}
