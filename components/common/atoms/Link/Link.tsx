@@ -11,6 +11,7 @@ const Link = (props: Props) => {
     <a
       className={clsx(styles.wrapper, className)}
       rel="noopener noreferrer"
+      target="_blank"
       {...rest}
     >
       {children}
