@@ -1,13 +1,14 @@
 import type { NextPage } from 'next'
 import CustomHead from '@atoms/CustomHead'
 import DiscoLink from '@atoms/DiscoLink'
+import styles from '@styles/pages/Home.module.css'
 import clsx from 'clsx'
 
 const Home: NextPage = () => {
   return (
     <>
       <CustomHead title="Home" />
-      <div id="home-page" className="page-container">
+      <div id="home-page" className={clsx(styles.container, 'page-container')}>
         <div className="content">
           <h1
             className={clsx(

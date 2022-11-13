@@ -1,9 +1,9 @@
-#home-page {
+.container {
   grid-template-columns: 1fr 1fr;
   display: grid;
 }
 
-#home-page .content {
+.container .content {
   overflow-x: hidden;
 
   & #description {
