@@ -17,7 +17,7 @@ const ProjectCard = ({ project }: Props) => {
     <ul className={clsx('mt-5 flex lg:mt-3')}>
       {frontmatter.tags.map((tag, idx) => (
         <li className={clsx('peer peer-first:ml-2.5')} key={idx}>
-          <Tag className={clsx('rounded px-4 py-2')}>{tag}</Tag>
+          <Tag className="px-4 py-2">{tag}</Tag>
         </li>
       ))}
     </ul>
@@ -40,7 +40,10 @@ const ProjectCard = ({ project }: Props) => {
         )}
       >
         <Image
-          src={'https://picsum.photos/600/4' + Math.floor(Math.random() * 90)}
+          src={
+            'https://picsum.photos/600/4' +
+            Math.floor(Math.random() * (90 - 10) + 10)
+          }
           alt="Placeholder"
           objectFit="cover"
           height={320}
