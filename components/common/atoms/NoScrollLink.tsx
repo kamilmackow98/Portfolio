@@ -1,7 +1,7 @@
 import Link, { LinkProps } from 'next/link'
 import { ReactNode } from 'react'
 
-interface Props extends LinkProps {
+export interface Props extends LinkProps {
   children?: ReactNode
   className?: string
 }
