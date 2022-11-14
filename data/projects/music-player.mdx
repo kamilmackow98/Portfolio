@@ -1,5 +1,6 @@
 ---
 title: Music Player
+link: https://kamilmackow98.github.io/player/
 tags: ['TypeScript', 'React', 'SCSS']
 excerpt: One of my very first side projects involving a little bit of my passion for music. A simple music player, heavily inspired by this theme for Foobar2000. It is capable of handling hundreds of songs and is fully operational without the need for a server.
 date: '2021-09-01'
@@ -7,4 +8,30 @@ isPublished: true
 priority: 300
 ---
 
-### My role
+### Overview
+
+Small side project with one simple goal - to play music. This Web application accepts multiple audio files (MP3 only) from user's device and can play them instantly. I worked alone on this project but the design was inspired by [this](https://www.deviantart.com/extremehunter1972/art/CaTRoX-final-screenshot-373369173) theme for [Foobar2000](https://www.foobar2000.org/). You can give it a try [here](https://kamilmackow98.github.io/player/).
+
+### Preview
+
+<Image src="https://picsum.photos/1280/720" alt="Some random image" />
+
+### Challenge
+
+It was one of my very first projects that I did completely alone and where I learned [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/). I also didn't know how to deal with audio files in a Web application, so I had to do some research first. I wanted most of the information of an audio file (or a song) to be displayed to the user. This included, for example, the artist of the song, the duration, song's album or even the album's cover.
+
+I didn't want to deal with server-side code and prefered to focus on an entirely client-side Web app. This means that basically all songs are available in one session only and cannot be stored anywhere. Each time the user refreshes the page, the application returns to its default state.
+
+### Solution
+
+I used HTML's [File's API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications) to read files from the user's device and turn them into readable data that any modern browser could handle. I achieved this by creating a [Blob](https://javascript.plainenglish.io/javascript-blob-why-is-it-useful-20c372dfca00) for each file, which I could then use to dynamically create an audio source and let the HTML handle the rest.
+
+One downside of using the method described above is that all data is loaded into memory. This can potentially lead to performance issues if not handled properly. This is also one of the reasons why I decided to only support MP3 files because, for example, [FLAC](https://en.wikipedia.org/wiki/FLAC) files can be considerably larger and have some impact on performance.
+
+To extract data from audio files I used [JS MediaTags](https://www.npmjs.com/package/jsmediatags), which worked out perfectly and I got everything I ever needed. It helped me to organize all the information of each song and later I was able to group them by albums, just for a little more clarity.
+
+On top of that, I decided I wanted to be able to look up the lyrics to any song that is currently playing. I ended up using the [Happi](https://happi.dev/) API service, which made this feature possible by providing lyrics from its large database.
+
+### Results
+
+This music player turned out to be a fun little side project in which I not only learned React and TypeScript, but also discovered how these kinds of applications work behind the scenes. I plan to revisit the project one day, and maybe this time add a back-end to it, and expand the player with even more features.
