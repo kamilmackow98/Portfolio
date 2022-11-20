@@ -13,10 +13,14 @@ interface LayoutProps {
 function Layout({ children }: LayoutProps) {
   const { asPath } = useRouter()
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0)
+  }
+
   return (
     <>
       <Navigation />
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" onExitComplete={scrollToTop}>
         <motion.main
           className={clsx('container', 'mx-auto mt-28 md:mt-48')}
           variants={pageMotion}
