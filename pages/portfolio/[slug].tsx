@@ -30,8 +30,8 @@ const Project: NextPage<Props> = (project: Props) => {
   const Component = useMemo(() => getMDXComponent(code), [code])
 
   const renderTags = tags.map((tag, idx) => (
-    <li className={clsx('peer peer-first:ml-2.5')} key={idx}>
-      <Tag className="px-4 py-2">{tag}</Tag>
+    <li className={clsx('peer peer-first:ml-2')} key={idx}>
+      <Tag className="px-4 py-1.5">{tag}</Tag>
     </li>
   ))
 

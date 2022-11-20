@@ -16,8 +16,8 @@ const ProjectCard = ({ project }: Props) => {
   const renderTags = frontmatter.tags ? (
     <ul className={clsx('mt-5 flex lg:mt-3')}>
       {frontmatter.tags.map((tag, idx) => (
-        <li className={clsx('peer peer-first:ml-2.5')} key={idx}>
-          <Tag className="px-4 py-2">{tag}</Tag>
+        <li className={clsx('peer peer-first:ml-2')} key={idx}>
+          <Tag className="px-4 py-1.5">{tag}</Tag>
         </li>
       ))}
     </ul>
@@ -88,11 +88,11 @@ const ProjectCard = ({ project }: Props) => {
           )}
         />
         <DiscoLink
-          className={clsx('mt-4 px-6 py-3.5')}
+          className={clsx('mt-4 px-6 py-3')}
           href={`portfolio/${slug}`}
           scroll={false}
         >
-          Learn More
+          Read More
         </DiscoLink>
       </div>
     </div>

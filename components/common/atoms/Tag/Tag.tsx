@@ -11,7 +11,7 @@ const Tag = (props: Props) => {
     <div
       className={clsx(
         styles.tag,
-        'font-text--xs theme-font--reading font-medium',
+        'font-text--xxs theme-font--reading font-medium',
         'leading-3 text-white',
         'select-none',
         className,
