@@ -12,6 +12,8 @@
   top: calc(50% + 5px);
   left: 50%;
 
+  opacity: 0.2; /* Same value as in arrows-fade keyframes */
+
   :global {
     animation: arrows-fade 2.5s infinite reverse
       cubic-bezier(0.95, 0.05, 0.795, 0.035);
