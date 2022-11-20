@@ -1,0 +1,19 @@
+@keyframes spin-resume {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes arrows-fade {
+  from {
+    opacity: 0.2;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

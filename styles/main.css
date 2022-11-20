@@ -6,4 +6,6 @@
 @import 'base/base.css';
 @import 'base/typography.css';
 
+@import 'utils/animations.css';
+
 @import 'components/index.css';
