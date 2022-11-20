@@ -74,7 +74,7 @@ function Navigation() {
           </NavLink>
           <span className={clsx(styles.separator, 'peer peer-first:ml-10')} />
           <DiscoLink
-            className={clsx('px-5 py-2.5', 'peer peer-first:ml-10')}
+            className={clsx('px-6 py-3', 'peer peer-first:ml-10')}
             href="/contact"
             variant="blue"
           >
