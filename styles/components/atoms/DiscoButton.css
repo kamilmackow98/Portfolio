@@ -1,8 +1,8 @@
 .disco-button {
   font-family: var(--theme-font--heading), sans-serif;
-  font-size: var(--font-text--xxs);
+  font-size: var(--font-text--margot);
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
 
   position: relative;
 
