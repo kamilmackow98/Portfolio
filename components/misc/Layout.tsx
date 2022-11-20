@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { pageMotion } from '@utils/motionVariants'
 import { useRouter } from 'next/router'
-import Navigation from './Navigation'
+import Navigation from './Navigation/Navigation'
 import Footer from './Footer/Footer'
 import { ReactNode } from 'react'
 import clsx from 'clsx'
@@ -22,7 +22,7 @@ function Layout({ children }: LayoutProps) {
       <Navigation />
       <AnimatePresence mode="wait" onExitComplete={scrollToTop}>
         <motion.main
-          className={clsx('container', 'mx-auto mt-28 md:mt-48')}
+          className={clsx('container', 'mx-auto mt-28 md:mt-32')}
           variants={pageMotion}
           initial="initial"
           animate="animate"
