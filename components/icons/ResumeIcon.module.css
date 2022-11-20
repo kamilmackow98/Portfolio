@@ -1,0 +1,55 @@
+.wrapper {
+  position: relative;
+
+  height: 80px;
+  width: 80px;
+}
+
+.chevron {
+  transform: translate3d(-50%, -50%, 0);
+  position: absolute;
+
+  top: calc(50% + 5px);
+  left: 50%;
+
+  :global {
+    animation: arrows-fade 2.5s infinite reverse
+      cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  }
+
+  &:nth-child(1) {
+    top: calc(50% - 6px);
+  }
+
+  &:nth-child(2) {
+    animation-delay: 400ms;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 800ms;
+    top: calc(50% + 14px);
+  }
+}
+
+.circle {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  transition: all 200ms ease;
+
+  :global {
+    animation: spin-resume 2s infinite cubic-bezier(0.85, 0, 0.05, 1.1);
+    animation-play-state: paused;
+  }
+
+  & > svg {
+    stroke: #7a8ba9;
+    max-height: 100%;
+    max-width: 100%;
+
+    :global {
+      animation: spin-resume 6s linear infinite;
+    }
+  }
+}
