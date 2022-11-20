@@ -76,6 +76,7 @@
   --font-text--sm: calc(var(--font-unit) * 0.875); /* 14px */
   --font-text--xs: calc(var(--font-unit) * 0.8125); /* 13px */
   --font-text--xxs: calc(var(--font-unit) * 0.75); /* 12px */
+  --font-text--margot: calc(var(--font-unit) * 0.6875); /* 11px */
 
   /* ---------------------------------------- */
   /* ----| Position, display and layout |---- */
