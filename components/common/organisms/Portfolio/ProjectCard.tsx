@@ -16,8 +16,8 @@ const ProjectCard = ({ project }: Props) => {
   const renderTags = frontmatter.tags ? (
     <ul className={clsx('mt-5 flex lg:mt-3')}>
       {frontmatter.tags.map((tag, idx) => (
-        <li className={clsx('peer peer-first:ml-2')} key={idx}>
-          <Tag className="px-4 py-1.5">{tag}</Tag>
+        <li className={clsx('peer peer-first:ml-2.5')} key={idx}>
+          <Tag className="px-[18px] py-[7px] tracking-wide">{tag}</Tag>
         </li>
       ))}
     </ul>

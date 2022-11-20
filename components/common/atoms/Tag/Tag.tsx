@@ -28,7 +28,7 @@ const Tag = (props: Props) => {
             fill="#39455c"
             stroke="#7a8ba9"
             strokeOpacity="0.5"
-            strokeWidth="0.25"
+            strokeWidth="0.4"
             d="M 32.051261,0.12579455 H 0.128051 V 7.0952359 l 2.820707,2.7789543 h 31.92321 V 2.9047488 Z"
             id="btn-bg"
           />
