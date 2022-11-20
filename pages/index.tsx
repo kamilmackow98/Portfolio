@@ -3,6 +3,7 @@ import CustomHead from '@atoms/CustomHead'
 import DiscoLink from '@atoms/DiscoLink'
 import styles from '@styles/pages/Home.module.css'
 import clsx from 'clsx'
+import ResumeIcon from '@icons/ResumeIcon'
 
 const Home: NextPage = () => {
   return (
@@ -54,8 +55,31 @@ const Home: NextPage = () => {
             </DiscoLink>
           </div>
 
-          <div id="resume-wrapper" className="mt-24">
-            Resume
+          <div
+            className={clsx(styles['resume-container'], 'mt-24')}
+            id="resume-wrapper"
+          >
+            <a
+              className={clsx('flex items-center', 'theme-font--heading')}
+              href="/assets/pdf/Resume.pdf"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <ResumeIcon />
+              <div className={clsx('flex flex-col', 'ml-6')}>
+                <span
+                  className={clsx(
+                    'font-text--md font-bold',
+                    'uppercase tracking-wide text-white',
+                  )}
+                >
+                  My resume
+                </span>
+                <span className={clsx('font-text--sm font-medium')}>
+                  Download
+                </span>
+              </div>
+            </a>
           </div>
         </div>
 
