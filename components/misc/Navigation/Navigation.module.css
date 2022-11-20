@@ -27,18 +27,33 @@
 
   position: relative;
 
+  &::before,
   &::after {
     position: absolute;
     content: '';
 
-    bottom: -0.25rem;
-    right: 0;
-    left: 0;
+    bottom: -0.3125rem;
+    left: -0.75rem;
 
-    height: 1px;
-    transition: all 600ms ease;
-    background: linear-gradient(90deg, var(--theme-secondary), transparent);
+    transition: opacity 600ms ease;
+    border-radius: 10px;
     opacity: 0;
+  }
+
+  &::before {
+    background: linear-gradient(
+      to top,
+      var(--theme-secondary) -25%,
+      transparent
+    );
+    height: 1rem;
+    width: 2px;
+  }
+
+  &::after {
+    background: linear-gradient(90deg, var(--theme-secondary), transparent);
+    height: 2px;
+    width: 2rem;
   }
 
   &.active {
@@ -46,7 +61,8 @@
       0 0 2px var(--theme-secondary--40);
     color: var(--theme-secondary);
 
-    &::after {
+    &::after,
+    &::before {
       opacity: 1;
     }
   }
