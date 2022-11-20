@@ -88,7 +88,7 @@ const ProjectCard = ({ project }: Props) => {
           )}
         />
         <DiscoLink
-          className={clsx('mt-4 px-6 py-3')}
+          className={clsx('mt-4 px-5 py-3')}
           href={`portfolio/${slug}`}
           scroll={false}
         >

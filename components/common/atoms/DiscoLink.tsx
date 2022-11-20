@@ -57,7 +57,7 @@ const DiscoLink = (props: Props) => {
     <Link {...rest}>
       <a
         className={clsx(
-          'disco-link tracking-wide',
+          'disco-link tracking-wider',
           variant === 'blue' && 'blue',
           className,
         )}
