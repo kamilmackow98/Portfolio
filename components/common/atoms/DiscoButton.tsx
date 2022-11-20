@@ -53,7 +53,7 @@ const DiscoButton = (props: Props) => {
   return (
     <button
       className={clsx(
-        'disco-button tracking-wide',
+        'disco-button tracking-wider',
         variant === 'blue' && 'blue',
         className,
       )}
