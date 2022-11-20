@@ -9,8 +9,15 @@ const Home: NextPage = () => {
   return (
     <>
       <CustomHead title="Home" />
-      <div id="home-page" className={clsx(styles.container, 'page-container')}>
-        <div className="content">
+      <div
+        className={clsx(
+          styles.container,
+          'page-container',
+          'grid lg:grid-cols-2',
+        )}
+        id="home-page"
+      >
+        <div className={clsx('flex flex-col', 'items-start')}>
           <h1
             className={clsx(
               'theme-font--heading font-extrabold',
@@ -21,8 +28,12 @@ const Home: NextPage = () => {
             I build unique experiences
           </h1>
           <p
+            className={clsx(
+              'font-medium leading-relaxed',
+              'max-w-[460px]',
+              'mt-10',
+            )}
             id="description"
-            className={clsx('font-medium leading-relaxed', 'mt-10')}
           >
             I&#39;m a Web Developer with a passion for UI and UX. Mainly focused
             on front-end development, I like to design user interfaces, create
@@ -30,8 +41,8 @@ const Home: NextPage = () => {
           </p>
 
           <div
-            id="home-buttons-wrapper"
             className={clsx('flex items-center', 'mt-10')}
+            id="home-buttons-wrapper"
           >
             <DiscoLink className="px-6 py-4" href="/portfolio">
               Check my work
