@@ -43,7 +43,7 @@ const About: NextPage = () => {
           id="about-who"
         >
           <Image
-            src="/assets/images/laptop.svg"
+            src="/assets/images/manypixels/html.svg"
             alt="Who am I section - laptop"
             height={320}
             width={540}
@@ -119,7 +119,7 @@ const About: NextPage = () => {
           </div>
           <Image
             className="order-first lg:order-last"
-            src="/assets/images/tech.svg"
+            src="/assets/images/manypixels/designer.svg"
             alt="Why me section - tech"
             height={340}
             width={540}
