@@ -45,15 +45,15 @@ const Event = (props: Props) => {
           'max-w-[420px] rounded',
         )}
       >
-        <h3
+        <div
           className={clsx(
-            'theme-font--heading font-text--lg font-semibold',
+            'theme-font--heading font-semibold',
             'leading-snug tracking-wide text-white',
             'mb-2',
           )}
         >
           {title}
-        </h3>
+        </div>
         {description.map((desc, i) => (
           <div className="theme-font--reading font-medium" key={i}>
             {desc}

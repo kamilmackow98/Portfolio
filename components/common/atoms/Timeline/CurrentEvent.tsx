@@ -18,7 +18,7 @@ const CurrentEvent = (props: Props) => {
     <div className={clsx(styles.wrapper, className)} {...rest}>
       <div
         className={clsx(
-          'theme-font--heading font-text--lg font-semibold',
+          'theme-font--heading font-semibold',
           'tracking-wide text-white',
           'mb-2',
         )}
