@@ -43,7 +43,7 @@
   --theme-dark--variant: #1a1f28;
 
   --theme-dark--bright: #343e50;
-  --theme-dark--bright-30: rgba(52, 62, 80, 0.3);
+  --theme-dark--bright-30: #343e504d;
 
   --theme-dark--brightest: #98a4bc;
 
@@ -51,7 +51,7 @@
   /* ----| Text color, text selection, etc. |---- */
   /* -------------------------------------------- */
 
-  --theme-text--color: #7a8ba9;
+  --theme-text--color: rgb(122, 139, 169);
   --theme-text--color-30: rgba(122, 139, 169, 0.3);
   --theme-text--color-50: rgba(122, 139, 169, 0.5);
 
