@@ -5,11 +5,11 @@ import styles from './TechBlock.module.css'
 interface Props extends Tech {}
 
 const TechBlock = (props: Props) => {
-  const { icon: Icon } = props
+  const { icon } = props
 
   return (
     <div className={clsx(styles.wrapper, 'peer rounded p-6 peer-first:ml-2')}>
-      <Icon size={36} color="#80d4ff" />
+      {icon}
     </div>
   )
 }

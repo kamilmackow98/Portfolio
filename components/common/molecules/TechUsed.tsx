@@ -9,69 +9,69 @@ import {
   SiVuedotjs as VueIcon,
   SiTypescript as TypeScriptIcon,
   SiJavascript as JavaScriptIcon,
-  SiPhp as PhpIcon,
+  SiSvelte as SvelteIcon,
 } from 'react-icons/si'
 import { CgFigma as FigmaIcon } from 'react-icons/cg'
-import { IconType } from 'react-icons'
 import TechBlock from '@atoms/TechBlock/TechBlock'
 import clsx from 'clsx'
+import { ReactNode } from 'react'
 
 export type Tech = {
   id: string
   name: string
-  icon: IconType
+  icon: ReactNode
 }
 
 const tech: Tech[] = [
   {
     id: 'react',
     name: 'React',
-    icon: ReactIcon,
+    icon: <ReactIcon size={36} color="#80d4ff" />,
   },
   {
     id: 'vue',
     name: 'Vue',
-    icon: VueIcon,
+    icon: <VueIcon size={36} color="#80d4ff" />,
   },
   {
-    id: 'symfony',
-    name: 'Symfony',
-    icon: SymfonyIcon,
+    id: 'svelte',
+    name: 'Svelte',
+    icon: <SvelteIcon size={36} color="#80d4ff" />,
   },
   {
     id: 'typescript',
     name: 'TypeScript',
-    icon: TypeScriptIcon,
+    icon: <TypeScriptIcon size={36} color="#80d4ff" />,
   },
   {
     id: 'javascript',
     name: 'JavaScript',
-    icon: JavaScriptIcon,
+    icon: <JavaScriptIcon size={36} color="#80d4ff" />,
   },
   {
     id: 'node',
     name: 'Node',
-    icon: NodeIcon,
+    icon: <NodeIcon size={36} color="#80d4ff" />,
   },
   {
-    id: 'php',
-    name: 'PHP',
-    icon: PhpIcon,
+    id: 'symfony',
+    name: 'Symfony',
+    icon: <SymfonyIcon size={36} color="#80d4ff" />,
   },
   {
     id: 'scss',
     name: 'SCSS',
-    icon: SassIcon,
+    icon: <SassIcon size={36} color="#80d4ff" />,
   },
   {
     id: 'git',
     name: 'Git',
-    icon: GitIcon,
+    icon: <GitIcon size={36} color="#80d4ff" />,
   },
   {
     id: 'figma',
     name: 'Figma',
-    icon: FigmaIcon,
+    icon: <FigmaIcon size={36} color="#80d4ff" />,
   },
 ]
 
