@@ -90,13 +90,17 @@
 @media screen(xl) {
   .container {
     &::before {
-      background-color: var(--theme-disco-border);
+      background: linear-gradient(
+        transparent,
+        var(--theme-disco-border),
+        transparent
+      );
       position: absolute;
       display: block;
       content: '';
 
       left: calc(50% - 1px);
-      height: 6rem;
+      height: 8rem;
       width: 2px;
 
       top: initial;
