@@ -27,33 +27,23 @@
 
   position: relative;
 
-  &::before,
   &::after {
+    box-shadow: 0 0 2px 1px var(--theme-primary--80);
+    background: var(--theme-primary);
+
     position: absolute;
     content: '';
 
-    bottom: -0.3125rem;
-    left: -0.75rem;
+    right: calc(100% + 0.625rem);
+    border-radius: 4px;
+    height: 4px;
+    width: 4px;
+    top: 50%;
 
-    transition: opacity 600ms ease;
-    border-radius: 10px;
-    opacity: 0;
-  }
+    transform: scale(0) translateY(-50%);
+    transform-origin: top;
 
-  &::before {
-    background: linear-gradient(
-      to top,
-      var(--theme-secondary) -25%,
-      transparent
-    );
-    height: 1rem;
-    width: 2px;
-  }
-
-  &::after {
-    background: linear-gradient(90deg, var(--theme-secondary), transparent);
-    height: 2px;
-    width: 2rem;
+    transition: transform 600ms ease;
   }
 
   &.active {
@@ -61,9 +51,8 @@
       0 0 2px var(--theme-secondary--40);
     color: var(--theme-secondary);
 
-    &::after,
-    &::before {
-      opacity: 1;
+    &::after {
+      transform: scale(1) translateY(-50%);
     }
   }
 
