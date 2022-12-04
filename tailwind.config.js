@@ -1,4 +1,4 @@
-const { screens } = require('tailwindcss/defaultTheme')
+const { screens, fontSize } = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -7,6 +7,15 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    fontSize: {
+      '7.5xl': [
+        '5.25rem',
+        {
+          lineHeight: 1,
+        },
+      ],
+      ...fontSize,
+    },
     screens: {
       xxs: '420px',
       xs: '480px',
