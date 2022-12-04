@@ -28,7 +28,7 @@ const ProjectCard = ({ project }: Props) => {
       className={clsx(
         styles.container,
         'grid items-center justify-center lg:grid-cols-2 lg:gap-16 xl:gap-32',
-        'peer peer-first:mt-16 peer-first:lg:mt-32',
+        'peer peer-first:mt-24 peer-first:lg:mt-40',
         'sm:px-12 lg:px-0',
       )}
     >

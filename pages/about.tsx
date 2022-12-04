@@ -77,7 +77,7 @@ const About: NextPage = () => {
           className={clsx(
             'grid lg:grid-cols-2',
             'items-center justify-center',
-            'mt-24',
+            'mt-14 lg:mt-32',
           )}
           id="about-why"
         >
@@ -131,7 +131,7 @@ const About: NextPage = () => {
           className={clsx(
             'grid lg:grid-cols-2',
             'items-center justify-center',
-            'mt-24',
+            'mt-12 lg:mt-32',
           )}
           id="about-what"
         >
@@ -163,7 +163,7 @@ const About: NextPage = () => {
           className={clsx(
             'flex flex-col',
             'items-center justify-center',
-            'mt-24',
+            'mt-16 lg:mt-40',
           )}
           id="about-timeline"
         >
@@ -180,7 +180,7 @@ const About: NextPage = () => {
             className={clsx(
               'theme-font--heading uppercase',
               'tracking-wide text-white',
-              'mt-6',
+              'mt-12',
             )}
           >
             Today

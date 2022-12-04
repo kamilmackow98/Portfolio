@@ -15,7 +15,7 @@ const Timeline = (props: Props) => {
 
   return (
     <div
-      className={clsx(styles.container, 'mt-8 space-y-12 py-12')}
+      className={clsx(styles.container, 'mt-12 space-y-16 py-4 lg:py-20')}
       id="timeline-wrapper"
     >
       {renderEvents}
