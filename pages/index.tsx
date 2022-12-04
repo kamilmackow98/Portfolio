@@ -4,6 +4,7 @@ import DiscoLink from '@atoms/DiscoLink'
 import styles from '@styles/pages/Home.module.css'
 import clsx from 'clsx'
 import ResumeIcon from '@icons/ResumeIcon'
+import DiscoCircles from '@atoms/DiscoCircles/DiscoCircles'
 
 const Home: NextPage = () => {
   return (
@@ -21,7 +22,7 @@ const Home: NextPage = () => {
           <h1
             className={clsx(
               'theme-font--heading font-extrabold',
-              'text-4xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl',
+              'text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7.5xl 2xl:text-8xl',
               'leading-tight text-white',
             )}
           >
@@ -30,7 +31,7 @@ const Home: NextPage = () => {
           <p
             className={clsx(
               'font-medium leading-relaxed',
-              'max-w-[460px]',
+              'max-w-[400px] xl:max-w-[460px]',
               'mt-10',
             )}
             id="description"
@@ -96,12 +97,13 @@ const Home: NextPage = () => {
 
         <div
           className={clsx(
+            styles['circles-container'],
+            'items-center justify-center lg:flex',
             'placeholder',
             'hidden',
-            'items-center justify-center lg:flex',
           )}
         >
-          <div>Spinning circles.</div>
+          <DiscoCircles />
         </div>
       </div>
     </>
