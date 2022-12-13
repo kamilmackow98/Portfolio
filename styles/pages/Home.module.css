@@ -1,8 +1,3 @@
-.circles-container {
-  perspective: 600px;
-  overflow: hidden;
-}
-
 .resume-container {
   & > a {
     & div:nth-child(1) {

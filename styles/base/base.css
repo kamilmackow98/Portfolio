@@ -11,12 +11,12 @@ body {
   background-image: url('/assets/images/funny-circle.svg'),
     radial-gradient(100% 185% at 100% 0%, #313b4d 0%, #242c3a 40%, #1a1f28 100%);
 
-  background-position: 5% 80%, top left;
-  background-attachment: fixed, scroll;
-  background-size: 225vw, auto;
+  background-position: bottom left, top left;
+  background-attachment: fixed;
+  background-size: cover, auto;
   background-repeat: no-repeat;
 
-  /* background-image: url(/assets/img/bg-circle-ac58c9d3.svg),
+  /* background-image: url('/assets/images/funny-circle.svg'),
     radial-gradient(
       105% 185% at 105% -5%,
       #303f5a 0%,
@@ -34,4 +34,8 @@ main {
   flex: 1;
 
   min-height: 100%;
+}
+
+#__next {
+  overflow: hidden;
 }

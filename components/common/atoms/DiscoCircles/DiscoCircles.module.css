@@ -1,157 +1,205 @@
-.container {
+.wrapper {
   /* transform: rotateX(60deg) rotateY(-20deg) rotateZ(0deg); */
-  transform: rotate3d(1.2, -1, 1.2, 60deg);
+  /* transform: rotate3d(1.2, -1, 1.2, 60deg); */
+  position: absolute;
+  bottom: 25%;
+  right: 0;
+  top: 0;
+
+  z-index: -999;
+
+  width: 60%;
+}
+
+.circles-container {
+  /* transform: rotate3d(1, -0.75, 0.75, 45deg); */
+  transform: rotate3d(2, -1, 2, 45deg);
   transform-style: preserve-3d;
-  position: relative;
-  height: 100%;
-  width: 100%;
+  transform-origin: center;
+
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
 }
 
 .circle {
+  transform-origin: center center;
   position: absolute;
-  height: 100%;
-  width: 100%;
 
   & > svg {
-    width: 100%;
+    stroke: var(--theme-secondary);
     height: 100%;
+    width: 100%;
   }
 
   &:nth-child(1) {
-    transform: translateZ(205px);
-    :global {
-      & svg {
-        animation: rotate 3s linear infinite reverse;
-      }
-      filter: drop-shadow(0 0 1px #80d4ff);
+    transform: translatez(240px);
+    height: 80px;
+    width: 80px;
+
+    & > svg {
+      filter: drop-shadow(0 0 2px var(--theme-secondary));
+      stroke-dasharray: 250;
+
+      animation: rotate 7.5s linear infinite;
     }
   }
 
   &:nth-child(2) {
-    transform: translateZ(180px);
-    :global {
-      & svg {
-        animation: rotate 8s linear infinite;
-      }
-      filter: drop-shadow(0 0 1px #ffcc66);
+    transform: translatez(200px);
+    height: 200px;
+    width: 200px;
+
+    & > svg {
+      stroke-dasharray: 75;
+
+      animation: rotate 12.5s linear infinite reverse;
     }
   }
 
   &:nth-child(3) {
-    transform: translateZ(160px);
-    :global {
-      & svg {
-        animation: rotate 6s linear infinite reverse;
-      }
-      filter: drop-shadow(0 0 4px #80d4ff)
-        drop-shadow(0 0 1px rgba(255, 255, 255, 0.1));
+    transform: translatez(150px);
+    height: 300px;
+    width: 300px;
+
+    & > svg {
+      filter: drop-shadow(0 0 4px var(--theme-secondary));
+      stroke-dasharray: 240;
+      stroke-width: 0.4;
+
+      animation: rotate 20s linear infinite;
     }
   }
 
   &:nth-child(4) {
-    transform: translateZ(140px);
-    :global {
-      & svg {
-        animation: rotate 12s linear infinite;
-      }
+    transform: translatez(100px);
+    height: 400px;
+    width: 400px;
+
+    & > svg {
+      stroke-dasharray: 45;
+      stroke-width: 0.8;
+
+      animation: rotate 30s linear infinite reverse;
     }
   }
 
   &:nth-child(5) {
-    transform: translateZ(115px);
-    :global {
-      & svg {
-        animation: rotate 14s linear infinite;
-      }
+    transform: translatez(60px);
+    height: 510px;
+    width: 510px;
+
+    & > svg {
+      stroke: var(--theme-text--color);
+      stroke-dasharray: 60;
+      stroke-opacity: 0.1;
+      stroke-width: 4;
+
+      animation: rotate 40s linear infinite reverse;
     }
   }
 
   &:nth-child(6) {
-    transform: translateZ(90px);
-    :global {
-      & svg {
-        animation: rotate 16s linear infinite;
-      }
-      filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.25))
-        drop-shadow(0 0 3px rgba(92, 207, 230, 0.5));
+    transform: translatez(40px);
+    height: 560px;
+    width: 560px;
+
+    & > svg {
+      filter: drop-shadow(0 0 4px var(--theme-secondary));
+      stroke-dasharray: 60;
+      stroke-width: 1.5;
+
+      animation: rotate 25s linear infinite;
     }
   }
 
   &:nth-child(7) {
-    transform: translateZ(60px);
-    :global {
-      & svg {
-        animation: rotate 20s linear infinite;
-      }
+    height: 670px;
+    width: 670px;
+
+    & > svg {
+      stroke: var(--theme-text--color);
+      stroke-dasharray: 50;
+      stroke-opacity: 0.6;
+      stroke-width: 2.25;
+
+      animation: rotate 50s linear infinite;
     }
   }
 
   &:nth-child(8) {
-    transform: translateZ(60px);
-    :global {
-      & svg {
-        animation: rotate 40s linear infinite;
-      }
+    transform: translatez(-50px);
+    height: 720px;
+    width: 720px;
+
+    & > svg {
+      stroke: var(--theme-text--color);
+      stroke-dasharray: 60;
+      stroke-opacity: 0.04;
+      stroke-width: 3;
+
+      animation: rotate 60s linear infinite reverse;
+
+      position: relative;
     }
   }
 
+  /* Last inner circle */
   &:nth-child(9) {
-    transform: translateZ(0px);
-    :global {
-      & svg {
-        animation: rotate 30s linear infinite;
-      }
+    transform: translatez(-80px);
+    height: 825px;
+    width: 825px;
+
+    & > svg {
+      stroke: var(--theme-text--color);
+      stroke-dasharray: 20;
+      stroke-opacity: 0.05;
+      stroke-width: 8;
+
+      animation: rotate 90s linear infinite reverse;
     }
   }
 
+  /* Outer circles */
   &:nth-child(10) {
-    transform: translateZ(-60px);
-    :global {
-      & svg {
-        animation: rotate 24s linear infinite;
-      }
+    height: 2690px;
+    width: 2690px;
+
+    & > svg {
+      stroke-dasharray: 20;
+      stroke-opacity: 0.15;
+      stroke-width: 1.25;
+
+      animation: rotate 90s linear infinite;
+    }
+  }
+
+  &:nth-child(11) {
+    height: 2950px;
+    width: 2950px;
+
+    & > svg {
+      stroke-dasharray: 20;
+      stroke-opacity: 0.05;
+      stroke-width: 6;
+
+      animation: rotate 120s linear infinite reverse;
     }
   }
 }
 
-@media screen(2xl) {
-  .circle:nth-child(1) {
-    transform: translateZ(250px);
+@keyframes rotate {
+  from {
+    transform: rotate(0);
   }
 
-  .circle:nth-child(2) {
-    transform: translateZ(220px);
-  }
-
-  .circle:nth-child(3) {
-    transform: translateZ(200px);
-  }
-
-  .circle:nth-child(4) {
-    transform: translateZ(170px);
-  }
-
-  .circle:nth-child(5) {
-    transform: translateZ(140px);
-  }
-
-  .circle:nth-child(6) {
-    transform: translateZ(110px);
-  }
-
-  .circle:nth-child(7) {
-    transform: translateZ(80px);
-  }
-
-  .circle:nth-child(8) {
-    transform: translateZ(80px);
-  }
-
-  .circle:nth-child(9) {
-    transform: translateZ(20px);
-  }
-
-  .circle:nth-child(10) {
-    transform: translateZ(-60px);
+  to {
+    transform: rotate(360deg);
   }
 }

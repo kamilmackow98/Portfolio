@@ -15,6 +15,7 @@ const Home: NextPage = () => {
           styles.container,
           'page-container',
           'grid lg:grid-cols-2',
+          'relative',
         )}
         id="home-page"
       >
@@ -95,16 +96,7 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <div
-          className={clsx(
-            styles['circles-container'],
-            'items-center justify-center lg:flex',
-            'placeholder',
-            'hidden',
-          )}
-        >
-          <DiscoCircles />
-        </div>
+        <DiscoCircles />
       </div>
     </>
   )
