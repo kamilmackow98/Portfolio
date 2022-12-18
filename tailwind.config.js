@@ -26,7 +26,13 @@ module.exports = {
       // xl: '1280px',
       // '2xl': '1536px',
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#ffcc66',
+        secondary: '#80d4ff',
+        default: '#7a8ba9',
+      },
+    },
     container: {
       padding: {
         DEFAULT: '1rem',
