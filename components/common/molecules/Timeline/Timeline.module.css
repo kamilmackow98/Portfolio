@@ -1,16 +1,20 @@
-.container {
+.dates-container {
   position: relative;
+  height: 100%;
+
+  & > button {
+    transition: color 400ms ease;
+  }
 
   &::before {
-    transform: translateX(-50%);
-    left: -10%;
-    top: 0;
-
     position: absolute;
     content: '';
+    right: 0;
+    top: 0;
 
+    opacity: 0.25;
     height: 100%;
-    width: 3px;
+    width: 1px;
 
     background-image: linear-gradient(
       transparent,
@@ -20,10 +24,19 @@
   }
 }
 
-@media screen(lg) {
-  .container {
-    &::before {
-      left: 50%;
-    }
-  }
+.active-event {
+  transition: transform 800ms cubic-bezier(0.175, 0.885, 0.32, 1.075);
+  background-image: linear-gradient(
+    transparent,
+    var(--theme-primary),
+    transparent
+  );
+
+  position: absolute;
+  top: 1.8rem;
+  right: 0;
+
+  height: 2rem;
+  width: 1px;
+  z-index: 1;
 }

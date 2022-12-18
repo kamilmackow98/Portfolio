@@ -1,0 +1,31 @@
+@media screen(lg) {
+  #who,
+  #why,
+  #what {
+    gap: 2rem;
+  }
+
+  #why,
+  #timeline > div {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  #timeline > div {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  #who,
+  #what {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+}
+
+@media screen(xl) {
+  #who,
+  #why,
+  #what,
+  #timeline > div {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+}

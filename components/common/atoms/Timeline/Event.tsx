@@ -1,12 +1,12 @@
 import clsx from 'clsx'
 import { Fragment } from 'react'
-import styles from './Event.module.css'
 
 export type Event = {
   id: string
   title: string
   description: string[]
   dates: string[]
+  eventDate: string
 }
 
 interface Props extends Event {}
@@ -16,51 +16,37 @@ const Event = (props: Props) => {
 
   const renderDates = dates.map((date, i) => (
     <Fragment key={i}>
-      <span>{date.replaceAll('/', ` ${String.fromCharCode(8226)} `)}</span>
-      {i < dates.length - 1 ? <span className="mx-2">-</span> : null}
+      <span>{date.replaceAll('/', ` ${String.fromCharCode(8901)} `)}</span>
+      {i < dates.length - 1 ? <span className="mx-2">&#8259;</span> : null}
     </Fragment>
   ))
 
   return (
-    <div
-      className={clsx(
-        styles.wrapper,
-        'grid lg:grid-cols-2 lg:gap-28',
-        'items-center lg:justify-center',
-      )}
-    >
+    <div className={clsx('flex flex-col', 'pt-8')}>
       <span
         className={clsx(
-          'theme-font--heading font-normal',
-          'tracking-wide text-white',
-          'pl-6 lg:pl-0',
+          'theme-font--heading font-light',
+          'tracking-wide',
+          'text-primary',
         )}
       >
         {renderDates}
       </span>
       <div
         className={clsx(
-          styles.memento,
-          'mt-2 px-6 py-4 lg:mt-0 lg:px-8 lg:py-5',
-          'max-w-[420px] rounded',
+          'theme-font--heading font-text--xl font-bold',
+          'leading-snug tracking-wide text-white',
         )}
       >
-        <div
-          className={clsx(
-            'theme-font--heading font-semibold',
-            'leading-snug tracking-wide text-white',
-            'mb-2',
-          )}
-        >
-          {title}
-        </div>
+        {title}
+      </div>
+      <div className="mt-2">
         {description.map((desc, i) => (
           <div className="theme-font--reading font-medium" key={i}>
             {desc}
           </div>
         ))}
       </div>
-      <span className={styles.separator} />
     </div>
   )
 }
