@@ -46,7 +46,7 @@
       content: '';
 
       height: 60%;
-      width: 2px;
+      width: 1px;
     }
 
     &::before {
@@ -92,16 +92,16 @@
     &::before {
       background: linear-gradient(
         transparent,
-        var(--theme-disco-border),
+        var(--theme-primary),
         transparent
       );
       position: absolute;
       display: block;
       content: '';
+      z-index: 1;
 
-      left: calc(50% - 1px);
       height: 8rem;
-      width: 2px;
+      left: 50%;
 
       top: initial;
       top: unset;

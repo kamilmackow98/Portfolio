@@ -1,0 +1,56 @@
+.container {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '';
+    z-index: -1;
+
+    width: 1px;
+    left: 50%;
+    bottom: 0;
+    top: 0;
+    
+    opacity: 0.25;
+
+    background-image: linear-gradient(
+      transparent,
+      var(--theme-secondary),
+      transparent
+    );
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    z-index: -1;
+
+    height: 6rem;
+    width: 1px;
+    left: 50%;
+    top: 2rem;
+
+    animation: slide 6s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+    background-image: linear-gradient(
+      transparent,
+      var(--theme-secondary),
+      transparent
+    );
+  }
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    top: 2rem;
+  }
+  
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    top: calc(100% - 8rem);
+  }
+}
