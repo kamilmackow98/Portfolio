@@ -45,8 +45,8 @@ const About: NextPage = () => {
           <Image
             src="/assets/images/manypixels/html.svg"
             alt="Who am I section - laptop"
-            height={320}
-            width={540}
+            height={280}
+            width={480}
             priority
           />
           <div className="content mt-12 lg:mt-0">
@@ -121,8 +121,8 @@ const About: NextPage = () => {
             className="order-first lg:order-last"
             src="/assets/images/manypixels/designer.svg"
             alt="Why me section - tech"
-            height={340}
-            width={540}
+            height={300}
+            width={480}
             priority
           />
         </section>
