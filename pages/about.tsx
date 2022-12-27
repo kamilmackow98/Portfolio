@@ -162,7 +162,7 @@ const About: NextPage = () => {
               'xl:px-8 2xl:px-12',
             )}
           >
-            How did I get here
+            My experiences
           </h2>
           <div className={clsx('grid items-center', 'w-full', 'mt-4')}>
             <Timeline events={data.events} />

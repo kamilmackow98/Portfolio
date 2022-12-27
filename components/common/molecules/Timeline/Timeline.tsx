@@ -1,33 +1,81 @@
 import Event, { Event as EventType } from '@atoms/Timeline/Event'
 import clsx from 'clsx'
-import { useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { Scrollbar, type Swiper as SwiperType } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+import 'swiper/css'
+import 'swiper/css/scrollbar'
 import styles from './Timeline.module.css'
 
 interface Props {
   events: EventType[]
 }
 
+const eventDateStyle = (isActive: boolean = false) => {
+  return [
+    isActive && styles['event-date--active'],
+    styles['event-date'],
+    'theme-font--heading',
+    'whitespace-nowrap',
+    'tracking-wide',
+    'font-text--md',
+  ]
+}
+
 const Timeline = (props: Props) => {
   const { events } = props
-  const [currentEventIdx, setCurrentEventIdx] = useState<number>(0)
-  const [activeDateTopDistance, setActiveDateTopDistance] = useState<number>(0)
 
-  const handleClickDate = (idx: number) => {
-    setCurrentEventIdx(idx)
-    setActiveDateTopDistance(idx * 3)
+  const [scrollerTopDistance, setScrollerTopDistance] = useState<number>(0)
+  const [currentEventIdx, setCurrentEventIdx] = useState<number>(0)
+  const [swiper, setSwiper] = useState<SwiperType>()
+
+  const activeEventStyle = {
+    transform: `translate3d(0, ${scrollerTopDistance}rem, 0)`,
   }
+
+  const handleEventChange = (idx: number) => {
+    setScrollerTopDistance(idx * 2.9)
+    setCurrentEventIdx(idx)
+
+    if (swiper) {
+      if (idx === 0 || idx === 1) {
+        swiper.slideTo(0)
+      } else if (idx === 2) {
+        swiper.slideTo(1)
+      } else {
+        swiper.slideTo(2)
+      }
+    }
+  }
+
+  useEffect(() => {
+    let isUpdated = false
+
+    function updateSwiperOnResize() {
+      if (!isUpdated && document.body.clientWidth < 640) {
+        swiper?.scrollbar.updateSize()
+        swiper?.update()
+        isUpdated = true
+      } else if (isUpdated && document.body.clientWidth >= 640) {
+        isUpdated = false
+      }
+    }
+
+    window.addEventListener('resize', updateSwiperOnResize, true)
+
+    return () =>
+      window.removeEventListener('resize', updateSwiperOnResize, true)
+  }, [swiper])
 
   const renderDates = events.map((event, idx) => (
     <button
-      onClick={() => handleClickDate(idx)}
+      onClick={() => handleEventChange(idx)}
       className={clsx(
-        styles['event-date'],
+        eventDateStyle(idx === currentEventIdx),
         'peer peer-first:mt-6',
-        'theme-font--heading',
-        'whitespace-nowrap',
-        'tracking-wide',
         'text-right',
-        idx === currentEventIdx ? 'text-white' : 'text-default',
       )}
       key={event.id}
       type="button"
@@ -36,30 +84,55 @@ const Timeline = (props: Props) => {
     </button>
   ))
 
-  const renderCurrentEvent = <Event {...events[currentEventIdx]} />
+  const renderSwiperDates = events.map((event, idx) => (
+    <SwiperSlide className="pb-4" key={idx}>
+      <button
+        className={clsx(eventDateStyle(idx === currentEventIdx), 'select-none')}
+        onClick={() => handleEventChange(idx)}
+        type="button"
+      >
+        {event.eventDate}
+      </button>
+    </SwiperSlide>
+  ))
+
+  const renderCurrentEvent = (
+    <AnimatePresence mode="wait">
+      <Event key={currentEventIdx} {...events[currentEventIdx]} />
+    </AnimatePresence>
+  )
 
   return (
-    <div
-      className={clsx(styles.container, 'flex', 'xl:pl-8 2xl:pl-12')}
-      id="timeline-wrapper"
-    >
-      <div
-        className={clsx(
-          styles['dates-container'],
-          'flex flex-col',
-          'py-8 pl-8 pr-12',
-        )}
+    <>
+      <Swiper
+        className={clsx('text-center', 'w-full sm:hidden')}
+        scrollbar={{
+          horizontalClass: styles['swiper-scrollbar'],
+        }}
+        modules={[Scrollbar]}
+        onSwiper={setSwiper}
+        slidesPerView={3}
+        roundLengths
+        grabCursor
       >
-        {renderDates}
-        <span
-          className={styles['active-event']}
-          style={{
-            transform: `translate3d(0, ${activeDateTopDistance}rem, 0)`,
-          }}
-        />
+        {renderSwiperDates}
+      </Swiper>
+
+      <div className={clsx('flex', 'xl:pl-8 2xl:pl-12')} id="timeline-wrapper">
+        <div
+          className={clsx(
+            styles['dates-container'],
+            'py-8 pr-12 lg:pl-8',
+            'flex-col sm:flex',
+            'hidden',
+          )}
+        >
+          {renderDates}
+          <span className={styles.scroller} style={activeEventStyle} />
+        </div>
+        <div className="sm:pl-12">{renderCurrentEvent}</div>
       </div>
-      <div className="pl-12">{renderCurrentEvent}</div>
-    </div>
+    </>
   )
 }
 
