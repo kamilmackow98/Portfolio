@@ -1,6 +1,5 @@
 import DiscoLink from '@atoms/DiscoLink'
 import { Project } from 'types'
-import styles from './ProjectCard.module.css'
 import { clsx } from 'clsx'
 import Image from 'next/image'
 import Tag from '@components/pages/portfolio/Tag'
@@ -26,17 +25,17 @@ const ProjectCard = ({ project }: Props) => {
   return (
     <div
       className={clsx(
-        styles.container,
         'grid items-center justify-center lg:grid-cols-2 lg:gap-16 xl:gap-32',
         'peer peer-first:mt-24 peer-first:lg:mt-40',
         'sm:px-12 lg:px-0',
+        'project-card',
       )}
     >
       <div
         className={clsx(
-          styles['image-wrapper'],
           'relative flex items-center justify-center',
           'lg:px-0 xl:px-12',
+          'project-card__image',
         )}
       >
         <Image
@@ -51,12 +50,12 @@ const ProjectCard = ({ project }: Props) => {
         />
         <span
           className={clsx(
-            styles['mobile-title'],
             'bottom-0 w-full rounded rounded-t-none px-5 py-3',
             'theme-font--heading font-text--xl font-semibold leading-7',
             'tracking-wide text-white',
             'absolute lg:hidden',
             'overflow-hidden',
+            'project-card__mobile-title',
           )}
         >
           {title}
@@ -64,14 +63,13 @@ const ProjectCard = ({ project }: Props) => {
       </div>
       <div
         className={clsx(
-          styles.content,
           'flex flex-col items-start',
           'overflow-hidden',
+          'project-card__content',
         )}
       >
         <h3
           className={clsx(
-            styles.title,
             'theme-font--heading font-text--xl font-semibold',
             'tracking-wide text-white',
             'hidden lg:block',
