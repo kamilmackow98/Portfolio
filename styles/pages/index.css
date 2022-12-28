@@ -1,12 +1,1 @@
-/* --- Home --- */
-
-/* --- About --- */
-
-/* --- Portfolio --- */
-
-@import 'portfolio/Tag.css';
-@import 'portfolio/ProjectCard.css';
-
-/* --- Project --- */
-
-/* --- Contact --- */
+@import 'portfolio/index.css';

@@ -3,7 +3,6 @@ import ProjectCard from '@components/pages/portfolio/ProjectCard'
 import { getProjects } from '@utils/mdx'
 import { GetStaticProps, NextPage } from 'next'
 import { Project } from 'types'
-import styles from '@styles/pages/Portfolio.module.css'
 import clsx from 'clsx'
 
 interface Props {
@@ -23,7 +22,6 @@ const Portfolio: NextPage<Props> = ({ projects }) => {
           'before:hidden xl:before:block',
           'after:hidden xl:after:block',
           'page-container',
-          styles.container,
         )}
         id="portfolio-page"
       >
