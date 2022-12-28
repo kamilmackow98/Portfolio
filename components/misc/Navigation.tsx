@@ -1,5 +1,5 @@
 import DiscoLink from '@atoms/DiscoLink'
-import NavLink from '@atoms/NavLink/NavLink'
+import NavLink from '@atoms/NavLink'
 import clsx from 'clsx'
 
 function Navigation() {
