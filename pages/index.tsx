@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import CustomHead from '@atoms/CustomHead'
 import DiscoLink from '@atoms/DiscoLink'
 import clsx from 'clsx'
-import ResumeIcon from '@icons/ResumeIcon'
+import ResumeIcon from '@components/pages/home/ResumeIcon'
 import DiscoCircles from '@atoms/DiscoCircles/DiscoCircles'
 
 const Home: NextPage = () => {
