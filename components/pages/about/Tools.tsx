@@ -12,7 +12,7 @@ import {
   SiSvelte as SvelteIcon,
 } from 'react-icons/si'
 import { CgFigma as FigmaIcon } from 'react-icons/cg'
-import ToolBlock from './ToolBlock'
+import Tool from './Tool'
 import clsx from 'clsx'
 import { ReactNode } from 'react'
 
@@ -22,7 +22,7 @@ export type Tool = {
   icon: ReactNode
 }
 
-const tech: Tool[] = [
+const tool: Tool[] = [
   {
     id: 'react',
     name: 'React',
@@ -76,17 +76,17 @@ const tech: Tool[] = [
 ]
 
 const Tools = () => {
-  const renderTechFirstRow = tech
+  const renderToolsFirstRow = tool
     .slice(0, 3)
-    .map((t) => <ToolBlock key={t.id} {...t} />)
+    .map((t) => <Tool key={t.id} {...t} />)
 
-  const renderTechSecondRow = tech
+  const renderToolsSecondRow = tool
     .slice(3, 7)
-    .map((t) => <ToolBlock key={t.id} {...t} />)
+    .map((t) => <Tool key={t.id} {...t} />)
 
-  const renderTechThirdRow = tech
-    .slice(7, tech.length)
-    .map((t) => <ToolBlock key={t.id} {...t} />)
+  const renderToolsThirdRow = tool
+    .slice(7, tool.length)
+    .map((t) => <Tool key={t.id} {...t} />)
 
   return (
     <div
@@ -97,9 +97,9 @@ const Tools = () => {
       )}
       id="about-tools"
     >
-      <div className="flex">{renderTechFirstRow}</div>
-      <div className="mt-2 flex">{renderTechSecondRow}</div>
-      <div className="mt-2 flex">{renderTechThirdRow}</div>
+      <div className="flex">{renderToolsFirstRow}</div>
+      <div className="mt-2 flex">{renderToolsSecondRow}</div>
+      <div className="mt-2 flex">{renderToolsThirdRow}</div>
     </div>
   )
 }

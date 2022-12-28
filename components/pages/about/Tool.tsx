@@ -1,9 +1,9 @@
-import { Tool } from '@components/pages/about/Tools'
+import { Tool } from './Tools'
 import clsx from 'clsx'
 
 interface Props extends Tool {}
 
-const TechBlock = (props: Props) => {
+const Tool = (props: Props) => {
   const { icon } = props
 
   return (
@@ -13,4 +13,4 @@ const TechBlock = (props: Props) => {
   )
 }
 
-export default TechBlock
+export default Tool

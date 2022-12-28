@@ -1,4 +1,4 @@
-import Event, { Event as EventType } from '@atoms/Timeline/Event'
+import Event, { Event as EventType } from '@components/pages/about/Event'
 import clsx from 'clsx'
 import { AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
