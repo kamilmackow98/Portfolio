@@ -12,17 +12,17 @@ import {
   SiSvelte as SvelteIcon,
 } from 'react-icons/si'
 import { CgFigma as FigmaIcon } from 'react-icons/cg'
-import TechBlock from '@atoms/TechBlock/TechBlock'
+import ToolBlock from './ToolBlock'
 import clsx from 'clsx'
 import { ReactNode } from 'react'
 
-export type Tech = {
+export type Tool = {
   id: string
   name: string
   icon: ReactNode
 }
 
-const tech: Tech[] = [
+const tech: Tool[] = [
   {
     id: 'react',
     name: 'React',
@@ -78,15 +78,15 @@ const tech: Tech[] = [
 const Tools = () => {
   const renderTechFirstRow = tech
     .slice(0, 3)
-    .map((t) => <TechBlock key={t.id} {...t} />)
+    .map((t) => <ToolBlock key={t.id} {...t} />)
 
   const renderTechSecondRow = tech
     .slice(3, 7)
-    .map((t) => <TechBlock key={t.id} {...t} />)
+    .map((t) => <ToolBlock key={t.id} {...t} />)
 
   const renderTechThirdRow = tech
     .slice(7, tech.length)
-    .map((t) => <TechBlock key={t.id} {...t} />)
+    .map((t) => <ToolBlock key={t.id} {...t} />)
 
   return (
     <div
@@ -95,7 +95,7 @@ const Tools = () => {
         'items-center justify-center',
         'overflow-hidden',
       )}
-      id="tech"
+      id="about-tools"
     >
       <div className="flex">{renderTechFirstRow}</div>
       <div className="mt-2 flex">{renderTechSecondRow}</div>
