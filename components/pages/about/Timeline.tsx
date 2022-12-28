@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/css'
 import 'swiper/css/scrollbar'
-import styles from './Timeline.module.css'
 
 interface Props {
   events: EventType[]
@@ -15,8 +14,8 @@ interface Props {
 
 const eventDateStyle = (isActive: boolean = false) => {
   return [
-    isActive && styles['event-date--active'],
-    styles['event-date'],
+    isActive && 'timeline__dates-container__event-date--active',
+    'timeline__dates-container__event-date',
     'theme-font--heading',
     'whitespace-nowrap',
     'tracking-wide',
@@ -105,9 +104,9 @@ const Timeline = (props: Props) => {
   return (
     <>
       <Swiper
-        className={clsx('text-center', 'w-full sm:hidden')}
+        className={clsx('text-center', 'w-full sm:hidden', 'timeline__swiper')}
         scrollbar={{
-          horizontalClass: styles['swiper-scrollbar'],
+          horizontalClass: 'timeline__swiper-scrollbar',
         }}
         modules={[Scrollbar]}
         onSwiper={setSwiper}
@@ -118,17 +117,17 @@ const Timeline = (props: Props) => {
         {renderSwiperDates}
       </Swiper>
 
-      <div className={clsx('flex', 'xl:pl-8 2xl:pl-12')} id="timeline-wrapper">
+      <div className={clsx('flex', 'xl:pl-8 2xl:pl-12')}>
         <div
           className={clsx(
-            styles['dates-container'],
+            'timeline__dates-container',
             'py-8 pr-12 lg:pl-8',
             'flex-col sm:flex',
             'hidden',
           )}
         >
           {renderDates}
-          <span className={styles.scroller} style={activeEventStyle} />
+          <span id="scroller" style={activeEventStyle} />
         </div>
         <div className="sm:pl-12">{renderCurrentEvent}</div>
       </div>

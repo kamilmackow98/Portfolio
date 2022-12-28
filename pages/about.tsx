@@ -1,6 +1,6 @@
 import CustomHead from '@atoms/CustomHead'
 import TechUsed from '@molecules/TechUsed'
-import Timeline from '@molecules/Timeline/Timeline'
+import Timeline from '@components/pages/about/Timeline'
 import { NextPage } from 'next'
 import Image from 'next/image'
 import clsx from 'clsx'
