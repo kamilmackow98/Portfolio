@@ -9,10 +9,10 @@ import { ParsedUrlQuery } from 'querystring'
 import { useMemo } from 'react'
 import { Project as ProjectType } from 'types'
 import { BiArrowBack } from 'react-icons/bi'
-import Image from '@atoms/Markdown/Image'
+import Image from '@components/markdown/Image'
 import Link from '@atoms/Link/Link'
 import { FiExternalLink } from 'react-icons/fi'
-import InternalLink from '@atoms/Markdown/InternalLink'
+import InternalLink from '@components/markdown/InternalLink'
 
 interface Props extends ProjectType {}
 
