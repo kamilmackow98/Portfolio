@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { pageMotion } from '@utils/motionVariants'
 import { useRouter } from 'next/router'
 import Navigation from './Navigation/Navigation'
-import Footer from './Footer/Footer'
+import Footer from './Footer'
 import { ReactNode } from 'react'
 import clsx from 'clsx'
 
