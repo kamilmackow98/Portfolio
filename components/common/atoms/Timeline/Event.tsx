@@ -52,7 +52,7 @@ const Event = (props: Props) => {
         {title}
       </motion.div>
       <motion.div
-        className="mt-1 min-h-[150px] sm:min-h-0"
+        className="mt-1 min-h-[150px] sm:min-h-0 text-justify"
         variants={eventItemMotion}
       >
         {description.map((desc, i) => (
