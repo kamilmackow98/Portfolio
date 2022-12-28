@@ -16,13 +16,13 @@ import Tool from './Tool'
 import clsx from 'clsx'
 import { ReactNode } from 'react'
 
-export type Tool = {
+export type ToolType = {
   id: string
   name: string
   icon: ReactNode
 }
 
-const tool: Tool[] = [
+const tool: ToolType[] = [
   {
     id: 'react',
     name: 'React',

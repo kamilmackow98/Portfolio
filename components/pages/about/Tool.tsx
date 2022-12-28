@@ -1,7 +1,7 @@
-import { Tool } from './Tools'
+import { ToolType } from './Tools'
 import clsx from 'clsx'
 
-interface Props extends Tool {}
+interface Props extends ToolType {}
 
 const Tool = (props: Props) => {
   const { icon } = props
