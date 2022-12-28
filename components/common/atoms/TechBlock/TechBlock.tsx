@@ -1,4 +1,4 @@
-import { Tech } from '@molecules/TechUsed'
+import { Tech } from '@components/pages/about/Tools'
 import clsx from 'clsx'
 import styles from './TechBlock.module.css'
 

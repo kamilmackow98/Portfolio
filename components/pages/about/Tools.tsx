@@ -75,7 +75,7 @@ const tech: Tech[] = [
   },
 ]
 
-const TechUsed = () => {
+const Tools = () => {
   const renderTechFirstRow = tech
     .slice(0, 3)
     .map((t) => <TechBlock key={t.id} {...t} />)
@@ -104,4 +104,4 @@ const TechUsed = () => {
   )
 }
 
-export default TechUsed
+export default Tools

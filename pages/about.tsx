@@ -1,5 +1,5 @@
 import CustomHead from '@atoms/CustomHead'
-import TechUsed from '@molecules/TechUsed'
+import Tools from '@components/pages/about/Tools'
 import Timeline from '@components/pages/about/Timeline'
 import { NextPage } from 'next'
 import Image from 'next/image'
@@ -122,7 +122,7 @@ const About: NextPage = () => {
           id="about-what"
           className={clsx('grid items-center justify-center', 'mt-12 lg:mt-32')}
         >
-          <TechUsed />
+          <Tools />
           <div className="content mt-12 lg:mt-0 xl:px-8 2xl:px-12">
             <h2
               className={clsx(
