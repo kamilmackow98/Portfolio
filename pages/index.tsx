@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import CustomHead from '@atoms/CustomHead'
+import CustomHead from '@components/misc/CustomHead'
 import DiscoLink from '@atoms/DiscoLink'
 import clsx from 'clsx'
 import ResumeIcon from '@components/pages/home/ResumeIcon'

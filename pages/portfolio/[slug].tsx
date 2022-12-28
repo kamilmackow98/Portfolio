@@ -1,4 +1,4 @@
-import CustomHead from '@atoms/CustomHead'
+import CustomHead from '@components/misc/CustomHead'
 import NoScrollLink from '@atoms/NoScrollLink'
 import Tag from '@components/pages/portfolio/Tag'
 import { getProject, getProjects } from '@utils/mdx'

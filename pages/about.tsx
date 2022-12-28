@@ -1,4 +1,4 @@
-import CustomHead from '@atoms/CustomHead'
+import CustomHead from '@components/misc/CustomHead'
 import Tools from '@components/pages/about/Tools'
 import Timeline from '@components/pages/about/Timeline'
 import { NextPage } from 'next'

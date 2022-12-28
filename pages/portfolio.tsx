@@ -1,4 +1,4 @@
-import CustomHead from '@atoms/CustomHead'
+import CustomHead from '@components/misc/CustomHead'
 import ProjectCard from '@components/pages/portfolio/ProjectCard'
 import { getProjects } from '@utils/mdx'
 import { GetStaticProps, NextPage } from 'next'
