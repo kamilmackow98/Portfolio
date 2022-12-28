@@ -3,7 +3,7 @@ import { Project } from 'types'
 import styles from './ProjectCard.module.css'
 import { clsx } from 'clsx'
 import Image from 'next/image'
-import Tag from '@atoms/Tag/Tag'
+import Tag from '@components/pages/portfolio/Tag'
 
 interface Props {
   project: Omit<Project, 'code'>

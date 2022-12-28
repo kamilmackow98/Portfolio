@@ -1,6 +1,5 @@
 import clsx from 'clsx'
 import { HTMLAttributes } from 'react'
-import styles from './Tag.module.css'
 
 interface Props extends HTMLAttributes<HTMLDivElement> {}
 
@@ -10,10 +9,10 @@ const Tag = (props: Props) => {
   return (
     <div
       className={clsx(
-        styles.tag,
         'font-text--xxs theme-font--reading font-medium',
         'leading-3 text-white',
         'select-none',
+        'portfolio-tag',
         className,
       )}
     >

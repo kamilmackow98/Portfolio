@@ -1,6 +1,6 @@
 import CustomHead from '@atoms/CustomHead'
 import NoScrollLink from '@atoms/NoScrollLink'
-import Tag from '@atoms/Tag/Tag'
+import Tag from '@components/pages/portfolio/Tag'
 import { getProject, getProjects } from '@utils/mdx'
 import clsx from 'clsx'
 import { getMDXComponent } from 'mdx-bundler/client'
