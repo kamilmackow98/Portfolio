@@ -1,10 +1,10 @@
-.tags-separator {
+#tags-container > #separator {
   background-color: var(--theme-disco-border);
   height: 1px;
   flex: 1;
 }
 
-.md-content {
+#project-page #markdown-content {
   & > *:not(h2, h3, h4, h5, h6) {
     margin-right: auto !important;
     margin-left: auto !important;
@@ -49,7 +49,7 @@
 }
 
 @media screen(lg) {
-  .md-content {
+  #project-page #markdown-content {
     & > h3 + p,
     & > h3 + span {
       margin-top: 4rem !important;
@@ -72,7 +72,7 @@
 }
 
 @media screen(xl) {
-  .md-content {
+  #project-page #markdown-content {
     & > h3 {
       margin-left: 6rem;
     }

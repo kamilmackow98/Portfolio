@@ -9,7 +9,6 @@ import { ParsedUrlQuery } from 'querystring'
 import { useMemo } from 'react'
 import { Project as ProjectType } from 'types'
 import { BiArrowBack } from 'react-icons/bi'
-import styles from '@styles/pages/Project.module.css'
 import Image from '@atoms/Markdown/Image'
 import Link from '@atoms/Link/Link'
 import { FiExternalLink } from 'react-icons/fi'
@@ -69,11 +68,11 @@ const Project: NextPage<Props> = (project: Props) => {
           </h2>
           {renderLink}
         </div>
-        <ul className={clsx('flex items-center', 'mt-3')}>
+        <ul id="tags-container" className={clsx('flex items-center', 'mt-3')}>
           {renderTags}
-          <span className={clsx(styles['tags-separator'], 'ml-8')} />
+          <span id="separator" className="ml-8" />
         </ul>
-        <div className={clsx(styles['md-content'], 'mt-24')}>
+        <div id="markdown-content" className="mt-24">
           <Component components={components} />
         </div>
       </div>

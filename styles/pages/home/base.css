@@ -1,4 +1,4 @@
-.resume-container {
+#home-page #resume {
   & > a {
     & div:nth-child(1) {
       & > span {

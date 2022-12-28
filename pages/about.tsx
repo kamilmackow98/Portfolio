@@ -4,7 +4,6 @@ import Timeline from '@molecules/Timeline/Timeline'
 import { NextPage } from 'next'
 import Image from 'next/image'
 import clsx from 'clsx'
-import styles from '@styles/pages/About.module.css'
 
 const isOpenForOpp = process.env.isOpenForOpp === 'yes'
 
@@ -37,7 +36,7 @@ const About: NextPage = () => {
     <>
       <CustomHead title="About" />
       <div id="about-page" className="page-container">
-        <section id={styles.who} className={'grid items-center justify-center'}>
+        <section id="about-who" className={'grid items-center justify-center'}>
           <Image
             src="/assets/images/manypixels/html.svg"
             alt="Who am I section - laptop"
@@ -70,7 +69,7 @@ const About: NextPage = () => {
         </section>
 
         <section
-          id={styles.why}
+          id="about-why"
           className={clsx('grid items-center justify-center', 'mt-14 lg:mt-32')}
         >
           <div
@@ -120,7 +119,7 @@ const About: NextPage = () => {
         </section>
 
         <section
-          id={styles.what}
+          id="about-what"
           className={clsx('grid items-center justify-center', 'mt-12 lg:mt-32')}
         >
           <TechUsed />
@@ -148,7 +147,7 @@ const About: NextPage = () => {
         </section>
 
         <section
-          id={styles.timeline}
+          id="about-timeline"
           className={clsx(
             'flex flex-col',
             'items-start justify-center',

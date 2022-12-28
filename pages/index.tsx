@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import CustomHead from '@atoms/CustomHead'
 import DiscoLink from '@atoms/DiscoLink'
-import styles from '@styles/pages/Home.module.css'
 import clsx from 'clsx'
 import ResumeIcon from '@icons/ResumeIcon'
 import DiscoCircles from '@atoms/DiscoCircles/DiscoCircles'
@@ -11,12 +10,7 @@ const Home: NextPage = () => {
     <>
       <CustomHead title="Home" />
       <div
-        className={clsx(
-          styles.container,
-          'page-container',
-          'grid lg:grid-cols-2',
-          'relative',
-        )}
+        className={clsx('page-container', 'grid lg:grid-cols-2', 'relative')}
         id="home-page"
       >
         <div className={clsx('flex flex-col', 'items-start')}>
@@ -68,10 +62,7 @@ const Home: NextPage = () => {
             </DiscoLink>
           </div>
 
-          <div
-            className={clsx(styles['resume-container'], 'mt-24')}
-            id="resume-wrapper"
-          >
+          <div id="resume" className="mt-24">
             <a
               className={clsx('flex items-center', 'theme-font--heading')}
               href="/assets/pdf/Resume.pdf"
