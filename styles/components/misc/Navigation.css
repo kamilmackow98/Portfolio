@@ -1,4 +1,4 @@
-.logo {
+#navigation__logo {
   background-image: url('/assets/images/logo.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -8,7 +8,7 @@
   width: 40px;
 }
 
-.name {
+#navigation__name {
   background-image: url('/assets/images/name.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -20,7 +20,7 @@
   margin-left: 0.8rem;
 }
 
-.nav-link {
+.navigation__link {
   text-shadow: 0 0 1px rgba(0, 0, 0, 0), 0 0 2px rgba(0, 0, 0, 0);
   transition: color 200ms ease, text-shadow 200ms ease;
   color: #fff;
@@ -46,7 +46,7 @@
     transition: transform 600ms ease;
   }
 
-  &.active {
+  &--active {
     text-shadow: 0 0 1px var(--theme-secondary),
       0 0 2px var(--theme-secondary--40);
     color: var(--theme-secondary);
@@ -58,31 +58,5 @@
 
   &:not(.active):hover {
     color: var(--theme-dark--brightest);
-  }
-}
-
-.separator {
-  position: relative;
-  height: 3px;
-  width: 3px;
-
-  background-color: #fff;
-
-  &::before,
-  &::after {
-    position: absolute;
-    content: '';
-
-    background-color: inherit;
-    height: inherit;
-    width: inherit;
-  }
-
-  &::before {
-    right: 0.5rem;
-  }
-
-  &::after {
-    left: 0.5rem;
   }
 }
