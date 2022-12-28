@@ -3,7 +3,7 @@ import CustomHead from '@components/misc/CustomHead'
 import DiscoLink from '@atoms/DiscoLink'
 import clsx from 'clsx'
 import ResumeIcon from '@components/pages/home/ResumeIcon'
-import DiscoCircles from '@atoms/DiscoCircles/DiscoCircles'
+import DiscoCircles from '@components/pages/home/DiscoCircles'
 
 const Home: NextPage = () => {
   return (

@@ -1,10 +1,9 @@
-import styles from './DiscoCircles.module.css'
 import { motion } from 'framer-motion'
 import { pageMotion } from '@utils/motionVariants'
 
 const Circle = () => {
   return (
-    <div className={styles.circle}>
+    <div className="disco-circles__circle">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
@@ -19,14 +18,14 @@ const Circle = () => {
 const DiscoCircles = () => {
   return (
     <motion.div
-      className={styles.wrapper}
       variants={pageMotion}
       initial="initial"
       animate="animate"
       exit="exit"
       key="disco-circles"
+      id="disco-circles-wrapper"
     >
-      <div className={styles['circles-container']}>
+      <div className="disco-circles">
         {Array.from(Array(11).keys()).map((_, idx) => (
           <Circle key={idx} />
         ))}

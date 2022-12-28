@@ -1,4 +1,4 @@
-.wrapper {
+#disco-circles-wrapper {
   /* transform: rotateX(60deg) rotateY(-20deg) rotateZ(0deg); */
   /* transform: rotate3d(1.2, -1, 1.2, 60deg); */
   position: absolute;
@@ -11,7 +11,7 @@
   width: 60%;
 }
 
-.circles-container {
+.disco-circles {
   /* transform: rotate3d(1, -0.75, 0.75, 45deg); */
   transform: rotate3d(2, -1, 2, 45deg);
   transform-style: preserve-3d;
@@ -28,7 +28,7 @@
   top: 0;
 }
 
-.circle {
+.disco-circles__circle {
   transform-origin: center center;
   position: absolute;
 
