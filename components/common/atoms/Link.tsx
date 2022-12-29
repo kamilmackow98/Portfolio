@@ -1,7 +1,7 @@
 import { AnchorHTMLAttributes } from 'react'
-import { styled } from '@stitches/react'
+import { styled, CSS } from '@stitches/react'
 
-export const StyledLink = styled('a', {
+export const LinkStyles: CSS = {
   color: 'var(--theme-primary)',
   position: 'relative',
   backgroundImage:
@@ -14,7 +14,9 @@ export const StyledLink = styled('a', {
   '&:hover, &:focus-visible': {
     backgroundSize: '100% 1px',
   },
-})
+}
+
+const StyledLink = styled('a', LinkStyles)
 
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {}
 

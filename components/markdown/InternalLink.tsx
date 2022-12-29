@@ -1,6 +1,8 @@
+import { LinkStyles } from '@atoms/Link'
 import NoScrollLink, { Props as NoScrollLinkProps } from '@atoms/NoScrollLink'
-import styles from '@atoms/Link/Link.module.css'
-import clsx from 'clsx'
+import { styled } from '@stitches/react'
+
+const StyledLink = styled(NoScrollLink, LinkStyles)
 
 interface Props extends NoScrollLinkProps {}
 
@@ -8,9 +10,9 @@ const InternalLink = (props: Props) => {
   const { className, children, ...rest } = props
 
   return (
-    <NoScrollLink className={clsx(styles.wrapper, className)} {...rest}>
+    <StyledLink className={className} {...rest}>
       {children}
-    </NoScrollLink>
+    </StyledLink>
   )
 }
 

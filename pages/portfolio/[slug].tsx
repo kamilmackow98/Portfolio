@@ -10,7 +10,7 @@ import { useMemo } from 'react'
 import { Project as ProjectType } from 'types'
 import { BiArrowBack } from 'react-icons/bi'
 import Image from '@components/markdown/Image'
-import Link from '@atoms/Link/Link'
+import Link from '@atoms/Link'
 import { FiExternalLink } from 'react-icons/fi'
 import InternalLink from '@components/markdown/InternalLink'
 
