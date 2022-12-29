@@ -7,11 +7,11 @@
 
     position: absolute;
     content: '';
-    right: 0;
-    top: 5%;
-
-    height: 90%;
     width: 1px;
+
+    bottom: 1.9rem;
+    top: 1.75rem;
+    right: 0;
   }
 }
 

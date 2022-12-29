@@ -1,180 +1,95 @@
 import CustomHead from '@components/misc/CustomHead'
-import Tools from '@components/pages/about/Tools'
+import Section from '@components/pages/about/Section'
 import Timeline from '@components/pages/about/Timeline'
+import Tools from '@components/pages/about/Tools'
 import { NextPage } from 'next'
 import Image from 'next/image'
-import clsx from 'clsx'
 
-const isOpenForOpp = process.env.isOpenForOpp === 'yes'
+// const isOpenForOpp = process.env.isOpenForOpp === 'yes'
 
 const About: NextPage = () => {
-  // const renderCurrentState = isOpenForOpp ? (
-  //   <CurrentEvent
-  //     className={clsx(
-  //       'flex flex-col items-center',
-  //       'mt-4 px-6 py-4 lg:px-8 lg:py-5',
-  //     )}
-  //     event={data.events[0]}
-  //   />
-  // ) : (
-  //   <div className="flex flex-col items-center">
-  //     <h3
-  //       className={clsx(
-  //         'theme-font--heading font-bold',
-  //         'tracking-wide text-white',
-  //       )}
-  //     >
-  //       Your company?
-  //     </h3>
-  //     <DiscoLink href="/contact" className="mt-6 px-6 py-3">
-  //       Hire me
-  //     </DiscoLink>
-  //   </div>
-  // )
-
   return (
     <>
       <CustomHead title="About" />
-      <div id="about-page" className="page-container">
-        <section id="about-who" className={'grid items-center justify-center'}>
+
+      <div id="about-page" className="page-container lg:mb-24">
+        <Section id="about-who" className="lg:mt-16">
           <Image
             src="/assets/images/manypixels/html.svg"
-            alt="Who am I section - laptop"
+            alt="Who am I section, laptop illustration"
             height={280}
             width={480}
             priority
           />
-          <div className="content mt-12 lg:mt-0 xl:px-8 2xl:px-12">
-            <h2
-              className={clsx(
-                'theme-font--heading font-text--fat font-bold',
-                'tracking-wide text-white',
-              )}
-            >
-              Who am I
-            </h2>
-            <p
-              className={clsx(
-                'text-justify font-medium leading-relaxed',
-                'mt-3 lg:px-8',
-              )}
-            >
+
+          <Section.Content>
+            <Section.Title>Who am I</Section.Title>
+            <Section.Paragraph>
               I&#39;m a Junior Web Developer and my goal is to master front-end
               development because, long story short, I really like it. And even
               if the back-end is not an alien technology to me, I simply enjoy
               working on the front-end more. In my spare time, I usually listen
               to music and play the guitar once in a while.
-            </p>
-          </div>
-        </section>
+            </Section.Paragraph>
+          </Section.Content>
+        </Section>
 
-        <section
-          id="about-why"
-          className={clsx('grid items-center justify-center', 'mt-14 lg:mt-32')}
-        >
-          <div
-            className={clsx(
-              'content',
-              'order-last lg:order-first',
-              'mt-12 lg:mt-0 xl:px-8 2xl:px-12',
-            )}
-          >
-            <h2
-              className={clsx(
-                'theme-font--heading font-text--fat font-bold',
-                'tracking-wide text-white',
-              )}
-            >
-              Why me
-            </h2>
-            <p
-              className={clsx(
-                'text-justify font-medium leading-relaxed',
-                'mt-3 lg:px-8',
-              )}
-            >
-              I enjoy learning and discovering new things, technologies or
-              tools. It helps me a lot to grow as a developer and constantly
-              improve at my job so that I can provide the best possible
-              experience for everyone on the Web.
-            </p>
-            <p
-              className={clsx(
-                'text-justify font-medium leading-relaxed',
-                'mt-3 lg:px-8',
-              )}
-            >
-              Currently, I&#39;m working on improving my problem-solving skills
-              and exploring 3D stuff and animations.
-            </p>
-          </div>
+        <Section id="about-why" className="mt-14 lg:mt-48">
           <Image
-            className="order-first lg:order-last"
+            className="lg:order-last"
             src="/assets/images/manypixels/designer.svg"
-            alt="Why me section - tech"
+            alt="Why me section, list of tools, icons"
             height={300}
             width={480}
             priority
           />
-        </section>
 
-        <section
-          id="about-what"
-          className={clsx('grid items-center justify-center', 'mt-12 lg:mt-32')}
-        >
+          <Section.Content className="lg:order-first">
+            <Section.Title>Why me</Section.Title>
+            <Section.Paragraph>
+              I enjoy learning and discovering new things, technologies or
+              tools. It helps me a lot to grow as a developer and constantly
+              improve at my job so that I can provide the best possible
+              experience for everyone on the Web.
+            </Section.Paragraph>
+            <Section.Paragraph className="mt-2">
+              Currently, I&#39;m working on improving my problem-solving skills
+              and exploring 3D stuff and animations.
+            </Section.Paragraph>
+          </Section.Content>
+        </Section>
+
+        <Section id="about-what" className="mt-12 lg:mt-48">
           <Tools />
-          <div className="content mt-12 lg:mt-0 xl:px-8 2xl:px-12">
-            <h2
-              className={clsx(
-                'theme-font--heading font-text--fat font-bold',
-                'tracking-wide text-white',
-              )}
-            >
-              What I use
-            </h2>
-            <p
-              className={clsx(
-                'text-justify font-medium leading-relaxed',
-                'mt-3 lg:px-8',
-              )}
-            >
+
+          <Section.Content>
+            <Section.Title>What I use</Section.Title>
+            <Section.Paragraph>
               I use a set of modern tools that help me develop better and more
               secure apps. I choose libraries and frameworks that solve existing
               problems faster and more efficiently, but also provide a great
               developer experience overall.
-            </p>
-          </div>
-        </section>
+            </Section.Paragraph>
+          </Section.Content>
+        </Section>
 
-        <section
-          id="about-timeline"
-          className={clsx(
-            'flex flex-col',
-            'items-start justify-center',
-            'mt-16 lg:mt-40',
-          )}
-        >
-          <h2
-            className={clsx(
-              'theme-font--heading font-text--fat font-bold',
-              'tracking-wide text-white',
-              'xl:px-8 2xl:px-12',
-            )}
-          >
-            My experiences
-          </h2>
-          <div className={clsx('grid items-center', 'w-full', 'mt-4')}>
+        <Section id="about-timeline" className="mt-16 lg:mt-48" align="top">
+          <Section.Content variant="timeline" className="grid items-center">
+            <Section.Title className="xl:px-8 2xl:px-12">
+              My experiences
+            </Section.Title>
             <Timeline events={data.events} />
-            <div className={clsx('hidden lg:flex', 'justify-center')}>
-              <Image
-                src="/assets/images/manypixels/startup.svg"
-                alt="Timeline rocket"
-                height={320}
-                width={420}
-              />
-            </div>
+          </Section.Content>
+
+          <div className="hidden justify-center lg:flex">
+            <Image
+              src="/assets/images/manypixels/startup.svg"
+              alt="Timeline section, rocket illustration"
+              height={360}
+              width={420}
+            />
           </div>
-        </section>
+        </Section>
       </div>
     </>
   )
@@ -222,7 +137,7 @@ const data = {
       id: 'af2dd644-359a-4693-8640-32501871ad68',
       title: 'Web Consultant at Bloomind',
       description: [
-        "Not a career path I anticipated, but it turned out to be a significant decision so far. As an entry job, it's an amazing opportunity to be able to work for different clients, with smaller or larger teams and older or modern codebases. There is always something new to learn pretty much everyday.",
+        "Not a career path I anticipated, but it turned out to be a significant decision so far. As an entry job, it's an amazing opportunity to be able to work for different clients, with smaller or larger teams and older or modern codebases. To my surprise, there is always something new to learn pretty much everyday.",
       ],
       dates: ['2022', 'Today'],
       eventDate: 'Now',

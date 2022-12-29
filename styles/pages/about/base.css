@@ -5,18 +5,17 @@
     gap: 2rem;
   }
 
-  #about-why,
-  #about-timeline > div {
+  #about-why {
     grid-template-columns: 1.1fr 0.9fr;
-  }
-
-  #about-timeline > div {
-    grid-template-columns: 1.2fr 0.8fr;
   }
 
   #about-who,
   #about-what {
     grid-template-columns: 0.9fr 1.1fr;
+  }
+
+  #about-timeline {
+    grid-template-columns: 1.2fr 0.8fr;
   }
 }
 
@@ -24,7 +23,7 @@
   #about-who,
   #about-why,
   #about-what,
-  #about-timeline > div {
+  #about-timeline {
     grid-template-columns: 1fr 1fr;
     gap: 0;
   }

@@ -11,10 +11,10 @@ export type Event = {
   eventDate: string
 }
 
-interface Props extends Event {}
+type Props = {} & Event & React.ComponentPropsWithoutRef<'div'>
 
 const Event = (props: Props) => {
-  const { title, description, dates } = props
+  const { title, className, description, dates } = props
 
   const renderDates = dates.map((date, i) => (
     <Fragment key={i}>
@@ -25,13 +25,13 @@ const Event = (props: Props) => {
 
   return (
     <motion.div
-      className={clsx('flex flex-col', 'pt-8')}
+      className={className}
       variants={eventMotion}
       initial="initial"
       animate="animate"
       exit="exit"
     >
-      <motion.span
+      <motion.div
         variants={eventItemMotion}
         className={clsx(
           'theme-font--heading font-light',
@@ -40,19 +40,19 @@ const Event = (props: Props) => {
         )}
       >
         {renderDates}
-      </motion.span>
+      </motion.div>
       <motion.div
         variants={eventItemMotion}
         className={clsx(
           'theme-font--heading font-text--xl font-bold',
-          'leading-snug tracking-wide text-white',
+          'leading-snug tracking-wider text-white',
           'mt-1',
         )}
       >
         {title}
       </motion.div>
       <motion.div
-        className="mt-1 min-h-[150px] sm:min-h-0 text-justify"
+        className="mt-1.5 min-h-[150px] text-justify sm:min-h-0"
         variants={eventItemMotion}
       >
         {description.map((desc, i) => (

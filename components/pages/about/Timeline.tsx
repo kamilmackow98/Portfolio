@@ -97,14 +97,23 @@ const Timeline = (props: Props) => {
 
   const renderCurrentEvent = (
     <AnimatePresence mode="wait">
-      <Event key={currentEventIdx} {...events[currentEventIdx]} />
+      <Event
+        className="pt-8 sm:pl-12"
+        key={currentEventIdx}
+        {...events[currentEventIdx]}
+      />
     </AnimatePresence>
   )
 
   return (
     <>
       <Swiper
-        className={clsx('text-center', 'w-full sm:hidden', 'timeline__swiper')}
+        className={clsx(
+          'text-center',
+          'w-full sm:hidden',
+          'timeline__swiper',
+          'mt-6',
+        )}
         scrollbar={{
           horizontalClass: 'timeline__swiper-scrollbar',
         }}
@@ -129,7 +138,7 @@ const Timeline = (props: Props) => {
           {renderDates}
           <span id="scroller" style={activeEventStyle} />
         </div>
-        <div className="sm:pl-12">{renderCurrentEvent}</div>
+        {renderCurrentEvent}
       </div>
     </>
   )
