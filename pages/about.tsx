@@ -32,7 +32,7 @@ const About: NextPage = () => {
               development because, long story short, I really like it. And even
               if the back-end is not an alien technology to me, I simply enjoy
               working on the front-end more. In my spare time, I usually listen
-              to music and play the guitar once in a while.
+              to music and play guitar once in a while.
             </Section.Paragraph>
           </Section.Content>
         </Section>
@@ -53,11 +53,8 @@ const About: NextPage = () => {
               I enjoy learning and discovering new things, technologies or
               tools. It helps me a lot to grow as a developer and constantly
               improve at my job so that I can provide the best possible
-              experience for everyone on the Web.
-            </Section.Paragraph>
-            <Section.Paragraph className="mt-2">
-              Currently, I&#39;m working on improving my problem-solving skills
-              and exploring 3D stuff and animations.
+              experience for everyone on the Web. Currently, I&#39;m working on
+              improving my problem-solving skills and I&#39;m exploring 3D stuff.
             </Section.Paragraph>
           </Section.Content>
         </Section>
