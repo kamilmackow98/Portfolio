@@ -1,13 +1,14 @@
 import { ToolType } from './Tools'
 import clsx from 'clsx'
+import React from 'react'
 
-interface Props extends ToolType {}
+type Props = {} & ToolType & React.ComponentPropsWithoutRef<'div'>
 
 const Tool = (props: Props) => {
-  const { icon } = props
+  const { icon, className, ...rest } = props
 
   return (
-    <div className={clsx('peer rounded p-6 peer-first:ml-2', 'tool-block')}>
+    <div title={props.name} className={clsx('tool-block', className)} {...rest}>
       {icon}
     </div>
   )
