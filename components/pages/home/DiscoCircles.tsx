@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
 import { pageMotion } from '@utils/motionVariants'
+import { motion } from 'framer-motion'
 
 const Circle = () => {
   return (
@@ -18,12 +18,11 @@ const Circle = () => {
 const DiscoCircles = () => {
   return (
     <motion.div
+      id="disco-circles-wrapper"
       variants={pageMotion}
       initial="initial"
       animate="animate"
       exit="exit"
-      key="disco-circles"
-      id="disco-circles-wrapper"
     >
       <div className="disco-circles">
         {Array.from(Array(11).keys()).map((_, idx) => (
