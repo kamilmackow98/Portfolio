@@ -1,8 +1,8 @@
 import Head from 'next/head'
 
 interface Props {
-  title: string
   description?: string
+  title: string
 }
 
 const CustomHead = (props: Props) => {
@@ -11,7 +11,9 @@ const CustomHead = (props: Props) => {
   return (
     <Head>
       <title>{title}</title>
-      {description && <meta name="description" content={description}></meta>}
+      {description ? (
+        <meta name="description" content={description}></meta>
+      ) : null}
     </Head>
   )
 }
