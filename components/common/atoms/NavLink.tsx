@@ -1,10 +1,11 @@
-import NoScrollLink, { Props as NoScrollLinkProps } from '@atoms/NoScrollLink'
-import { useEffect, useState } from 'react'
+import Link, { LinkProps } from 'next/link'
 import { useRouter } from 'next/router'
-import clsx from 'clsx'
+import { ReactNode, useEffect, useState } from 'react'
 
-interface Props extends NoScrollLinkProps {
+interface Props extends LinkProps {
   activeClassName?: string
+  className?: string
+  children?: ReactNode
 }
 
 const NavLink = (props: Props) => {
@@ -13,6 +14,7 @@ const NavLink = (props: Props) => {
   const { className, activeClassName, children, ...rest } = props
   const [classNameState, setClassNameState] = useState(className)
 
+  // TODO : Extract to a custom hook ?
   useEffect(() => {
     if (isReady) {
       const linkPathname = new URL(
@@ -46,9 +48,9 @@ const NavLink = (props: Props) => {
   ])
 
   return (
-    <NoScrollLink className={clsx(classNameState)} {...rest}>
-      {children}
-    </NoScrollLink>
+    <Link scroll={false} {...rest}>
+      <a className={classNameState}>{children}</a>
+    </Link>
   )
 }
 

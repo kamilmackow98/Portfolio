@@ -1,5 +1,4 @@
 import CustomHead from '@components/misc/CustomHead'
-import NoScrollLink from '@atoms/NoScrollLink'
 import Tag from '@components/pages/portfolio/Tag'
 import { getProject, getProjects } from '@utils/mdx'
 import clsx from 'clsx'
@@ -10,6 +9,7 @@ import { useMemo } from 'react'
 import { Project as ProjectType } from 'types'
 import { BiArrowBack } from 'react-icons/bi'
 import Image from '@components/markdown/Image'
+import NextLink from 'next/link'
 import Link from '@atoms/Link'
 import { FiExternalLink } from 'react-icons/fi'
 import InternalLink from '@components/markdown/InternalLink'
@@ -47,7 +47,8 @@ const Project: NextPage<Props> = (project: Props) => {
       <div id="project-page" className="page-container my-20 lg:my-32">
         <div className="flex items-center">
           <BiArrowBack size={18} />
-          <NoScrollLink
+          <NextLink
+            scroll={false}
             className={clsx(
               'theme-font--reading font-text--md font-medium',
               'tracking-wide',
@@ -56,7 +57,7 @@ const Project: NextPage<Props> = (project: Props) => {
             href="/portfolio"
           >
             All projects
-          </NoScrollLink>
+          </NextLink>
         </div>
         <div className={clsx('flex', 'items-center', 'mt-8')}>
           <h2
