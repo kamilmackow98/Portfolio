@@ -45,7 +45,7 @@ const Home: NextPage = () => {
             className={clsx('flex items-center', 'mt-10')}
             id="home-buttons-wrapper"
           >
-            <DiscoLink className="px-6 py-4" href="/portfolio">
+            <DiscoLink size="md" href="/portfolio">
               Check my work
             </DiscoLink>
             <div
@@ -57,12 +57,7 @@ const Home: NextPage = () => {
             >
               OR
             </div>
-            <DiscoLink
-              className="px-6 py-4"
-              variant="blue"
-              href="/about"
-              backwards
-            >
+            <DiscoLink variant="blue" size="md" href="/about" backwards>
               Learn about me
             </DiscoLink>
           </div>

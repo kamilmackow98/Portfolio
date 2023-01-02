@@ -1,69 +1,88 @@
+import { cva, VariantProps } from 'class-variance-authority'
 import Link, { LinkProps } from 'next/link'
 import { ReactNode, useRef } from 'react'
-import clsx from 'clsx'
 
-interface Props extends LinkProps {
+interface Props extends LinkProps, VariantProps<typeof linkStyles> {
   children?: ReactNode
   backwards?: boolean
   className?: string
-  variant?: 'blue'
+}
+
+const linkStyles = cva(['tracking-wider', 'disco-link'], {
+  variants: {
+    variant: {
+      blue: 'blue',
+      default: '',
+    },
+    size: {
+      xs: 'px-6 py-3',
+      sm: 'px-6 py-3.5',
+      md: 'px-6 py-4',
+      zero: '',
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+    size: 'sm',
+  },
+})
+
+const linkBackground = (
+  backwards: boolean = false,
+  color: string = '#ffcc66',
+) => {
+  if (backwards) {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        viewBox="0 0 35 10"
+      >
+        <g>
+          <path
+            d="M 30.05126,0.12579455 H 0.12805072 V 7.0952359 L 4.9487577,9.7541902 H 34.751968 V 2.9047488 Z"
+            strokeOpacity="0.8"
+            fillOpacity="0.05"
+            strokeWidth="0.3"
+            fill="#a0afcc"
+            stroke={color}
+          />
+        </g>
+      </svg>
+    )
+  }
+
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+      viewBox="0 0 35 10"
+    >
+      <g>
+        <path
+          d="M 4.9487583,0.12579455 H 34.751968 V 7.0952359 L 30.051261,9.7541902 H 0.25805072 V 2.9047488 Z"
+          strokeOpacity="0.8"
+          fillOpacity="0.05"
+          strokeWidth="0.3"
+          fill="#a0afcc"
+          stroke={color}
+        />
+      </g>
+    </svg>
+  )
 }
 
 const DiscoLink = (props: Props) => {
-  const { children, className, backwards, variant, ...rest } = props
-  const variantColorRef = useRef<string>(
-    variant === 'blue' ? '#80d4ff' : '#ffcc66',
-  )
+  const { children, className, variant, backwards, size, ...rest } = props
+  const colorRef = useRef<string>(variant === 'blue' ? '#80d4ff' : '#ffcc66')
 
-  const renderBackwards = backwards ? (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 35 10"
-      preserveAspectRatio="none"
-    >
-      <g>
-        <path
-          fill="#a0afcc"
-          fillOpacity="0.05"
-          stroke={variantColorRef.current}
-          strokeOpacity="0.8"
-          strokeWidth="0.3"
-          d="M 30.05126,0.12579455 H 0.12805072 V 7.0952359 L 4.9487577,9.7541902 H 34.751968 V 2.9047488 Z"
-          id="btn-bg"
-        />
-      </g>
-    </svg>
-  ) : (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 35 10"
-      preserveAspectRatio="none"
-    >
-      <g>
-        <path
-          fill="#a0afcc"
-          fillOpacity="0.05"
-          stroke={variantColorRef.current}
-          strokeOpacity="0.8"
-          strokeWidth="0.3"
-          d="M 4.9487583,0.12579455 H 34.751968 V 7.0952359 L 30.051261,9.7541902 H 0.25805072 V 2.9047488 Z"
-          id="btn-bg"
-        />
-      </g>
-    </svg>
-  )
+  const renderBackground = linkBackground(backwards, colorRef.current)
 
   return (
     <Link {...rest}>
-      <a
-        className={clsx(
-          'disco-link tracking-wider',
-          variant === 'blue' && 'blue',
-          className,
-        )}
-      >
+      <a className={linkStyles({ className, variant, size })}>
+        {renderBackground}
         {children}
-        {renderBackwards}
       </a>
     </Link>
   )

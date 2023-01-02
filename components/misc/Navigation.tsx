@@ -54,9 +54,10 @@ function Navigation() {
             Portfolio
           </NavLink>
           <DiscoLink
-            className={clsx('px-6 py-3', 'peer peer-first:ml-10')}
+            className="peer peer-first:ml-10"
             href="/contact"
             variant="blue"
+            size="xs"
           >
             Contact
           </DiscoLink>

@@ -98,11 +98,7 @@ const ProjectCard = (props: Props) => {
           dangerouslySetInnerHTML={{ __html: excerpt }}
           className={excerptStyles}
         />
-        <DiscoLink
-          className="mt-4 px-6 py-3.5"
-          href={`portfolio/${slug}`}
-          scroll={false}
-        >
+        <DiscoLink className="mt-4" href={`portfolio/${slug}`}>
           Read More
         </DiscoLink>
       </Content>
