@@ -39,15 +39,19 @@
 @keyframes slide {
   0% {
     opacity: 0;
-    top: 2rem;
+    top: 4rem;
   }
 
   40% {
     opacity: 1;
   }
 
-  100% {
+  90% {
     opacity: 0;
-    top: calc(100% - 8rem);
+  }
+
+  100% {
+    top: calc(100% - 4rem);
+    opacity: 0;
   }
 }
