@@ -1,17 +1,22 @@
 import CustomHead from '@components/misc/CustomHead'
 import ProjectCard from '@components/pages/portfolio/ProjectCard'
 import { getProjects } from '@utils/mdx'
+import clsx from 'clsx'
 import { GetStaticProps, NextPage } from 'next'
 import { Project } from 'types'
-import clsx from 'clsx'
 
 interface Props {
   projects: Omit<Project, 'code'>[]
 }
 
+const cardStyles = clsx(
+  'peer peer-first:mt-24 peer-first:lg:mt-48',
+  'sm:px-12 lg:px-0',
+)
+
 const Portfolio: NextPage<Props> = ({ projects }) => {
   const renderProjects = projects.map((project) => (
-    <ProjectCard key={project.slug} project={project} />
+    <ProjectCard key={project.slug} project={project} className={cardStyles} />
   ))
 
   return (

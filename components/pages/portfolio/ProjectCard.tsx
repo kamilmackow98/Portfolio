@@ -1,43 +1,84 @@
 import DiscoLink from '@atoms/DiscoLink'
-import { Project } from 'types'
+import Tag from '@components/pages/portfolio/Tag'
+import { styled } from '@stitches/react'
 import { clsx } from 'clsx'
 import Image from 'next/image'
-import Tag from '@components/pages/portfolio/Tag'
+import { ComponentPropsWithoutRef } from 'react'
+import { Project } from 'types'
 
-interface Props {
+interface Props extends ComponentPropsWithoutRef<'div'> {
   project: Omit<Project, 'code'>
 }
 
-const ProjectCard = ({ project }: Props) => {
-  const { frontmatter, slug } = project
+const containerStyles = (classes: string = '') =>
+  clsx(
+    'grid items-center justify-center',
+    'lg:grid-cols-2 lg:gap-16 xl:gap-32',
+    'project-card',
+    classes,
+  )
+const Container = styled('div')
+
+const imageWrapperStyles = clsx(
+  'flex items-center justify-center',
+  'relative',
+  'xl:px-12',
+  'project-card__image',
+)
+const ImageWrapper = styled('div')
+
+const mobileTitleStyles = clsx(
+  'theme-font--heading font-text--xl font-semibold',
+  'leading-7 tracking-wide text-white',
+  'rounded rounded-t-none',
+  'absolute bottom-0',
+  'w-full lg:hidden',
+  'overflow-hidden',
+  'px-5 py-3',
+  'z-10',
+  'project-card__mobile-title',
+)
+const MobileTitle = styled('span')
+
+const contentStyles = clsx('flex flex-col items-start', 'project-card__content')
+const Content = styled('div')
+
+const excerptStyles = clsx(
+  'theme-font--reading font-medium',
+  'leading-relaxed',
+  'max-w-[480px]',
+  'mt-3',
+)
+const Excerpt = styled('p')
+
+const titleStyles = clsx(
+  'theme-font--heading font-text--xl font-semibold',
+  'tracking-wide text-white',
+  'hidden lg:block',
+)
+const Title = styled('h3')
+
+// TODO : use CSS in JS instead of classes like project-card__content
+// TODO : Remove flex-wrap on tags later (once Swiper is used) ?
+
+const ProjectCard = (props: Props) => {
+  const { className, ...rest } = props
+  const { frontmatter, slug } = props.project
   const { title, excerpt } = frontmatter
 
   const renderTags = frontmatter.tags ? (
-    <ul className={clsx('mt-5 flex lg:mt-3')}>
+    <ul className={clsx('mt-5 flex flex-wrap lg:mt-3')}>
       {frontmatter.tags.map((tag, idx) => (
         <li className={clsx('peer peer-first:ml-2.5')} key={idx}>
-          <Tag className="px-[18px] py-[7px] tracking-wide">{tag}</Tag>
+          <Tag>{tag}</Tag>
         </li>
       ))}
     </ul>
   ) : null
 
   return (
-    <div
-      className={clsx(
-        'grid items-center justify-center lg:grid-cols-2 lg:gap-16 xl:gap-32',
-        'peer peer-first:mt-24 peer-first:lg:mt-40',
-        'sm:px-12 lg:px-0',
-        'project-card',
-      )}
-    >
-      <div
-        className={clsx(
-          'relative flex items-center justify-center',
-          'lg:px-0 xl:px-12',
-          'project-card__image',
-        )}
-      >
+    <Container className={containerStyles(className)} {...rest}>
+      <ImageWrapper className={imageWrapperStyles}>
         <Image
           src={
             'https://picsum.photos/600/4' +
@@ -48,52 +89,24 @@ const ProjectCard = ({ project }: Props) => {
           height={320}
           width={500}
         />
-        <span
-          className={clsx(
-            'bottom-0 w-full rounded rounded-t-none px-5 py-3',
-            'theme-font--heading font-text--xl font-semibold leading-7',
-            'tracking-wide text-white',
-            'absolute lg:hidden',
-            'overflow-hidden',
-            'project-card__mobile-title',
-          )}
-        >
-          {title}
-        </span>
-      </div>
-      <div
-        className={clsx(
-          'flex flex-col items-start',
-          'overflow-hidden',
-          'project-card__content',
-        )}
-      >
-        <h3
-          className={clsx(
-            'theme-font--heading font-text--xl font-semibold',
-            'tracking-wide text-white',
-            'hidden lg:block',
-          )}
-        >
-          {title}
-        </h3>
+        <MobileTitle className={mobileTitleStyles}>{title}</MobileTitle>
+      </ImageWrapper>
+      <Content className={contentStyles}>
+        <Title className={titleStyles}>{title}</Title>
         {renderTags}
-        <p
+        <Excerpt
           dangerouslySetInnerHTML={{ __html: excerpt }}
-          className={clsx(
-            'theme-font--reading font-medium leading-relaxed',
-            'mt-3 max-w-[480px]',
-          )}
+          className={excerptStyles}
         />
         <DiscoLink
-          className={clsx('mt-4 px-6 py-3.5')}
+          className="mt-4 px-6 py-3.5"
           href={`portfolio/${slug}`}
           scroll={false}
         >
           Read More
         </DiscoLink>
-      </div>
-    </div>
+      </Content>
+    </Container>
   )
 }
 
