@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import Navigation from './Navigation'
 import Footer from './Footer'
 import { ReactNode } from 'react'
-import clsx from 'clsx'
 
 interface LayoutProps {
   children: ReactNode
@@ -22,7 +21,7 @@ function Layout({ children }: LayoutProps) {
       <Navigation />
       <AnimatePresence mode="wait" onExitComplete={scrollToTop}>
         <motion.main
-          className={clsx('container', 'mx-auto mt-28 md:mt-32')}
+          className="container mx-auto"
           variants={pageMotion}
           initial="initial"
           animate="animate"
@@ -30,8 +29,8 @@ function Layout({ children }: LayoutProps) {
           key={asPath}
         >
           {children}
-          <span className="mt-24 block" />
-          <Footer />
+          {/* <span className="mt-24 block" />
+          <Footer /> */}
         </motion.main>
       </AnimatePresence>
     </>

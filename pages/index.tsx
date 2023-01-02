@@ -10,7 +10,12 @@ const Home: NextPage = () => {
     <>
       <CustomHead title="Home" />
       <div
-        className={clsx('page-container', 'grid lg:grid-cols-2', 'relative')}
+        className={clsx(
+          'grid lg:grid-cols-2',
+          'my-20 lg:my-32',
+          'page-container',
+          'relative',
+        )}
         id="home-page"
       >
         <div className={clsx('flex flex-col', 'items-start')}>

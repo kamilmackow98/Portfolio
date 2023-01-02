@@ -15,8 +15,8 @@ const About: NextPage = () => {
     <>
       <CustomHead title="About" />
 
-      <div id="about-page" className="page-container lg:mb-24">
-        <Section id="about-who" className="lg:mt-16">
+      <div id="about-page" className="page-container my-20 lg:my-48">
+        <Section id="about-who">
           <Image
             src="/assets/images/manypixels/html.svg"
             alt="Who am I section, laptop illustration"

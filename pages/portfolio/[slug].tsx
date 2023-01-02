@@ -43,7 +43,8 @@ const Project: NextPage<Props> = (project: Props) => {
   return (
     <>
       <CustomHead title={`${title} | Portfolio`} description={excerpt} />
-      <div id="project-page" className="page-container">
+
+      <div id="project-page" className="page-container my-20 lg:my-32">
         <div className="flex items-center">
           <BiArrowBack size={18} />
           <NoScrollLink

@@ -17,14 +17,8 @@ const Portfolio: NextPage<Props> = ({ projects }) => {
   return (
     <>
       <CustomHead title="Portfolio" />
-      <div
-        className={clsx(
-          'before:hidden xl:before:block',
-          'after:hidden xl:after:block',
-          'page-container',
-        )}
-        id="portfolio-page"
-      >
+
+      <div id="portfolio-page" className="page-container my-20 lg:my-48">
         {renderProjects}
       </div>
     </>
