@@ -73,13 +73,15 @@ const linkBackground = (
 }
 
 const DiscoLink = (props: Props) => {
-  const { children, className, variant, backwards, size, ...rest } = props
+  const { children, className, variant, backwards, size, scroll, ...rest } =
+    props
   const colorRef = useRef<string>(variant === 'blue' ? '#80d4ff' : '#ffcc66')
+  const scrollToTop = scroll ? scroll : false
 
   const renderBackground = linkBackground(backwards, colorRef.current)
 
   return (
-    <Link {...rest}>
+    <Link scroll={scrollToTop} {...rest}>
       <a className={linkStyles({ className, variant, size })}>
         {renderBackground}
         {children}
