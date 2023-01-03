@@ -11,10 +11,9 @@ export type Event = {
   eventDate: string
 }
 
-type Props = {} & Event &
-  ComponentPropsWithoutRef<
-    ForwardRefComponent<HTMLDivElement, HTMLMotionProps<'div'>>
-  >
+type Props = {} & Event & {
+    className?: string
+  }
 
 const datesClasses = cx(
   'theme-font--heading font-light',
@@ -37,7 +36,7 @@ const descWrapperClasses = cx(
 const descContentClasses = cx('theme-font--reading font-medium')
 
 const Event = (props: Props) => {
-  const { title, className, description, dates, ...rest } = props
+  const { title, className, description, dates } = props
 
   const renderDates = dates.map((date, i) => (
     <Fragment key={i}>
@@ -53,7 +52,6 @@ const Event = (props: Props) => {
       initial="initial"
       animate="animate"
       exit="exit"
-      {...rest}
     >
       <motion.div variants={eventItemMotion} className={datesClasses}>
         {renderDates}
