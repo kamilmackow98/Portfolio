@@ -1,6 +1,6 @@
 import { eventItemMotion, eventMotion } from '@utils/motionVariants'
-import clsx from 'clsx'
-import { motion } from 'framer-motion'
+import { cx } from 'class-variance-authority'
+import { ForwardRefComponent, HTMLMotionProps, motion } from 'framer-motion'
 import { ComponentPropsWithoutRef, Fragment } from 'react'
 
 export type Event = {
@@ -11,10 +11,33 @@ export type Event = {
   eventDate: string
 }
 
-type Props = {} & Event & ComponentPropsWithoutRef<'div'>
+type Props = {} & Event &
+  ComponentPropsWithoutRef<
+    ForwardRefComponent<HTMLDivElement, HTMLMotionProps<'div'>>
+  >
+
+const datesClasses = cx(
+  'theme-font--heading font-light',
+  'font-text--md tracking-wider',
+  'text-primary',
+)
+
+const titleClasses = cx(
+  'theme-font--heading font-text--xl font-bold',
+  'leading-snug tracking-wider text-white',
+  'mt-1',
+)
+
+const descWrapperClasses = cx(
+  'min-h-[150px] sm:min-h-0',
+  'text-justify',
+  'mt-1.5',
+)
+
+const descContentClasses = cx('theme-font--reading font-medium')
 
 const Event = (props: Props) => {
-  const { title, className, description, dates } = props
+  const { title, className, description, dates, ...rest } = props
 
   const renderDates = dates.map((date, i) => (
     <Fragment key={i}>
@@ -30,33 +53,19 @@ const Event = (props: Props) => {
       initial="initial"
       animate="animate"
       exit="exit"
+      {...rest}
     >
-      <motion.div
-        variants={eventItemMotion}
-        className={clsx(
-          'theme-font--heading font-light',
-          'font-text--md tracking-wider',
-          'text-primary',
-        )}
-      >
+      <motion.div variants={eventItemMotion} className={datesClasses}>
         {renderDates}
       </motion.div>
-      <motion.div
-        variants={eventItemMotion}
-        className={clsx(
-          'theme-font--heading font-text--xl font-bold',
-          'leading-snug tracking-wider text-white',
-          'mt-1',
-        )}
-      >
+
+      <motion.div variants={eventItemMotion} className={titleClasses}>
         {title}
       </motion.div>
-      <motion.div
-        className="mt-1.5 min-h-[150px] text-justify sm:min-h-0"
-        variants={eventItemMotion}
-      >
+
+      <motion.div variants={eventItemMotion} className={descWrapperClasses}>
         {description.map((desc, i) => (
-          <div className="theme-font--reading font-medium" key={i}>
+          <div key={i} className={descContentClasses}>
             {desc}
           </div>
         ))}
