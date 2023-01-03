@@ -1,7 +1,7 @@
 import { eventItemMotion, eventMotion } from '@utils/motionVariants'
 import { cx } from 'class-variance-authority'
-import { ForwardRefComponent, HTMLMotionProps, motion } from 'framer-motion'
-import { ComponentPropsWithoutRef, Fragment } from 'react'
+import { motion } from 'framer-motion'
+import { Fragment } from 'react'
 
 export type Event = {
   id: string

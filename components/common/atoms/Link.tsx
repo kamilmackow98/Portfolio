@@ -1,5 +1,5 @@
+import { CSS, styled } from '@stitches/react'
 import { AnchorHTMLAttributes } from 'react'
-import { styled, CSS } from '@stitches/react'
 
 export const LinkStyles: CSS = {
   color: 'var(--theme-primary)',
