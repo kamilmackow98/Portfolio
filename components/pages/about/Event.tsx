@@ -1,7 +1,7 @@
-import clsx from 'clsx'
-import { Fragment } from 'react'
-import { motion } from 'framer-motion'
 import { eventItemMotion, eventMotion } from '@utils/motionVariants'
+import clsx from 'clsx'
+import { motion } from 'framer-motion'
+import { ComponentPropsWithoutRef, Fragment } from 'react'
 
 export type Event = {
   id: string
@@ -11,7 +11,7 @@ export type Event = {
   eventDate: string
 }
 
-type Props = {} & Event & React.ComponentPropsWithoutRef<'div'>
+type Props = {} & Event & ComponentPropsWithoutRef<'div'>
 
 const Event = (props: Props) => {
   const { title, className, description, dates } = props

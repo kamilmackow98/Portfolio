@@ -1,13 +1,14 @@
 import { cva, VariantProps } from 'class-variance-authority'
+import { ComponentPropsWithoutRef } from 'react'
 
 interface SectionProps
-  extends React.ComponentPropsWithoutRef<'section'>,
+  extends ComponentPropsWithoutRef<'section'>,
     VariantProps<typeof sectionStyles> {}
-interface TitleProps extends React.ComponentPropsWithoutRef<'h3'> {}
+interface TitleProps extends ComponentPropsWithoutRef<'h3'> {}
 interface ContentProps
-  extends React.ComponentPropsWithoutRef<'div'>,
+  extends ComponentPropsWithoutRef<'div'>,
     VariantProps<typeof contentStyles> {}
-interface ParagraphProps extends React.ComponentPropsWithoutRef<'p'> {}
+interface ParagraphProps extends ComponentPropsWithoutRef<'p'> {}
 
 const sectionStyles = cva(['grid justify-center'], {
   variants: {

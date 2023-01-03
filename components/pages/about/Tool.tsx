@@ -1,8 +1,8 @@
-import { ToolType } from './Tools'
 import clsx from 'clsx'
-import React from 'react'
+import { ComponentPropsWithoutRef } from 'react'
+import { ToolType } from './Tools'
 
-type Props = {} & ToolType & React.ComponentPropsWithoutRef<'div'>
+type Props = {} & ToolType & ComponentPropsWithoutRef<'div'>
 
 const Tool = (props: Props) => {
   const { icon, className, ...rest } = props
