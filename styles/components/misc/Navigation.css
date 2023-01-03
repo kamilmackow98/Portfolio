@@ -28,13 +28,13 @@
   position: relative;
 
   &::after {
-    box-shadow: 0 0 2px 1px var(--theme-primary--80);
+    box-shadow: 0 0 3px 1px var(--theme-primary--40);
     background: var(--theme-primary);
 
     position: absolute;
     content: '';
 
-    right: calc(100% + 0.625rem);
+    right: calc(100% + 0.8125rem);
     border-radius: 4px;
     height: 4px;
     width: 4px;
