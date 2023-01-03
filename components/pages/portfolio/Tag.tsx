@@ -50,8 +50,8 @@ const Tag = (props: Props) => {
 
   return (
     <div className={tagStyles({ className, gutter })} {...rest}>
-      {children}
       <TagBackground />
+      {children}
     </div>
   )
 }
