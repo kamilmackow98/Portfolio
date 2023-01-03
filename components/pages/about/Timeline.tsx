@@ -1,5 +1,5 @@
 import Event, { Event as EventType } from '@components/pages/about/Event'
-import clsx from 'clsx'
+import { cx } from 'class-variance-authority'
 import { AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { Scrollbar, type Swiper as SwiperType } from 'swiper'
@@ -12,16 +12,29 @@ interface Props {
   events: EventType[]
 }
 
-const eventDateStyle = (isActive: boolean = false) => {
-  return [
-    isActive && 'timeline__dates-container__event-date--active',
-    'timeline__dates-container__event-date',
+const eventDateClasses = (isActive: boolean = false) =>
+  cx(
+    isActive ? 'timeline__event-date--active' : '',
+    'timeline__event-date',
     'theme-font--heading',
     'whitespace-nowrap',
     'tracking-wide',
     'font-text--md',
-  ]
-}
+  )
+
+const swiperClasses = cx(
+  'w-full sm:hidden',
+  'timeline__swiper',
+  'text-center',
+  'mt-6',
+)
+
+const datesContainerClasses = cx(
+  'timeline__dates-container',
+  'py-8 pr-12 lg:pl-8',
+  'flex-col sm:flex',
+  'hidden',
+)
 
 const Timeline = (props: Props) => {
   const { events } = props
@@ -71,9 +84,9 @@ const Timeline = (props: Props) => {
   const renderDates = events.map((event, idx) => (
     <button
       onClick={() => handleEventChange(idx)}
-      className={clsx(
-        eventDateStyle(idx === currentEventIdx),
-        'peer peer-first:mt-6',
+      className={cx(
+        eventDateClasses(idx === currentEventIdx),
+        'peer peer-first-of-type:mt-6',
         'text-right',
       )}
       key={event.id}
@@ -86,7 +99,7 @@ const Timeline = (props: Props) => {
   const renderSwiperDates = events.map((event, idx) => (
     <SwiperSlide className="pb-4" key={idx}>
       <button
-        className={clsx(eventDateStyle(idx === currentEventIdx), 'select-none')}
+        className={cx(eventDateClasses(idx === currentEventIdx), 'select-none')}
         onClick={() => handleEventChange(idx)}
         type="button"
       >
@@ -108,15 +121,8 @@ const Timeline = (props: Props) => {
   return (
     <>
       <Swiper
-        className={clsx(
-          'text-center',
-          'w-full sm:hidden',
-          'timeline__swiper',
-          'mt-6',
-        )}
-        scrollbar={{
-          horizontalClass: 'timeline__swiper-scrollbar',
-        }}
+        scrollbar={{ horizontalClass: 'timeline__swiper-scrollbar' }}
+        className={swiperClasses}
         modules={[Scrollbar]}
         onSwiper={setSwiper}
         slidesPerView={3}
@@ -126,18 +132,12 @@ const Timeline = (props: Props) => {
         {renderSwiperDates}
       </Swiper>
 
-      <div className={clsx('flex', 'xl:pl-8 2xl:pl-12')}>
-        <div
-          className={clsx(
-            'timeline__dates-container',
-            'py-8 pr-12 lg:pl-8',
-            'flex-col sm:flex',
-            'hidden',
-          )}
-        >
+      <div className="flex xl:pl-8 2xl:pl-12">
+        <div className={datesContainerClasses}>
+          <span id="timeline__scroller" style={activeEventStyle} />
           {renderDates}
-          <span id="scroller" style={activeEventStyle} />
         </div>
+
         {renderCurrentEvent}
       </div>
     </>
