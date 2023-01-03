@@ -12,8 +12,9 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
 
 const containerStyles = (classes: string = '') =>
   cx(
+    'lg:[&>.group]:even:mr-16 lg:[&>.group]:odd:ml-16',
     'grid items-center justify-center',
-    'lg:grid-cols-2 lg:gap-16 xl:gap-32',
+    'lg:grid-cols-2',
     'project-card',
     classes,
   )
@@ -21,9 +22,9 @@ const Container = styled('div')
 
 const imageWrapperStyles = cx(
   'flex items-center justify-center',
-  'relative',
-  'xl:px-12',
   'project-card__image',
+  'xl:px-10 2xl:px-8',
+  'relative',
 )
 const ImageWrapper = styled('div')
 
@@ -40,7 +41,10 @@ const mobileTitleStyles = cx(
 )
 const MobileTitle = styled('span')
 
-const contentStyles = cx('flex flex-col items-start', 'project-card__content')
+const contentStyles = cx(
+  'flex flex-col items-start group',
+  'project-card__content',
+)
 const Content = styled('div')
 
 const excerptStyles = cx(
@@ -86,8 +90,8 @@ const ProjectCard = (props: Props) => {
           }
           alt="Placeholder"
           objectFit="cover"
-          height={320}
-          width={500}
+          height={360}
+          width={560}
         />
         <MobileTitle className={mobileTitleStyles}>{title}</MobileTitle>
       </ImageWrapper>

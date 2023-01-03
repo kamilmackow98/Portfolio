@@ -84,26 +84,6 @@
 }
 
 @media screen(xl) {
-  .project-card {
-    &::before {
-      background: linear-gradient(
-        transparent,
-        var(--theme-primary),
-        transparent
-      );
-      position: absolute;
-      display: block;
-      content: '';
-      z-index: 1;
-
-      height: 4rem;
-      left: 50%;
-
-      top: initial;
-      top: unset;
-    }
-  }
-
   .project-card__image {
     &::before {
       bottom: 12.5%;
