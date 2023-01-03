@@ -1,23 +1,40 @@
+import ExternalLink from '@atoms/Link'
+import Image from '@components/markdown/Image'
+import InternalLink from '@components/markdown/InternalLink'
 import CustomHead from '@components/misc/CustomHead'
 import Tag from '@components/pages/portfolio/Tag'
 import { getProject, getProjects } from '@utils/mdx'
-import clsx from 'clsx'
+import { cx } from 'class-variance-authority'
 import { getMDXComponent } from 'mdx-bundler/client'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import Link from 'next/link'
 import { ParsedUrlQuery } from 'querystring'
 import { useMemo } from 'react'
-import { Project as ProjectType } from 'types'
 import { BiArrowBack } from 'react-icons/bi'
-import Image from '@components/markdown/Image'
-import NextLink from 'next/link'
-import Link from '@atoms/Link'
 import { FiExternalLink } from 'react-icons/fi'
-import InternalLink from '@components/markdown/InternalLink'
+import { Project as ProjectType } from 'types'
 
 interface Props extends ProjectType {}
 
+const pageContainerClasses = cx(
+  'flex flex-col',
+  'my-20 lg:my-32',
+  'page-container',
+)
+
+const backLinkClasses = cx(
+  'theme-font--reading font-text--md font-medium',
+  'flex self-start',
+  'tracking-wide',
+)
+
+const titleClasses = cx(
+  'theme-font--heading font-text--xxl font-semibold',
+  'tracking-wide text-white',
+)
+
 const components = {
-  a: Link,
+  a: ExternalLink,
   InternalLink,
   Image,
 }
@@ -28,52 +45,47 @@ const Project: NextPage<Props> = (project: Props) => {
 
   const Component = useMemo(() => getMDXComponent(code), [code])
 
-  const renderTags = tags.map((tag, idx) => (
-    <li className={clsx('peer peer-first:ml-2.5')} key={idx}>
-      <Tag className="px-[18px] py-[7px]">{tag}</Tag>
-    </li>
-  ))
+  const renderBackLink = (
+    <Link scroll={false} href="/portfolio">
+      <a className={backLinkClasses}>
+        <BiArrowBack size={18} />
+        <span className="ml-2">All projects</span>
+      </a>
+    </Link>
+  )
 
-  const renderLink = link ? (
+  const renderWebsiteLink = link ? (
     <a className="ml-2" href={link} target="_blank" rel="noopener noreferrer">
       <FiExternalLink size={20} className="text-white" />
     </a>
   ) : null
 
+  const renderTags = (
+    <ul id="tags-container" className="mt-3 flex items-center">
+      {tags.map((tag, idx) => (
+        <li key={idx} className="peer peer-first:ml-2.5">
+          <Tag>{tag}</Tag>
+        </li>
+      ))}
+
+      <span id="tags-separator" className="ml-4" />
+    </ul>
+  )
+
   return (
     <>
       <CustomHead title={`${title} | Portfolio`} description={excerpt} />
 
-      <div id="project-page" className="page-container my-20 lg:my-32">
-        <div className="flex items-center">
-          <BiArrowBack size={18} />
-          <NextLink
-            scroll={false}
-            className={clsx(
-              'theme-font--reading font-text--md font-medium',
-              'tracking-wide',
-              'ml-2',
-            )}
-            href="/portfolio"
-          >
-            All projects
-          </NextLink>
+      <div id="project-page" className={pageContainerClasses}>
+        {renderBackLink}
+
+        <div className="mt-8 flex items-center">
+          <h2 className={titleClasses}>{title}</h2>
+          {renderWebsiteLink}
         </div>
-        <div className={clsx('flex', 'items-center', 'mt-8')}>
-          <h2
-            className={clsx(
-              'theme-font--heading font-text--xxl font-semibold',
-              'tracking-wide text-white',
-            )}
-          >
-            {title}
-          </h2>
-          {renderLink}
-        </div>
-        <ul id="tags-container" className={clsx('flex items-center', 'mt-3')}>
-          {renderTags}
-          <span id="separator" className="ml-8" />
-        </ul>
+
+        {renderTags}
+
         <div id="markdown-content" className="mt-24">
           <Component components={components} />
         </div>

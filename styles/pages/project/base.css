@@ -1,4 +1,4 @@
-#tags-container > #separator {
+#tags-container > #tags-separator {
   background-color: var(--theme-disco-border);
   height: 1px;
   flex: 1;
@@ -45,6 +45,10 @@
   & > span + p,
   & > p + span {
     margin-top: 3rem !important;
+  }
+
+  & > p:first-of-type {
+    margin-top: 0 !important;
   }
 }
 
