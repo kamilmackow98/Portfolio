@@ -1,5 +1,5 @@
 import { CSS, styled } from '@stitches/react'
-import { AnchorHTMLAttributes } from 'react'
+import { ComponentPropsWithoutRef } from 'react'
 
 export const LinkStyles: CSS = {
   color: 'var(--theme-primary)',
@@ -18,7 +18,7 @@ export const LinkStyles: CSS = {
 
 const StyledLink = styled('a', LinkStyles)
 
-interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {}
+interface Props extends ComponentPropsWithoutRef<'a'> {}
 
 const Link = (props: Props) => {
   const { children, className, ...rest } = props
