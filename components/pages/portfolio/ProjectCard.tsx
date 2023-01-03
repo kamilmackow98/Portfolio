@@ -1,7 +1,7 @@
 import DiscoLink from '@atoms/DiscoLink'
 import Tag from '@components/pages/portfolio/Tag'
 import { styled } from '@stitches/react'
-import { clsx } from 'clsx'
+import { cx } from 'class-variance-authority'
 import Image from 'next/image'
 import { ComponentPropsWithoutRef } from 'react'
 import { Project } from 'types'
@@ -11,7 +11,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
 }
 
 const containerStyles = (classes: string = '') =>
-  clsx(
+  cx(
     'grid items-center justify-center',
     'lg:grid-cols-2 lg:gap-16 xl:gap-32',
     'project-card',
@@ -19,7 +19,7 @@ const containerStyles = (classes: string = '') =>
   )
 const Container = styled('div')
 
-const imageWrapperStyles = clsx(
+const imageWrapperStyles = cx(
   'flex items-center justify-center',
   'relative',
   'xl:px-12',
@@ -27,7 +27,7 @@ const imageWrapperStyles = clsx(
 )
 const ImageWrapper = styled('div')
 
-const mobileTitleStyles = clsx(
+const mobileTitleStyles = cx(
   'theme-font--heading font-text--xl font-semibold',
   'leading-7 tracking-wide text-white',
   'rounded rounded-t-none',
@@ -40,10 +40,10 @@ const mobileTitleStyles = clsx(
 )
 const MobileTitle = styled('span')
 
-const contentStyles = clsx('flex flex-col items-start', 'project-card__content')
+const contentStyles = cx('flex flex-col items-start', 'project-card__content')
 const Content = styled('div')
 
-const excerptStyles = clsx(
+const excerptStyles = cx(
   'theme-font--reading font-medium',
   'leading-relaxed',
   'max-w-[480px]',
@@ -51,7 +51,7 @@ const excerptStyles = clsx(
 )
 const Excerpt = styled('p')
 
-const titleStyles = clsx(
+const titleStyles = cx(
   'theme-font--heading font-text--xl font-semibold',
   'tracking-wide text-white',
   'hidden lg:block',
@@ -67,9 +67,9 @@ const ProjectCard = (props: Props) => {
   const { title, excerpt } = frontmatter
 
   const renderTags = frontmatter.tags ? (
-    <ul className={clsx('mt-5 flex flex-wrap lg:mt-3')}>
+    <ul className="mt-5 flex flex-wrap lg:mt-3">
       {frontmatter.tags.map((tag, idx) => (
-        <li className={clsx('peer peer-first:ml-2.5')} key={idx}>
+        <li key={idx} className="peer peer-first:ml-2.5">
           <Tag>{tag}</Tag>
         </li>
       ))}

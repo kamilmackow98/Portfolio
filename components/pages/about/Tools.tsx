@@ -1,23 +1,23 @@
+import { cx } from 'class-variance-authority'
+import { ReactNode } from 'react'
+import { CgFigma as FigmaIcon } from 'react-icons/cg'
 import {
-  FaReact as ReactIcon,
-  FaSymfony as SymfonyIcon,
-  FaNodeJs as NodeIcon,
-  FaSass as SassIcon,
   FaGitAlt as GitIcon,
+  FaNodeJs as NodeIcon,
+  FaReact as ReactIcon,
+  FaSass as SassIcon,
+  FaSymfony as SymfonyIcon,
 } from 'react-icons/fa'
 import {
-  SiVuedotjs as VueIcon,
-  SiTypescript as TypeScriptIcon,
   SiJavascript as JavaScriptIcon,
   SiSvelte as SvelteIcon,
+  SiTypescript as TypeScriptIcon,
+  SiVuedotjs as VueIcon,
 } from 'react-icons/si'
-import { CgFigma as FigmaIcon } from 'react-icons/cg'
 import Tool from './Tool'
-import clsx from 'clsx'
-import { ReactNode } from 'react'
 
-const containerStyles = clsx('flex flex-col', 'items-center justify-center')
-const blockStyles = clsx('peer rounded p-5 peer-first:ml-1.5 xxs:p-6')
+const containerStyles = cx('flex flex-col', 'items-center justify-center')
+const blockStyles = cx('peer rounded p-5 peer-first:ml-1.5 xxs:p-6')
 
 export type ToolType = {
   id: string
