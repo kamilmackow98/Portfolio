@@ -2,7 +2,7 @@
   /* transform: rotateX(60deg) rotateY(-20deg) rotateZ(0deg); */
   /* transform: rotate3d(1.2, -1, 1.2, 60deg); */
   position: absolute;
-  bottom: 25%;
+  bottom: 22.5%;
   right: 0;
   top: 0;
 
@@ -69,7 +69,7 @@
     width: 300px;
 
     & > svg {
-      filter: drop-shadow(0 0 4px var(--theme-secondary));
+      filter: drop-shadow(0 0 3px var(--theme-secondary));
       stroke-dasharray: 240;
       stroke-width: 0.4;
 
@@ -92,14 +92,14 @@
 
   &:nth-child(5) {
     transform: translatez(60px);
-    height: 510px;
-    width: 510px;
+    height: 500px;
+    width: 500px;
 
     & > svg {
       stroke: var(--theme-text--color);
       stroke-dasharray: 60;
       stroke-opacity: 0.1;
-      stroke-width: 4;
+      stroke-width: 3;
 
       animation: rotate 40s linear infinite reverse;
     }
@@ -111,7 +111,7 @@
     width: 560px;
 
     & > svg {
-      filter: drop-shadow(0 0 4px var(--theme-secondary));
+      filter: drop-shadow(0 0 3px var(--theme-secondary));
       stroke-dasharray: 60;
       stroke-width: 1.5;
 
@@ -126,7 +126,7 @@
     & > svg {
       stroke: var(--theme-text--color);
       stroke-dasharray: 50;
-      stroke-opacity: 0.6;
+      stroke-opacity: 0.15;
       stroke-width: 2.25;
 
       animation: rotate 50s linear infinite;
@@ -173,7 +173,7 @@
 
     & > svg {
       stroke-dasharray: 20;
-      stroke-opacity: 0.15;
+      stroke-opacity: 0.1;
       stroke-width: 1.25;
 
       animation: rotate 90s linear infinite;

@@ -35,10 +35,9 @@ const TagBackground = () => {
       <g>
         <path
           d="M 32.051261,0.12579455 H 0.128051 V 7.0952359 l 2.820707,2.7789543 h 31.92321 V 2.9047488 Z"
-          strokeOpacity="0.5"
-          strokeWidth="0.4"
-          stroke="#7a8ba9"
-          fill="#39455c"
+          strokeWidth="0.5"
+          stroke="#0000"
+          fill="#0000"
         />
       </g>
     </svg>

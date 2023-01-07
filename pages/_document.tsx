@@ -20,6 +20,7 @@ export default function Document() {
         />
       </Head>
       <body>
+        <div id="disco-bg" />
         <Main />
         <NextScript />
       </body>

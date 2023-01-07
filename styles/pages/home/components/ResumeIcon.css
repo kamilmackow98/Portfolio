@@ -43,7 +43,7 @@
   & > svg {
     animation: spin-resume 6s linear infinite;
 
-    stroke: #7a8ba9;
+    stroke: var(--theme-text--color-70);
     max-height: 100%;
     max-width: 100%;
   }

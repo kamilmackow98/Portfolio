@@ -41,10 +41,9 @@ const buttonBackground = (
           <path
             d="M 30.05126,0.12579455 H 0.12805072 V 7.0952359 L 4.9487577,9.8741902 H 34.751968 V 2.9047488 Z"
             strokeOpacity="0.8"
-            fillOpacity="0.05"
             strokeWidth="0.3"
+            fill="#0000"
             stroke={color}
-            fill="#a0afcc"
           />
         </g>
       </svg>
@@ -61,9 +60,8 @@ const buttonBackground = (
         <path
           d="M 4.9487583,0.12579455 H 34.751968 V 7.0952359 L 30.051261,9.8741902 H 0.25805072 V 2.9047488 Z"
           strokeOpacity="0.8"
-          fillOpacity="0.05"
           strokeWidth="0.3"
-          fill="#a0afcc"
+          fill="#0000"
           stroke={color}
         />
       </g>

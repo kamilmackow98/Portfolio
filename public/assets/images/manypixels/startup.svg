@@ -15,7 +15,7 @@
    height="202.17195"
    class="illustration styles_illustrationTablet__1DWOa"
    version="1.1"
-   sodipodi:docname="Startup_Monochromatic.svg"
+   sodipodi:docname="startup.svg"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
   <metadata
      id="metadata123">
@@ -42,9 +42,9 @@
      inkscape:window-height="1027"
      id="namedview121"
      showgrid="false"
-     inkscape:zoom="3.4778709"
-     inkscape:cx="47.396227"
-     inkscape:cy="126.94282"
+     inkscape:zoom="3.560787"
+     inkscape:cx="60.876393"
+     inkscape:cy="104.47588"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -52,7 +52,8 @@
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:document-rotation="0" />
   <defs
      id="defs20">
     <linearGradient
@@ -165,7 +166,7 @@
      d="m 48.524131,44.966624 c -15.0146,11.66487 -20.17872,32.2784 -29.45029,49.27355 -5.3124,9.764386 -12.1325296,18.506136 -17.7073996,28.104076 -5.5748804,9.59795 -9.9028404,20.43965 -9.4705904,31.65346 0.80454,21.25986 17.9052804,37.45512 26.26784,56.8534 2.66799,6.19666 4.48609,12.85088 8.08831,18.49992 2.85079,4.47075 6.7246,8.14946 10.90711,11.24136 16.97025,12.63732 39.84443,16.14106 59.57249,9.12472 13.012779,-4.63004 24.404519,-13.4115 37.541709,-17.70877 19.79734,-6.47921 42.49621,-2.42088 60.59535,-13.00947 8.3448,-4.89011 14.90094,-12.47038 21.12152,-20.0639 12.34342,-15.07285 24.67778,-32.77263 23.36919,-52.56894 -0.96185,-14.53741 -9.28885,-27.8136 -9.58848,-42.37822 -0.1738,-8.452476 2.39068,-16.722226 2.69649,-25.171166 0.65816,-17.91675 -9.3986,-35.27307 -23.84102,-44.94731 -14.44244,-9.674253 -32.63407,-12.156134 -49.52577,-9.033413 -11.0767,2.045473 -21.65026,6.339543 -32.57135,9.163463 -26.644609,6.92144 -53.414089,-8.138383 -78.005099,10.96727 z"
      fill="#80d4ff"
      opacity="0.24"
-     style="opacity:1;isolation:isolate;fill:#343e50;fill-opacity:0.301961;stroke:#7a8ba9;stroke-width:0.482383;stroke-opacity:0.3"
+     style="opacity:1;isolation:isolate;fill:#333c4d;fill-opacity:0.1;stroke:#667399;stroke-width:0.482383;stroke-opacity:0.30000001"
      id="path24" />
   <polygon
      points="337.91,235.34 328.63,197.09 312.73,205.8 290.19,261.47 "
@@ -196,7 +197,7 @@
      ry="3.3499999"
      fill="#80d4ff"
      opacity="0.24"
-     style="isolation:isolate;fill:#80d4ff;fill-opacity:0.25;opacity:1"
+     style="isolation:isolate;fill:#80d4ff;fill-opacity:0.1;opacity:1"
      id="ellipse96"
      transform="rotate(30)" />
   <ellipse
@@ -206,7 +207,7 @@
      ry="5.4299998"
      fill="#80d4ff"
      opacity="0.24"
-     style="isolation:isolate;fill:#80d4ff;fill-opacity:0.25;opacity:1"
+     style="isolation:isolate;fill:#80d4ff;fill-opacity:0.1;opacity:1"
      id="ellipse98"
      transform="rotate(30)" />
   <ellipse

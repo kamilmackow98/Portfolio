@@ -8,13 +8,15 @@ body {
   width: 100vw;
 
   background-color: var(--theme-main-background);
+  /* background-image: url('/assets/images/funny-circle.svg'),
+    radial-gradient(100% 185% at 100% 0%, #313b4d 0%, #242c3a 40%, #1a1f28 100%); */
   background-image: url('/assets/images/funny-circle.svg'),
-    radial-gradient(100% 185% at 100% 0%, #313b4d 0%, #242c3a 40%, #1a1f28 100%);
+    url('/assets/images/noisy-50.png');
 
-  background-position: bottom left, top left;
+  background-position: bottom left;
   background-attachment: fixed;
-  background-size: cover, auto;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat, repeat;
+  background-size: cover, 200px;
 
   /* background-image: url('/assets/images/funny-circle.svg'),
     radial-gradient(
@@ -38,6 +40,31 @@ main {
 
 #__next {
   overflow: hidden;
+}
+
+#disco-bg {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  top: 0;
+
+  width: 100vw;
+
+  /* https://angrytools.com/gradient/ */
+  background-image: radial-gradient(
+    320% 600% at 63.5% 48%,
+    rgba(128, 213, 255, 0.125) 0%,
+    rgba(128, 213, 255, 0.1) 2%,
+    rgba(128, 213, 255, 0.075) 4%,
+    rgba(128, 213, 255, 0.04) 7%,
+    rgba(0, 0, 0, 0) 14%
+  );
+
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: -99999;
+
+  opacity: 0.85;
 }
 
 #footer {

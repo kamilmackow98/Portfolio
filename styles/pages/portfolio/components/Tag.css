@@ -10,4 +10,10 @@
     height: 100%;
     z-index: -1;
   }
+
+  & > svg path {
+    stroke: var(--theme-text--color);
+    fill: var(--theme-dark--bright);
+    stroke-opacity: 0.3;
+  }
 }

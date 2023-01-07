@@ -81,7 +81,7 @@ const Home: NextPage = () => {
             </DiscoLink>
           </div>
 
-          <div id="resume" className="mt-24">
+          <div id="resume" className="mt-20">
             <ResumeWrapper>
               <ResumeIcon />
               <div className="ml-6 flex flex-col">

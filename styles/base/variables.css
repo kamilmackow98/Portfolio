@@ -42,18 +42,20 @@
   --theme-dark: #212733;
   --theme-dark--variant: #1a1f28;
 
-  --theme-dark--bright: #343e50;
-  --theme-dark--bright-30: #343e504d;
+  --theme-dark--bright: hsl(220, 20%, 22%);
+  --theme-dark--bright-30: hsla(220, 20%, 25%, 0.3);
+  --theme-dark--bright-10: hsla(220, 20%, 25%, 0.1);
 
-  --theme-dark--brightest: #98a4bc;
+  --theme-dark--brightest: hsl(220, 20%, 70%);
 
   /* -------------------------------------------- */
   /* ----| Text color, text selection, etc. |---- */
   /* -------------------------------------------- */
 
-  --theme-text--color: rgb(122, 139, 169);
-  --theme-text--color-30: rgba(122, 139, 169, 0.3);
-  --theme-text--color-50: rgba(122, 139, 169, 0.5);
+  --theme-text--color: hsl(225, 20%, 55%);
+  --theme-text--color-30: hsla(225, 20%, 50%, 0.3);
+  --theme-text--color-50: hsla(225, 20%, 50%, 0.5);
+  --theme-text--color-70: hsla(225, 20%, 50%, 0.7);
 
   --theme-text--selection: #bacff5;
 
@@ -82,8 +84,8 @@
   /* ----| Position, display and layout |---- */
   /* ---------------------------------------- */
 
-  --theme-main-background: var(--theme-dark);
-  --theme-disco-background: var(--theme-dark--bright-30);
+  --theme-main-background: hsl(230, 25%, 10%);
+  --theme-disco-background: var(--theme-dark--bright-10);
   --theme-disco-border: var(--theme-text--color-30);
 
   --z-index-home-placeholder: -99;
