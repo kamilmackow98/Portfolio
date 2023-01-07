@@ -69,6 +69,7 @@ const Timeline = (props: Props) => {
       if (!isUpdated && document.body.clientWidth < 640) {
         swiper?.scrollbar.updateSize()
         swiper?.update()
+        swiper?.update() // For some reason must be updated twice the 1st time
         isUpdated = true
       } else if (isUpdated && document.body.clientWidth >= 640) {
         isUpdated = false
