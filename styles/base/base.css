@@ -1,5 +1,8 @@
 html {
   overflow-x: hidden;
+
+  scrollbar-color: var(--theme-dark) var(--theme-disco-background);
+  scrollbar-width: thin;
 }
 
 body {
@@ -65,6 +68,24 @@ main {
   z-index: -99999;
 
   opacity: 0.85;
+}
+
+:not(input):not(textarea) {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--theme-disco-background);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--theme-dark);
+
+    &:hover {
+      background: var(--theme-dark--bright);
+    }
+  }
 }
 
 #footer {
