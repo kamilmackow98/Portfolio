@@ -20,7 +20,7 @@ function Layout({ children }: LayoutProps) {
       <Navigation />
       <AnimatePresence mode="wait" onExitComplete={scrollToTop}>
         <motion.main
-          className="container mx-auto"
+          className="container mx-auto mt-20"
           variants={pageMotion}
           initial="initial"
           animate="animate"

@@ -1,14 +1,16 @@
 import DiscoLink from '@atoms/DiscoLink'
 import NavLink from '@atoms/NavLink'
 import { cx } from 'class-variance-authority'
+import useScrollNav from 'hooks/useScrollNav'
+import { useRef } from 'react'
 
-const navClasses = cx('container', 'flex justify-between', 'mx-auto mt-4 py-3')
+const navClasses = cx('container', 'flex justify-between', 'mx-auto py-3')
 
 const linkSpacingClasses = 'peer peer-first:ml-12'
 // TODO : Move internal classes to NavLink component
 const linkClasses = cx(
-  'theme-font--heading font-text--md font-light',
-  'tracking-wide',
+  'theme-font--heading font-text--sm font-light',
+  'tracking-wider',
   'navigation__link',
   linkSpacingClasses,
 )
@@ -20,6 +22,9 @@ const pagesLinks = [
 ]
 
 function Navigation() {
+  const headerRef = useRef<HTMLElement>(null)
+  useScrollNav(headerRef)
+
   const renderLinks = pagesLinks.map(({ path, title }, idx) => (
     <NavLink
       activeClassName="navigation__link--active"
@@ -32,11 +37,13 @@ function Navigation() {
   ))
 
   return (
-    <header>
+    <header ref={headerRef} id="navigation__container">
+      <span className="navigation__bg" />
+      <span className="go-go-gadget" />
+
       <nav className={navClasses}>
         <div className="flex items-center">
           <span id="navigation__logo" />
-          <span id="navigation__name" />
         </div>
         <div className="flex items-center">
           {renderLinks}
