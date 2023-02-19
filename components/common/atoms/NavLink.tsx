@@ -48,8 +48,8 @@ const NavLink = (props: Props) => {
   ])
 
   return (
-    <Link scroll={false} {...rest}>
-      <a className={classNameState}>{children}</a>
+    <Link scroll={false} className={classNameState} {...rest}>
+      {children}
     </Link>
   )
 }

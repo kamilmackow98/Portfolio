@@ -79,11 +79,13 @@ const DiscoLink = (props: Props) => {
   const renderBackground = linkBackground(backwards, colorRef.current)
 
   return (
-    <Link scroll={scrollToTop} {...rest}>
-      <a className={linkStyles({ className, variant, size })}>
-        {renderBackground}
-        {children}
-      </a>
+    <Link
+      className={linkStyles({ className, variant, size })}
+      scroll={scrollToTop}
+      {...rest}
+    >
+      {renderBackground}
+      {children}
     </Link>
   )
 }

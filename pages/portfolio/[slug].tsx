@@ -46,11 +46,9 @@ const Project: NextPage<Props> = (project: Props) => {
   const Component = useMemo(() => getMDXComponent(code), [code])
 
   const renderBackLink = (
-    <Link scroll={false} href="/portfolio">
-      <a className={backLinkClasses}>
-        <BiArrowBack size={18} />
-        <span className="ml-2">All projects</span>
-      </a>
+    <Link scroll={false} className={backLinkClasses} href="/portfolio">
+      <BiArrowBack size={18} />
+      <span className="ml-2">All projects</span>
     </Link>
   )
 

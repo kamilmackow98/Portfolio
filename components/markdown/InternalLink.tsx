@@ -3,7 +3,7 @@ import { styled } from '@stitches/react'
 import Link, { LinkProps } from 'next/link'
 import { ReactNode } from 'react'
 
-const StyledLink = styled('a', LinkStyles)
+const StyledLink = styled(Link, LinkStyles)
 
 interface Props extends LinkProps {
   className?: string
@@ -14,9 +14,9 @@ const InternalLink = (props: Props) => {
   const { className, children, ...rest } = props
 
   return (
-    <Link scroll={false} passHref {...rest}>
-      <StyledLink className={className}>{children}</StyledLink>
-    </Link>
+    <StyledLink scroll={false} className={className} {...rest}>
+      {children}
+    </StyledLink>
   )
 }
 
