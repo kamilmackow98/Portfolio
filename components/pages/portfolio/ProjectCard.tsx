@@ -2,7 +2,7 @@ import DiscoLink from '@atoms/DiscoLink'
 import Tag from '@components/pages/portfolio/Tag'
 import { styled } from '@stitches/react'
 import { cx } from 'class-variance-authority'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import { ComponentPropsWithoutRef } from 'react'
 import { Project } from 'types'
 
@@ -84,12 +84,12 @@ const ProjectCard = (props: Props) => {
     <Container className={containerStyles(className)} {...rest}>
       <ImageWrapper className={imageWrapperStyles}>
         <Image
+          className="object-cover object-center"
           src={
             'https://picsum.photos/600/4' +
             Math.floor(Math.random() * (90 - 10) + 10)
           }
           alt="Placeholder"
-          objectFit="cover"
           height={360}
           width={560}
         />
