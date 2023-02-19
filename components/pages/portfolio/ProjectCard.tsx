@@ -88,7 +88,7 @@ const ProjectCard = (props: Props) => {
     <Container className={containerClasses(className)} {...rest}>
       <ImageWrapper className={imageWrapperClasses}>
         <Image
-          src="https://picsum.photos/600/880"
+          src="/static/island.jpg"
           className={imageClasses}
           alt="Placeholder"
           sizes="100vw" // TODO : Check docs
