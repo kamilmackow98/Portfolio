@@ -1,4 +1,6 @@
 .project-card__image {
+  aspect-ratio: 480 / 300;
+
   &::before {
     position: absolute;
     z-index: -10;
@@ -11,7 +13,7 @@
     background-color: var(--theme-disco-background);
   }
 
-  & > span:not(.project-card__mobile-title) {
+  & > img {
     box-shadow: 0 10px 30px -6px rgba(0, 0, 0, 0.2);
     border-radius: 0.25rem;
   }
@@ -74,6 +76,8 @@
   }
 
   .project-card__image {
+    aspect-ratio: unset;
+
     &::before {
       bottom: -10%;
       right: 10%;

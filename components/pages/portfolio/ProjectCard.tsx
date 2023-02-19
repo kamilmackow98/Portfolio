@@ -2,7 +2,7 @@ import DiscoLink from '@atoms/DiscoLink'
 import Tag from '@components/pages/portfolio/Tag'
 import { styled } from '@stitches/react'
 import { cx } from 'class-variance-authority'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 import { ComponentPropsWithoutRef } from 'react'
 import { Project } from 'types'
 
@@ -10,7 +10,8 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
   project: Omit<Project, 'code'>
 }
 
-const containerStyles = (classes: string = '') =>
+const Container = styled('div')
+const containerClasses = (classes: string = '') =>
   cx(
     'lg:[&>.group]:even:mr-16 lg:[&>.group]:odd:ml-16',
     'grid items-center justify-center',
@@ -18,17 +19,21 @@ const containerStyles = (classes: string = '') =>
     'project-card',
     classes,
   )
-const Container = styled('div')
 
-const imageWrapperStyles = cx(
+const ImageWrapper = styled('div')
+const imageWrapperClasses = cx(
+  'xxs:h-[242.5px] xs:h-[280px] sm:h-[300px] xl:h-[337.5px] 2xl:h-[360px]',
   'flex items-center justify-center',
   'project-card__image',
-  'xl:px-10 2xl:px-8',
+  'max-w-full w-full',
+  'xl:px-10',
   'relative',
 )
-const ImageWrapper = styled('div')
 
-const mobileTitleStyles = cx(
+const imageClasses = cx('h-full w-full')
+
+const MobileTitle = styled('span')
+const mobileTitleClasses = cx(
   'theme-font--heading font-text--xl font-semibold',
   'leading-7 tracking-wide text-white',
   'rounded rounded-t-none',
@@ -39,28 +44,27 @@ const mobileTitleStyles = cx(
   'z-10',
   'project-card__mobile-title',
 )
-const MobileTitle = styled('span')
 
-const contentStyles = cx(
+const Content = styled('div')
+const contentClasses = cx(
   'flex flex-col items-start group',
   'project-card__content',
 )
-const Content = styled('div')
 
-const excerptStyles = cx(
+const Excerpt = styled('p')
+const excerptClasses = cx(
   'theme-font--reading font-medium',
   'leading-relaxed',
   'max-w-[480px]',
   'mt-3',
 )
-const Excerpt = styled('p')
 
-const titleStyles = cx(
+const Title = styled('h3')
+const titleClasses = cx(
   'theme-font--heading font-text--xl font-semibold',
   'tracking-wide text-white',
   'hidden lg:block',
 )
-const Title = styled('h3')
 
 // TODO : use CSS in JS instead of classes like project-card__content
 // TODO : Remove flex-wrap on tags later (once Swiper is used) ?
@@ -81,26 +85,25 @@ const ProjectCard = (props: Props) => {
   ) : null
 
   return (
-    <Container className={containerStyles(className)} {...rest}>
-      <ImageWrapper className={imageWrapperStyles}>
+    <Container className={containerClasses(className)} {...rest}>
+      <ImageWrapper className={imageWrapperClasses}>
         <Image
-          className="object-cover object-center"
-          src={
-            'https://picsum.photos/600/4' +
-            Math.floor(Math.random() * (90 - 10) + 10)
-          }
+          src="https://picsum.photos/600/880"
+          className={imageClasses}
           alt="Placeholder"
-          height={360}
-          width={560}
+          sizes="100vw" // TODO : Check docs
+          quality={90}
+          height={0}
+          width={0}
         />
-        <MobileTitle className={mobileTitleStyles}>{title}</MobileTitle>
+        <MobileTitle className={mobileTitleClasses}>{title}</MobileTitle>
       </ImageWrapper>
-      <Content className={contentStyles}>
-        <Title className={titleStyles}>{title}</Title>
+      <Content className={contentClasses}>
+        <Title className={titleClasses}>{title}</Title>
         {renderTags}
         <Excerpt
           dangerouslySetInnerHTML={{ __html: excerpt }}
-          className={excerptStyles}
+          className={excerptClasses}
         />
         <DiscoLink className="mt-4" href={`portfolio/${slug}`}>
           Read More
