@@ -9,9 +9,9 @@ const Image = (props: Props) => {
 
   return (
     <NextImage
-      objectFit="cover"
-      width={1200}
-      height={768}
+      className="lg:max-w-[40rem] mx-auto"
+      height={360}
+      width={640}
       alt={alt}
       {...rest}
     />

@@ -5,7 +5,7 @@
 }
 
 #project-page #markdown-content {
-  & > *:not(h2, h3, h4, h5, h6) {
+  & > *:not(h2, h3, h4, h5, h6, img) {
     margin-right: auto !important;
     margin-left: auto !important;
     max-width: 40rem !important;
@@ -20,8 +20,7 @@
     margin-bottom: 0.5rem;
   }
 
-  /* Next.js wrapper for Image component */
-  & > span {
+  & > img {
     border-radius: 0.25rem !important;
     display: block !important;
   }
@@ -36,14 +35,14 @@
   }
 
   & > p + p,
-  & > span + span {
+  & > img + img {
     margin-top: 1rem !important;
   }
 
   & > p + h3,
-  & > span + h3,
-  & > span + p,
-  & > p + span {
+  & > img + h3,
+  & > img + p,
+  & > p + img {
     margin-top: 3rem !important;
   }
 
@@ -55,7 +54,7 @@
 @media screen(lg) {
   #project-page #markdown-content {
     & > h3 + p,
-    & > h3 + span {
+    & > h3 + img {
       margin-top: 4rem !important;
     }
 
@@ -67,9 +66,9 @@
     }
 
     & > p + h3,
-    & > span + h3,
-    & > span + p,
-    & > p + span {
+    & > img + h3,
+    & > img + p,
+    & > p + img {
       margin-top: 4rem !important;
     }
   }
