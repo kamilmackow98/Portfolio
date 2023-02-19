@@ -72,7 +72,7 @@ const titleClasses = cx(
 const ProjectCard = (props: Props) => {
   const { className, ...rest } = props
   const { frontmatter, slug } = props.project
-  const { title, excerpt } = frontmatter
+  const { title, thumbnail, excerpt } = frontmatter
 
   const renderTags = frontmatter.tags ? (
     <ul className="mt-5 flex flex-wrap lg:mt-3">
@@ -88,11 +88,11 @@ const ProjectCard = (props: Props) => {
     <Container className={containerClasses(className)} {...rest}>
       <ImageWrapper className={imageWrapperClasses}>
         <Image
-          src="/static/island.jpg"
+          src={`/static/projects/${slug}/${thumbnail}`}
+          alt={`${title} thumbnail`}
           className={imageClasses}
-          alt="Placeholder"
           sizes="100vw" // TODO : Check docs
-          quality={90}
+          quality={100}
           height={0}
           width={0}
         />
