@@ -3,10 +3,21 @@ import Section from '@components/pages/about/Section'
 import Timeline from '@components/pages/about/Timeline'
 import Tools from '@components/pages/about/Tools'
 import { getEvents } from '@utils/events'
+import { cx } from 'class-variance-authority'
 import { NextPage } from 'next'
 import Image from 'next/image'
 
 // const isOpenForOpp = process.env.isOpenForOpp === 'yes'
+
+const whoImageClasses = cx(
+  'w-full px-6 xs:px-16 sm:px-24 lg:px-10 xl:px-28 2xl:px-32',
+)
+
+const whyImageClasses = cx(
+  'w-full px-6 xs:px-16 sm:px-24 lg:px-8 xl:px-24 2xl:px-28',
+)
+
+const timelineImageClasses = cx('w-full lg:px-14 xl:px-36 2xl:px-40')
 
 const About: NextPage = () => {
   const events = getEvents()
@@ -20,8 +31,9 @@ const About: NextPage = () => {
           <Image
             src="/assets/images/manypixels/html.svg"
             alt="Who am I section, laptop illustration"
-            height={280}
-            width={480}
+            className={whoImageClasses}
+            height={0}
+            width={0}
             priority
           />
 
@@ -39,11 +51,11 @@ const About: NextPage = () => {
 
         <Section id="about-why" className="mt-14 lg:mt-48">
           <Image
-            className="lg:order-last"
             src="/assets/images/manypixels/designer.svg"
             alt="Why me section, list of tools, icons"
-            height={300}
-            width={480}
+            className={whyImageClasses}
+            height={0}
+            width={0}
             priority
           />
 
@@ -85,8 +97,9 @@ const About: NextPage = () => {
             <Image
               src="/assets/images/manypixels/startup.svg"
               alt="Timeline section, rocket illustration"
-              height={360}
-              width={420}
+              className={timelineImageClasses}
+              height={0}
+              width={0}
             />
           </div>
         </Section>
