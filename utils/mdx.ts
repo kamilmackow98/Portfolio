@@ -5,9 +5,13 @@ import path from 'path'
 import { Project, ProjectFrontMatter } from 'types'
 
 export const PROJECTS_PATH = path.join(process.cwd(), 'data/projects')
+export const DEFAULT_MDX_FILENAME = 'index.mdx'
 
-export const getFileSource = (fileName: string): string => {
-  return fs.readFileSync(path.join(PROJECTS_PATH, fileName), 'utf-8')
+export const getFileSource = (slug: string): string => {
+  return fs.readFileSync(
+    path.join(PROJECTS_PATH, slug, DEFAULT_MDX_FILENAME),
+    'utf-8',
+  )
 }
 
 // User defined Type Guard
@@ -19,12 +23,9 @@ function isPublished<T>(argument: T | null): argument is T {
 // No need to get all the content from Markdown file
 // So we remove the 'code' property (corresponds to the file's content)
 export const getProjects = (): Omit<Project, 'code'>[] => {
-  return fs
-    .readdirSync(PROJECTS_PATH)
-    .filter((path) => /\.mdx?$/.test(path))
-    .map((fileName) => {
-      const slug = fileName.replace(/\.mdx?$/, '')
-      const source = getFileSource(fileName)
+  const data = getProjectsPaths()
+    .map(({ slug, projectPath }) => {
+      const source = fs.readFileSync(projectPath, 'utf-8')
       const { data } = grayMatter(source) // Data = metadata from MDX
 
       const frontMatter = data as ProjectFrontMatter
@@ -69,10 +70,51 @@ export const getProjects = (): Omit<Project, 'code'>[] => {
 
       return aPriority - bPriority
     })
+
+  return data
+}
+
+type ProjectPathType = {
+  slug: string
+  projectPath: string
+}
+
+function getProjectsPaths(): ProjectPathType[] {
+  const slugs = fs
+    .readdirSync(PROJECTS_PATH, { withFileTypes: true })
+    .filter((dir) => dir.isDirectory())
+    .map((dir) => dir.name)
+
+  const projectsPathsAndSlugs: ProjectPathType[] = []
+  const data: ProjectPathType[] = []
+
+  slugs.forEach((slug) => {
+    projectsPathsAndSlugs.push({
+      slug,
+      projectPath: path.join(PROJECTS_PATH, slug),
+    })
+  })
+
+  projectsPathsAndSlugs.forEach(({ slug, projectPath }) => {
+    const files = fs
+      .readdirSync(projectPath)
+      .filter((path) => /\.mdx?$/.test(path)) // Should only contain index.mdx
+
+    const indexFile = files.length > 0 ? files[0] : ''
+
+    if (indexFile === DEFAULT_MDX_FILENAME) {
+      data.push({
+        slug,
+        projectPath: path.join(projectPath, indexFile),
+      })
+    }
+  })
+
+  return data
 }
 
 export const getProject = async (slug: string): Promise<Project> => {
-  const source = getFileSource(`${slug}.mdx`)
+  const source = getFileSource(slug)
 
   const { code, frontmatter } = await bundleMDX<ProjectFrontMatter>({
     source: source,

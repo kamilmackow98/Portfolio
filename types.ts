@@ -6,7 +6,7 @@ export type ProjectFrontMatter = {
   excerpt: string
   date: string
   isPublished: boolean
-  priority: number
+  priority: number|undefined
 }
 
 export type Project = {
