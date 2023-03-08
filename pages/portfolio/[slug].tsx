@@ -36,7 +36,7 @@ const titleClasses = cx(
 const components = {
   a: ExternalLink,
   InternalLink,
-  Image,
+  img: Image as React.ComponentType<{}>,
 }
 
 const Project: NextPage<Props> = (project: Props) => {

@@ -2,6 +2,7 @@ import fs from 'fs'
 import grayMatter from 'gray-matter'
 import { bundleMDX } from 'mdx-bundler'
 import path from 'path'
+import remarkMdxImages from 'remark-mdx-images'
 import { Project, ProjectFrontMatter } from 'types'
 
 export const PROJECTS_PATH = path.join(process.cwd(), 'data/projects')
@@ -116,9 +117,32 @@ function getProjectsPaths(): ProjectPathType[] {
 export const getProject = async (slug: string): Promise<Project> => {
   const source = getFileSource(slug)
 
+  const cwd = path.join(process.cwd(), `data/projects/${slug}`);
+
   const { code, frontmatter } = await bundleMDX<ProjectFrontMatter>({
     source: source,
-    cwd: PROJECTS_PATH, // It's usually a good idea to provide the CWD
+    cwd, // It's usually a good idea to provide the CWD
+    mdxOptions: (options) => {
+      options.remarkPlugins = [
+        ...(options.remarkPlugins ?? []),
+        remarkMdxImages,
+      ]
+
+      return options
+    },
+    esbuildOptions: (options) => {
+      // options.outdir = `./public/static/projects/${slug}`
+      options.loader = {
+        ...options.loader,
+        '.jpeg': 'dataurl',
+        '.jpg': 'dataurl',
+        '.png': 'dataurl',
+      }
+      // options.publicPath = `static/projects/${slug}`
+      // options.write = true
+
+      return options
+    },
   })
 
   return {
