@@ -40,8 +40,8 @@ const About: NextPage = () => {
           <Section.Content>
             <Section.Title>Who am I</Section.Title>
             <Section.Paragraph>
-              I&#39;m a Junior Web Developer and my goal is to master front-end
-              development because, long story short, I really like it. And even
+              I&#39;m Kamil, a Web Developer, and my goal is to master front-end
+              development because long story short, I really like it. And even
               if the back-end is not an alien technology to me, I simply enjoy
               working on the front-end more. In my spare time, I usually listen
               to music and play guitar once in a while.
@@ -66,7 +66,8 @@ const About: NextPage = () => {
               tools. It helps me a lot to grow as a developer and constantly
               improve at my job so that I can provide the best possible
               experience for everyone on the Web. Currently, I&#39;m working on
-              improving my problem-solving skills and I&#39;m exploring 3D stuff.
+              improving my problem-solving skills and I&#39;m exploring 3D
+              stuff.
             </Section.Paragraph>
           </Section.Content>
         </Section>
