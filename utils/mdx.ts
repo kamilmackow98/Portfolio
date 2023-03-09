@@ -116,12 +116,12 @@ function getProjectsPaths(): ProjectPathType[] {
 
 export const getProject = async (slug: string): Promise<Project> => {
   const source = getFileSource(slug)
-
-  const cwd = path.join(process.cwd(), `data/projects/${slug}`);
+  const publicPath = `/static/projects/${slug}`
+  const outdir = path.join(process.cwd(), `/public/${publicPath}`)
 
   const { code, frontmatter } = await bundleMDX<ProjectFrontMatter>({
     source: source,
-    cwd, // It's usually a good idea to provide the CWD
+    cwd: path.join(PROJECTS_PATH, `/${slug}`), // It's usually a good idea to provide the CWD - No, it's necessary
     mdxOptions: (options) => {
       options.remarkPlugins = [
         ...(options.remarkPlugins ?? []),
@@ -130,19 +130,34 @@ export const getProject = async (slug: string): Promise<Project> => {
 
       return options
     },
-    esbuildOptions: (options) => {
-      // options.outdir = `./public/static/projects/${slug}`
-      options.loader = {
-        ...options.loader,
-        '.jpeg': 'dataurl',
-        '.jpg': 'dataurl',
-        '.png': 'dataurl',
-      }
-      // options.publicPath = `static/projects/${slug}`
-      // options.write = true
+    esbuildOptions: (options) => ({
+      ...options,
+      ...{
+        outdir,
+        publicPath, // Might need a "/" at the end
+        write: true,
+        loader: {
+          ...options.loader,
+          '.jpeg': 'file',
+          '.jpg': 'file',
+          '.png': 'file',
+        },
+      },
+    }),
+    // Same thing, but different, but same
+    // esbuildOptions: (options) => {
+    //   options.outdir = outdir
+    //   options.loader = {
+    //     ...options.loader,
+    //     '.jpeg': 'file',
+    //     '.jpg': 'file',
+    //     '.png': 'file',
+    //   }
+    //   options.publicPath = publicPath
+    //   options.write = true
 
-      return options
-    },
+    //   return options
+    // },
   })
 
   return {

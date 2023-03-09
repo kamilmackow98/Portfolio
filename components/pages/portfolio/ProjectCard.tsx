@@ -92,7 +92,7 @@ const ProjectCard = (props: Props) => {
           src={`/static/projects/${slug}/${thumbnail}`}
           alt={`${title} thumbnail`}
           className={imageClasses}
-          placeholder="blur"
+          // placeholder="blur"
           sizes="100vw" // TODO : Check docs
           quality={100}
           height={0}

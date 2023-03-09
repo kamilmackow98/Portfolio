@@ -1,5 +1,5 @@
 import ExternalLink from '@atoms/Link'
-import Image from '@components/markdown/Image'
+import MdxImage from '@components/markdown/MdxImage'
 import InternalLink from '@components/markdown/InternalLink'
 import CustomHead from '@components/misc/CustomHead'
 import Tag from '@components/pages/portfolio/Tag'
@@ -13,6 +13,7 @@ import { useMemo } from 'react'
 import { BiArrowBack } from 'react-icons/bi'
 import { FiExternalLink } from 'react-icons/fi'
 import { Project as ProjectType } from 'types'
+import MdxParagraph from '@components/markdown/MdxParagraph'
 
 interface Props extends ProjectType {}
 
@@ -36,7 +37,8 @@ const titleClasses = cx(
 const components = {
   a: ExternalLink,
   InternalLink,
-  img: Image as React.ComponentType<{}>,
+  img: MdxImage as React.ComponentType,
+  p: MdxParagraph as React.ComponentType,
 }
 
 const Project: NextPage<Props> = (project: Props) => {
@@ -72,7 +74,10 @@ const Project: NextPage<Props> = (project: Props) => {
 
   return (
     <>
-      <CustomHead title={`${title} | Portfolio`} description={excerpt} />
+      <CustomHead
+        title={`${title} ${String.fromCharCode(8226)} Portfolio`}
+        description={excerpt}
+      />
 
       <div id="project-page" className={pageContainerClasses}>
         {renderBackLink}
