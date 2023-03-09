@@ -1,9 +1,10 @@
 import DiscoLink from '@atoms/DiscoLink'
 import Tag from '@components/pages/portfolio/Tag'
+import BlurData from '@data/image/blur.json'
 import { styled } from '@stitches/react'
 import { cx } from 'class-variance-authority'
 import Image from 'next/image'
-import { ComponentPropsWithoutRef } from 'react'
+import { ComponentPropsWithoutRef, useState } from 'react'
 import { Project } from 'types'
 
 interface Props extends ComponentPropsWithoutRef<'div'> {
@@ -74,6 +75,8 @@ const ProjectCard = (props: Props) => {
   const { frontmatter, slug } = props.project
   const { title, thumbnail, excerpt } = frontmatter
 
+  const [imgSrc, setImgSrc] = useState(`/static/projects/${slug}/thumbnail.jpg`)
+
   const renderTags = frontmatter.tags ? (
     <ul className="mt-5 flex flex-wrap lg:mt-3">
       {frontmatter.tags.map((tag, idx) => (
@@ -84,19 +87,24 @@ const ProjectCard = (props: Props) => {
     </ul>
   ) : null
 
+  function handleError() {
+    setImgSrc('/assets/images/picture-not-available.jpg')
+  }
+
   return (
     <Container className={containerClasses(className)} {...rest}>
       <ImageWrapper className={imageWrapperClasses}>
         <Image
-          // blurDataURL={`/static/projects/${slug}/blurred/${thumbnail}`}
-          src={`/static/projects/${slug}/${thumbnail}`}
+          blurDataURL={BlurData.data}
           alt={`${title} thumbnail`}
           className={imageClasses}
-          // placeholder="blur"
+          onError={handleError}
+          placeholder="blur"
           sizes="100vw" // TODO : Check docs
           quality={100}
-          height={0}
-          width={0}
+          src={imgSrc}
+          height={560}
+          width={360}
         />
         <MobileTitle className={mobileTitleClasses}>{title}</MobileTitle>
       </ImageWrapper>
