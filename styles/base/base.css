@@ -16,7 +16,7 @@ body {
   background-image: url('/assets/images/funny-circle.svg'),
     url('/assets/images/noisy-50.png');
 
-  background-position: bottom left;
+  background-position: bottom left, top left;
   background-attachment: fixed, scroll;
   background-repeat: no-repeat, repeat;
   background-size: cover, 200px;
