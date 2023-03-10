@@ -63,8 +63,8 @@
   /* ----| Fonts and typograpgy |---- */
   /* -------------------------------- */
 
-  --theme-font--reading: 'Hind Madurai', sans-serif;
-  --theme-font--heading: 'Kanit', sans-serif;
+  /* --theme-font--reading: 'Hind Madurai', sans-serif;
+  --theme-font--heading: 'Kanit', sans-serif; */
 
   --font-unit: 1rem;
   --font-text: var(--font-unit); /* 16px */
