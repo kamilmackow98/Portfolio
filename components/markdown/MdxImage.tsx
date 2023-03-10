@@ -23,8 +23,8 @@ const MdxImage = (props: Props) => {
       onError={onError}
       sizes="100vw" // TODO : Check doc
       quality={95}
-      height={360}
-      width={640}
+      height={0} // Used to be 360
+      width={0} // Used to be 640
       {...rest}
       alt={alt}
       src={src}
