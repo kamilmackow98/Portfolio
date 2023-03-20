@@ -6,33 +6,45 @@
 
   position: relative;
 
-  color: var(--theme-primary);
+  background-color: var(--theme-disco-background);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: #fff;
 
-  &.blue {
-    color: var(--theme-secondary);
+  transition: background-color 250ms ease;
+
+  &.glowing {
+    box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.2);
   }
-}
 
-.disco-link svg {
-  position: absolute;
-  z-index: -1;
+  &.primary {
+    background-color: var(--theme-primary--025);
+    border: 1px solid var(--theme-primary--80);
+    color: var(--theme-primary);
 
-  height: 100%;
-  width: 100%;
+    &.glowing {
+      box-shadow: 0 0 6px 0 var(--theme-primary--20);
+    }
+  }
 
-  left: 0;
-  top: 0;
+  &.secondary {
+    background-color: var(--theme-secondary--025);
+    border: 1px solid var(--theme-secondary--80);
+    color: var(--theme-secondary);
 
-  & path {
-    transition: all 200ms ease;
-
-    fill: var(--theme-text--color);
-    fill-opacity: 0.075;
+    &.glowing {
+      box-shadow: 0 0 6px 0 var(--theme-secondary--20);
+    }
   }
 }
 
 .disco-link:hover {
-  & svg path {
-    fill-opacity: 0.14;
+  background-color: rgba(255, 255, 255, 0.05);
+
+  &.primary {
+    background-color: var(--theme-primary--5);
+  }
+
+  &.secondary {
+    background-color: var(--theme-secondary--5);
   }
 }

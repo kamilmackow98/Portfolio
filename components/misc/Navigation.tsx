@@ -2,9 +2,10 @@ import DiscoLink from '@atoms/DiscoLink'
 import NavLink from '@atoms/NavLink'
 import { cx } from 'class-variance-authority'
 import useScrollNav from 'hooks/useScrollNav'
+import Link from 'next/link'
 import { useRef } from 'react'
 
-const navClasses = cx('container', 'flex justify-between', 'mx-auto py-3')
+const navClasses = cx('container', 'flex justify-between', 'mx-auto py-4')
 
 const linkSpacingClasses = 'peer peer-first:ml-12'
 // TODO : Move internal classes to NavLink component
@@ -33,6 +34,7 @@ function Navigation() {
       key={idx}
     >
       {title}
+      <span className="navigation__link-underline" />
     </NavLink>
   ))
 
@@ -50,9 +52,9 @@ function Navigation() {
 
           <DiscoLink
             className={linkSpacingClasses}
+            rounded="tl-br"
             href="/contact"
-            variant="blue"
-            size="xs"
+            size="xxs"
           >
             Contact
           </DiscoLink>

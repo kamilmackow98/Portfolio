@@ -2,10 +2,10 @@ import { CSS, styled } from '@stitches/react'
 import { ComponentPropsWithoutRef } from 'react'
 
 export const LinkStyles: CSS = {
-  color: 'var(--theme-primary)',
+  color: 'var(--theme-secondary)',
   position: 'relative',
   backgroundImage:
-    'linear-gradient(to right, var(--theme-primary), var(--theme-primary))',
+    'linear-gradient(to right, var(--theme-secondary), var(--theme-secondary))',
   backgroundPosition: 'bottom left',
   backgroundRepeat: 'no-repeat',
   backgroundSize: '0% 1px',

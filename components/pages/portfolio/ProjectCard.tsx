@@ -31,6 +31,8 @@ const imageWrapperClasses = cx(
   'relative',
 )
 
+const imageCoverClasses = cx('project-card__cover xl:mx-10 rounded')
+
 const imageClasses = cx('h-full w-full')
 
 const MobileTitle = styled('span')
@@ -73,7 +75,7 @@ const titleClasses = cx(
 const ProjectCard = (props: Props) => {
   const { className, ...rest } = props
   const { frontmatter, slug } = props.project
-  const { title, thumbnail, excerpt } = frontmatter
+  const { title, excerpt } = frontmatter
 
   const [imgSrc, setImgSrc] = useState(`/static/projects/${slug}/thumbnail.jpg`)
 
@@ -94,6 +96,7 @@ const ProjectCard = (props: Props) => {
   return (
     <Container className={containerClasses(className)} {...rest}>
       <ImageWrapper className={imageWrapperClasses}>
+        <span className={imageCoverClasses} />
         <Image
           blurDataURL={BlurData.data}
           alt={`${title} thumbnail`}
@@ -115,7 +118,13 @@ const ProjectCard = (props: Props) => {
           dangerouslySetInnerHTML={{ __html: excerpt }}
           className={excerptClasses}
         />
-        <DiscoLink className="mt-4" href={`portfolio/${slug}`}>
+        <DiscoLink
+          href={`portfolio/${slug}`}
+          className="mt-4"
+          variant="primary"
+          rounded="tl-br"
+          size="xs"
+        >
           Read More
         </DiscoLink>
       </Content>

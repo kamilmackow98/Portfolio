@@ -15,6 +15,12 @@ module.exports = {
           lineHeight: 1,
         },
       ],
+      '7.75xl': [
+        '5.625rem',
+        {
+          lineHeight: 1,
+        },
+      ],
       ...fontSize,
     },
     screens: {
@@ -32,6 +38,9 @@ module.exports = {
         primary: '#ffcc66',
         secondary: '#80d4ff',
         default: '#7a8ba9',
+      },
+      padding: {
+        6.5: '1.625rem',
       },
     },
     container: {

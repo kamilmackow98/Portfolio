@@ -19,6 +19,28 @@
   }
 }
 
+.project-card__image:hover {
+  & .project-card__cover {
+    opacity: 0;
+  }
+}
+
+.project-card__cover {
+  background-color: var(--theme-card--backdrop);
+  mix-blend-mode: multiply;
+
+  transition: opacity 500ms;
+  opacity: 1;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+
+  z-index: 10;
+}
+
 .project-card__mobile-title {
   &::before {
     position: absolute;

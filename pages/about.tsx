@@ -40,7 +40,7 @@ const About: NextPage = () => {
           <Section.Content>
             <Section.Title>Who am I</Section.Title>
             <Section.Paragraph>
-              I&#39;m Kamil, a Web Developer, and my goal is to master front-end
+              My name is Kamil and one of my main goals is to master front-end
               development because long story short, I really like it. And even
               if the back-end is not an alien technology to me, I simply enjoy
               working on the front-end more. In my spare time, I usually listen

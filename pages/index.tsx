@@ -15,7 +15,7 @@ const pageContainerClasses = cx(
 
 const titleClasses = cx(
   'theme-font--heading font-extrabold leading-tight text-white',
-  'lg:text-7xl xl:text-7.5xl 2xl:text-8xl',
+  'lg:text-7xl xl:text-7.5xl 2xl:text-7.75xl',
   'text-4xl sm:text-5xl md:text-6xl',
 )
 
@@ -26,8 +26,8 @@ const descriptionClasses = cx(
 )
 
 const myResumeClasses = cx(
-  'uppercase tracking-wide text-white',
-  'font-text--md font-bold',
+  'uppercase tracking-wider text-white',
+  'font-text--sm font-bold',
 )
 
 const orClasses = cx(
@@ -70,13 +70,21 @@ const Home: NextPage = () => {
           </p>
 
           <div className="mt-10 flex items-center" id="home-buttons-wrapper">
-            <DiscoLink size="md" href="/portfolio">
+            <DiscoLink
+              href="/portfolio"
+              variant="primary"
+              rounded="tl-br"
+            >
               Check my work
             </DiscoLink>
 
             <div className={orClasses}>OR</div>
 
-            <DiscoLink variant="blue" size="md" href="/about" backwards>
+            <DiscoLink
+              variant="secondary"
+              rounded="tr-bl"
+              href="/about"
+            >
               Learn about me
             </DiscoLink>
           </div>

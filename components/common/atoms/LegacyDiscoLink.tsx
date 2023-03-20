@@ -1,13 +1,14 @@
 import { cva, VariantProps } from 'class-variance-authority'
-import { ComponentPropsWithoutRef, useRef } from 'react'
+import Link, { LinkProps } from 'next/link'
+import { ReactNode, useRef } from 'react'
 
-interface Props
-  extends ComponentPropsWithoutRef<'button'>,
-    VariantProps<typeof buttonStyles> {
+interface Props extends LinkProps, VariantProps<typeof linkStyles> {
+  children?: ReactNode
   backwards?: boolean
+  className?: string
 }
 
-const buttonStyles = cva(['tracking-wider', 'disco-button'], {
+const linkStyles = cva(['tracking-wider', 'disco-link'], {
   variants: {
     variant: {
       blue: 'blue',
@@ -26,7 +27,7 @@ const buttonStyles = cva(['tracking-wider', 'disco-button'], {
   },
 })
 
-const buttonBackground = (
+const linkBackground = (
   backwards: boolean = false,
   color: string = '#ffcc66',
 ) => {
@@ -39,7 +40,7 @@ const buttonBackground = (
       >
         <g>
           <path
-            d="M 30.05126,0.12579455 H 0.12805072 V 7.0952359 L 4.9487577,9.8741902 H 34.751968 V 2.9047488 Z"
+            d="M 30.05126,0.12579455 H 0.12805072 V 7.0952359 L 4.9487577,9.7541902 H 34.751968 V 2.9047488 Z"
             strokeOpacity="0.8"
             strokeWidth="0.3"
             fill="#0000"
@@ -58,7 +59,7 @@ const buttonBackground = (
     >
       <g>
         <path
-          d="M 4.9487583,0.12579455 H 34.751968 V 7.0952359 L 30.051261,9.8741902 H 0.25805072 V 2.9047488 Z"
+          d="M 4.9487583,0.12579455 H 34.751968 V 7.0952359 L 30.051261,9.7541902 H 0.25805072 V 2.9047488 Z"
           strokeOpacity="0.8"
           strokeWidth="0.3"
           fill="#0000"
@@ -69,18 +70,24 @@ const buttonBackground = (
   )
 }
 
-const DiscoButton = (props: Props) => {
-  const { children, className, variant, backwards, size, ...rest } = props
+const LegacyDiscoLink = (props: Props) => {
+  const { children, className, variant, backwards, size, scroll, ...rest } =
+    props
   const colorRef = useRef<string>(variant === 'blue' ? '#80d4ff' : '#ffcc66')
+  const scrollToTop = scroll ? scroll : false
 
-  const renderBackground = buttonBackground(backwards, colorRef.current)
+  const renderBackground = linkBackground(backwards, colorRef.current)
 
   return (
-    <button className={buttonStyles({ className, variant, size })} {...rest}>
+    <Link
+      className={linkStyles({ className, variant, size })}
+      scroll={scrollToTop}
+      {...rest}
+    >
       {renderBackground}
       {children}
-    </button>
+    </Link>
   )
 }
 
-export default DiscoButton
+export default LegacyDiscoLink

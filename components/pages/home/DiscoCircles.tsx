@@ -24,8 +24,9 @@ const DiscoCircles = () => {
       animate="animate"
       exit="exit"
     >
+      {/* CSS defined up to 11 circles - but performance gets rekt  */}
       <div className="disco-circles">
-        {Array.from(Array(11).keys()).map((_, idx) => (
+        {Array.from(Array(9).keys()).map((_, idx) => (
           <Circle key={idx} />
         ))}
       </div>

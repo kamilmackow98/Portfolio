@@ -2,7 +2,6 @@ export type ProjectFrontMatter = {
   title: string
   link?: string
   tags: string[]
-  thumbnail: string
   excerpt: string
   date: string
   isPublished: boolean
