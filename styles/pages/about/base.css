@@ -1,3 +1,9 @@
+#about-page {
+  img::selection {
+    background-color: transparent;
+  }
+}
+
 @media screen(lg) {
   #about-who,
   #about-why,

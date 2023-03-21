@@ -11,6 +11,10 @@
     max-width: 40rem !important;
   }
 
+  & a::selection {
+    color: var(--theme-primary);
+  }
+
   & > h3 {
     font-family: var(--theme-font--reading);
     font-size: var(--font-text--xl);
@@ -26,6 +30,8 @@
 
     height: 100%;
     width: 100%;
+
+    user-select: none;
   }
 
   & > p {

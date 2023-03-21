@@ -88,6 +88,13 @@ main {
   }
 }
 
+::selection {
+  background-color: var(--theme-dark--bright);
+  color: var(--theme-text--selection);
+
+  text-shadow: none;
+}
+
 #footer {
   position: relative;
 

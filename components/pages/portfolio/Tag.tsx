@@ -9,7 +9,6 @@ const tagStyles = cva(
   [
     'font-text--xxs theme-font--reading font-medium',
     'leading-3 tracking-wide text-white',
-    'select-none',
     'portfolio-tag',
   ],
   {
