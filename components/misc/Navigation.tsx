@@ -45,7 +45,7 @@ function Navigation() {
 
       <nav className={navClasses}>
         <div className="flex items-center">
-          <span id="navigation__logo" />
+          <Link href="/" tabIndex={-1} scroll={false} id="navigation__logo" />
         </div>
         <div className="flex items-center">
           {renderLinks}
