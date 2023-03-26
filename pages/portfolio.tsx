@@ -10,7 +10,7 @@ interface Props {
 }
 
 const cardStyles = cx(
-  'peer peer-first:mt-24 peer-first:lg:mt-48',
+  'peer peer-first:mt-24 peer-first:lg:mt-56',
   'sm:px-12 lg:px-0',
 )
 

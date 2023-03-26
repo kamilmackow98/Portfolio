@@ -49,7 +49,7 @@ const About: NextPage = () => {
           </Section.Content>
         </Section>
 
-        <Section id="about-why" className="mt-14 lg:mt-48">
+        <Section id="about-why" className="mt-14 lg:mt-56">
           <Image
             src="/assets/images/manypixels/designer.svg"
             alt="Why me section, list of tools, icons"
@@ -72,7 +72,7 @@ const About: NextPage = () => {
           </Section.Content>
         </Section>
 
-        <Section id="about-what" className="mt-12 lg:mt-48">
+        <Section id="about-what" className="mt-12 lg:mt-56">
           <Tools />
 
           <Section.Content>
@@ -86,7 +86,7 @@ const About: NextPage = () => {
           </Section.Content>
         </Section>
 
-        <Section id="about-timeline" className="mt-16 lg:mt-48" align="top">
+        <Section id="about-timeline" className="mt-16 lg:mt-56" align="top">
           <Section.Content variant="timeline" className="grid items-center">
             <Section.Title className="xl:px-8 2xl:px-12">
               My experiences
