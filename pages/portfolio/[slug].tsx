@@ -82,14 +82,14 @@ const Project: NextPage<Props> = (project: Props) => {
       <div id="project-page" className={pageContainerClasses}>
         {renderBackLink}
 
-        <div className="mt-8 flex items-center">
+        <div className="mt-12 flex items-center lg:mt-16">
           <h2 className={titleClasses}>{title}</h2>
           {renderWebsiteLink}
         </div>
 
         {renderTags}
 
-        <div id="markdown-content" className="mt-24">
+        <div id="markdown-content" className="mt-20 lg:mt-32">
           <Component components={components} />
         </div>
       </div>

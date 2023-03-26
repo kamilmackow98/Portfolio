@@ -80,13 +80,37 @@
     & > p + img {
       margin-top: 4rem !important;
     }
+
+    & > *:not(h2, h3, h4, h5, h6) {
+      margin-right: 4rem !important;
+    }
+
+    & > h3 {
+      margin-left: 4rem;
+    }
   }
 }
 
 @media screen(xl) {
   #project-page #markdown-content {
+    & > *:not(h2, h3, h4, h5, h6) {
+      margin-right: 10rem !important;
+    }
+
     & > h3 {
-      margin-left: 6rem;
+      margin-left: 10rem;
+    }
+  }
+}
+
+@media screen(2xl) {
+  #project-page #markdown-content {
+    & > *:not(h2, h3, h4, h5, h6) {
+      margin-right: 12rem !important;
+    }
+
+    & > h3 {
+      margin-left: 12rem;
     }
   }
 }
