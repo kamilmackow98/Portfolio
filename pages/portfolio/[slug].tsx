@@ -61,9 +61,9 @@ const Project: NextPage<Props> = (project: Props) => {
   ) : null
 
   const renderTags = (
-    <ul id="tags-container" className="mt-3 flex items-center">
+    <ul id="tags-container" className="mt-3 flex items-center gap-2">
       {tags.map((tag, idx) => (
-        <li key={idx} className="peer peer-first:ml-2.5">
+        <li key={idx}>
           <Tag>{tag}</Tag>
         </li>
       ))}

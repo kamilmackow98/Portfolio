@@ -80,9 +80,9 @@ const ProjectCard = (props: Props) => {
   const [imgSrc, setImgSrc] = useState(`/static/projects/${slug}/thumbnail.jpg`)
 
   const renderTags = frontmatter.tags ? (
-    <ul className="mt-5 flex flex-wrap lg:mt-3">
+    <ul className="mt-5 flex flex-wrap lg:mt-3 gap-2">
       {frontmatter.tags.map((tag, idx) => (
-        <li key={idx} className="peer peer-first:ml-2.5">
+        <li key={idx}>
           <Tag>{tag}</Tag>
         </li>
       ))}
