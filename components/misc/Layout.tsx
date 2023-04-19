@@ -2,7 +2,7 @@ import { pageMotion } from '@utils/motionVariants'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import { ReactNode } from 'react'
-import Navigation from './Navigation'
+import Navigation from './Navigation/Navigation'
 
 interface LayoutProps {
   children: ReactNode

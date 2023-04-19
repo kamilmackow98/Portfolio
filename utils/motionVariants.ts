@@ -181,3 +181,17 @@ export const eventItemMotion: Variants = {
     y: -15,
   },
 }
+
+export const mobileNavMotion: Variants = {
+  initial: {
+    clipPath: 'inset(0% 0% 100% 0%)',
+  },
+  animate: {
+    transition: { duration: 0.4, ease: 'easeOut' },
+    clipPath: 'inset(0% 0% 0% 0%)',
+  },
+  exit: {
+    transition: { duration: 0.6, ease: 'anticipate' },
+    clipPath: 'inset(100% 0% 0% 0%)', // Or 0% 0% 100% 0%
+  },
+}
