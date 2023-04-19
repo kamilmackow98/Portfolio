@@ -19,6 +19,7 @@ const DiscoCircles = () => {
   return (
     <motion.div
       id="disco-circles-wrapper"
+      className='hidden lg:block'
       variants={pageMotion}
       initial="initial"
       animate="animate"
