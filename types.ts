@@ -5,11 +5,16 @@ export type ProjectFrontMatter = {
   excerpt: string
   date: string
   isPublished: boolean
-  priority: number|undefined
+  priority: number | undefined
 }
 
 export type Project = {
   frontmatter: ProjectFrontMatter
   slug: string
   code: string
+}
+
+export type Route = {
+  path: string
+  title: string
 }
