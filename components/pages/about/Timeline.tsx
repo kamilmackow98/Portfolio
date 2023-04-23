@@ -7,10 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/css'
 import 'swiper/css/scrollbar'
-
-interface Props {
-  events: EventType[]
-}
+import { getEvents } from '@utils/events'
 
 const eventDateClasses = (isActive: boolean = false) =>
   cx(
@@ -31,13 +28,13 @@ const swiperClasses = cx(
 
 const datesContainerClasses = cx(
   'timeline__dates-container',
-  'py-8 pr-12 lg:pl-8',
+  'py-8 pr-12 lg:pr-10 xl:pr-12 lg:pl-8',
   'flex-col sm:flex',
   'hidden',
 )
 
-const Timeline = (props: Props) => {
-  const { events } = props
+const Timeline = () => {
+  const events: EventType[] = getEvents()
 
   const [scrollerTopDistance, setScrollerTopDistance] = useState<number>(0)
   const [currentEventIdx, setCurrentEventIdx] = useState<number>(0)
@@ -112,7 +109,7 @@ const Timeline = (props: Props) => {
   const renderCurrentEvent = (
     <AnimatePresence mode="wait">
       <Event
-        className="pt-8 sm:pl-12"
+        className="pt-8 sm:pl-12 lg:pl-10 xl:pl-12"
         key={currentEventIdx}
         {...events[currentEventIdx]}
       />

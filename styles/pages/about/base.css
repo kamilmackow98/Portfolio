@@ -4,6 +4,83 @@
   }
 }
 
+.about-section .about-section__misc {
+  aspect-ratio: 16/9;
+  max-width: 100%;
+  width: 100%;
+
+  & > figure {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+#about-who .about-section__misc figure {
+  background-image: url('/assets/images/manypixels/html.svg');
+}
+
+#about-why .about-section__misc figure {
+  background-image: url('/assets/images/manypixels/designer.svg');
+}
+
+#about-timeline .about-section__misc figure {
+  background-image: url('/assets/images/manypixels/startup.svg');
+}
+
+#about-who,
+#about-why {
+  .about-section__misc {
+    aspect-ratio: 16/10;
+  }
+}
+
+#about-timeline .about-section__misc {
+  aspect-ratio: 12/10;
+}
+
+/* ----------------------------------- */
+/* --------- BREAKPOINT - XS --------- */
+/* ----------------------------------- */
+
+@media screen(xs) {
+  #about-who,
+  #about-why {
+    .about-section__misc {
+      aspect-ratio: 16/9;
+    }
+  }
+
+  #about-timeline .about-section__misc {
+    aspect-ratio: 4/3;
+  }
+}
+
+/* ----------------------------------- */
+/* --------- BREAKPOINT - SM --------- */
+/* ----------------------------------- */
+
+@media screen(sm) {
+  #about-who,
+  #about-why {
+    .about-section__misc {
+      aspect-ratio: 16/7;
+    }
+  }
+
+  #about-timeline .about-section__misc {
+    aspect-ratio: 12/7;
+  }
+}
+
+/* ----------------------------------- */
+/* --------- BREAKPOINT - LG --------- */
+/* ----------------------------------- */
+
 @media screen(lg) {
   #about-who,
   #about-why,
@@ -23,7 +100,23 @@
   #about-timeline {
     grid-template-columns: 1.2fr 0.8fr;
   }
+
+  #about-who .about-section__misc {
+    aspect-ratio: 16/9;
+  }
+
+  #about-why .about-section__misc {
+    aspect-ratio: 17/10;
+  }
+
+  #about-timeline .about-section__misc {
+    aspect-ratio: 16/13;
+  }
 }
+
+/* ----------------------------------- */
+/* --------- BREAKPOINT - XL --------- */
+/* ----------------------------------- */
 
 @media screen(xl) {
   #about-who,
@@ -32,5 +125,23 @@
   #about-timeline {
     grid-template-columns: 1fr 1fr;
     gap: 0;
+  }
+
+  #about-who .about-section__misc {
+    aspect-ratio: 16/7;
+  }
+
+  #about-why .about-section__misc {
+    aspect-ratio: 19/9;
+  }
+
+  #about-timeline .about-section__misc {
+    aspect-ratio: 24/14;
+  }
+}
+
+@media screen(2xl) {
+  #about-timeline .about-section__misc {
+    aspect-ratio: 16/9;
   }
 }
