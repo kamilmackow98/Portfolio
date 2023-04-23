@@ -21,59 +21,59 @@ const blockStyles = cx('peer rounded p-5 peer-first:ml-1.5 xxs:p-6')
 
 export type ToolType = {
   id: string
-  name: string
+  title: string
   icon: ReactNode
 }
 
 const tool: ToolType[] = [
   {
     id: 'react',
-    name: 'React',
+    title: 'React',
     icon: <ReactIcon size="100%" color="#80d4ff" />,
   },
   {
     id: 'vue',
-    name: 'Vue',
+    title: 'Vue',
     icon: <VueIcon size="100%" color="#80d4ff" />,
   },
   {
     id: 'svelte',
-    name: 'Svelte',
+    title: 'Svelte',
     icon: <SvelteIcon size="100%" color="#80d4ff" />,
   },
   {
     id: 'typescript',
-    name: 'TypeScript',
+    title: 'TypeScript',
     icon: <TypeScriptIcon size="100%" color="#80d4ff" />,
   },
   {
     id: 'javascript',
-    name: 'JavaScript',
+    title: 'JavaScript',
     icon: <JavaScriptIcon size="100%" color="#80d4ff" />,
   },
   {
     id: 'node',
-    name: 'Node',
+    title: 'Node',
     icon: <NodeIcon size="100%" color="#80d4ff" />,
   },
   {
     id: 'symfony',
-    name: 'Symfony',
+    title: 'Symfony',
     icon: <SymfonyIcon size="100%" color="#80d4ff" />,
   },
   {
     id: 'scss',
-    name: 'SCSS',
+    title: 'SCSS',
     icon: <SassIcon size="100%" color="#80d4ff" />,
   },
   {
     id: 'git',
-    name: 'Git',
+    title: 'Git',
     icon: <GitIcon size="100%" color="#80d4ff" />,
   },
   {
     id: 'figma',
-    name: 'Figma',
+    title: 'Figma',
     icon: <FigmaIcon size="100%" color="#80d4ff" />,
   },
 ]

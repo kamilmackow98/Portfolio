@@ -1,16 +1,17 @@
-import { cva, VariantProps } from 'class-variance-authority'
+import { cva, cx, VariantProps } from 'class-variance-authority'
 import { ComponentPropsWithoutRef } from 'react'
 
 interface SectionProps
   extends ComponentPropsWithoutRef<'section'>,
     VariantProps<typeof sectionStyles> {}
+interface MiscProps extends ComponentPropsWithoutRef<'div'> {}
 interface TitleProps extends ComponentPropsWithoutRef<'h3'> {}
 interface ContentProps
   extends ComponentPropsWithoutRef<'div'>,
     VariantProps<typeof contentStyles> {}
 interface ParagraphProps extends ComponentPropsWithoutRef<'p'> {}
 
-const sectionStyles = cva(['grid justify-center'], {
+const sectionStyles = cva(['about-section', 'grid'], {
   variants: {
     align: {
       center: 'items-center',
@@ -22,6 +23,8 @@ const sectionStyles = cva(['grid justify-center'], {
   },
 })
 
+const miscStyles = cva(['about-section__misc'])
+
 const titleStyles = cva([
   'theme-font--heading font-text--fat font-bold',
   'tracking-wider text-white',
@@ -31,7 +34,11 @@ const contentStyles = cva([], {
   variants: {
     variant: {
       timeline: '',
-      default: 'mt-12 lg:mt-0 xl:px-8 2xl:px-12',
+      default: cx(
+        'mt-12 lg:mt-0 xl:px-8 2xl:px-12',
+        'sm:max-w-[480px] lg:max-w-none',
+        'ml-auto mr-auto',
+      ),
     },
   },
   defaultVariants: {
@@ -52,6 +59,12 @@ const Section = (props: SectionProps) => {
       {children}
     </section>
   )
+}
+
+const Misc = (props: MiscProps) => {
+  const { className, ...rest } = props
+
+  return <div className={miscStyles({ className })} {...rest} />
 }
 
 const Title = (props: TitleProps) => {
@@ -84,6 +97,7 @@ const Paragraph = (props: ParagraphProps) => {
   )
 }
 
+Section.Misc = Misc
 Section.Title = Title
 Section.Content = Content
 Section.Paragraph = Paragraph

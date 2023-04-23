@@ -33,7 +33,10 @@ const descWrapperClasses = cx(
   'mt-1.5',
 )
 
-const descContentClasses = cx('theme-font--reading font-medium leading-relaxed')
+const descContentClasses = cx(
+  'theme-font--reading font-medium leading-relaxed',
+  'lg:max-w-[420px] xl:max-w-none',
+)
 
 const Event = (props: Props) => {
   const { title, className, description, dates } = props
