@@ -1,9 +1,10 @@
+import NavigationContext from '@context/NavigationContext'
 import useNav from 'hooks/useNav'
-import { useRef } from 'react'
+import { Route } from 'types'
 import DesktopNavigation from './DesktopNavigation'
 import MobileNavigation from './MobileNavigation'
 
-const routes = [
+const routes: Route[] = [
   { path: '/', title: 'Home' },
   { path: '/about', title: 'About' },
   { path: '/portfolio', title: 'Portfolio' },
@@ -11,21 +12,19 @@ const routes = [
 ]
 
 function Navigation() {
-  const headerRef = useRef<HTMLElement>(null)
-  const { isOpen, setIsOpen } = useNav(headerRef)
+  const [isMenuOpen, setIsMenuOpen] = useNav()
+  const contextValue = { routes, isMenuOpen, setIsMenuOpen }
 
   return (
-    <header className="navigation__container" ref={headerRef}>
-      <span className="navigation__bg" />
-      <span className="go-go-gadget" />
+    <NavigationContext.Provider value={contextValue}>
+      <header className="navigation__container">
+        <span className="navigation__bg" />
+        <span className="go-go-gadget" />
 
-      <DesktopNavigation routes={routes} />
-      <MobileNavigation
-        handleOpen={setIsOpen}
-        routes={routes}
-        isOpen={isOpen}
-      />
-    </header>
+        <DesktopNavigation />
+        <MobileNavigation />
+      </header>
+    </NavigationContext.Provider>
   )
 }
 

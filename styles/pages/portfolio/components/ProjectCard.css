@@ -61,36 +61,11 @@
 @media screen(sm) {
   .project-card {
     position: relative;
-
-    &::before,
-    &::after {
-      background-color: var(--theme-disco-border);
-      position: absolute;
-      content: '';
-
-      height: 60%;
-      width: 1px;
-    }
-
-    &::before {
-      top: 3rem;
-      left: 0;
-    }
-
-    &::after {
-      bottom: 3rem;
-      right: 0;
-    }
   }
 }
 
 @media screen(lg) {
   .project-card {
-    &::before,
-    &::after {
-      display: none;
-    }
-
     &:nth-child(even) > .project-card__content {
       align-items: flex-end;
       text-align: right;

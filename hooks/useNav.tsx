@@ -1,25 +1,39 @@
-import { RefObject, useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 
-function useNav(ref: RefObject<any>) {
-  const [isOpen, setIsOpen] = useState(false)
+const BREAKPOINT = 640 // Tailwind's "sm" breakpoint
+const HEIGHT = 40
+
+const SCROLL_CLASS = 'scroll'
+const MC_HAMMER_CLASS = 'cant-touch-this'
+
+function useNav() {
+  const [isScrolling, setIsScrolling] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   // TODO : Also change state on routeChange
 
   useEffect(() => {
     function updateNavigation() {
-      const header = ref.current
-      const height = 40
-
       const scrollOffset = window.scrollY
+      const pageWidth = window.innerWidth
 
-      if (!header?.classList.contains('scroll') && scrollOffset >= height) {
-        document.documentElement.classList.add('scroll')
-        header?.classList.add('scroll')
+      if (!isScrolling) {
+        // Mobile nav - instant background fill on scroll
+        if (pageWidth < BREAKPOINT) {
+          document.documentElement.classList.add(SCROLL_CLASS)
+          setIsScrolling(true)
+        }
+
+        // Desktop nav - wait till scrollOffset >= height to fill the background
+        if (pageWidth >= BREAKPOINT && scrollOffset >= HEIGHT) {
+          document.documentElement.classList.add(SCROLL_CLASS)
+          setIsScrolling(true)
+        }
       }
 
-      if (header?.classList.contains('scroll') && scrollOffset === 0) {
-        document.documentElement.classList.remove('scroll')
-        header?.classList.remove('scroll')
+      if (isScrolling && scrollOffset === 0) {
+        document.documentElement.classList.remove(SCROLL_CLASS)
+        setIsScrolling(false)
       }
     }
 
@@ -28,20 +42,20 @@ function useNav(ref: RefObject<any>) {
     return () => {
       window.removeEventListener('scroll', updateNavigation)
     }
-  }, [ref])
+  }, [isScrolling])
 
   useEffect(() => {
     function handleResize() {
-      if (isOpen && window.innerWidth >= 640) {
-        document.documentElement.classList.remove('cant-touch-this')
-        setIsOpen(false)
+      if (isMenuOpen && window.innerWidth >= BREAKPOINT) {
+        document.documentElement.classList.remove(MC_HAMMER_CLASS)
+        setIsMenuOpen(false)
       }
     }
 
-    if (isOpen) {
-      document.documentElement.classList.add('cant-touch-this')
+    if (isMenuOpen) {
+      document.documentElement.classList.add(MC_HAMMER_CLASS)
     } else {
-      document.documentElement.classList.remove('cant-touch-this')
+      document.documentElement.classList.remove(MC_HAMMER_CLASS)
     }
 
     window.addEventListener('resize', handleResize)
@@ -49,9 +63,9 @@ function useNav(ref: RefObject<any>) {
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [isOpen])
+  }, [isMenuOpen])
 
-  return { isOpen, setIsOpen }
+  return [isMenuOpen, setIsMenuOpen] as const
 }
 
 export default useNav

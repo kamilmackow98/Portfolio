@@ -1,11 +1,8 @@
 import DiscoLink from '@atoms/DiscoLink'
 import NavLink from '@atoms/NavLink'
+import { useNavigationContext } from '@context/NavigationContext'
 import { cx } from 'class-variance-authority'
 import Link from 'next/link'
-
-interface Props {
-  routes: { path: string; title: string }[]
-}
 
 const linkSpacingClasses = cx('peer peer-first:ml-12')
 // TODO : Move internal classes to NavLink component
@@ -22,8 +19,8 @@ const navClasses = cx(
   'container',
 )
 
-function DesktopNavigation(props: Props) {
-  const { routes } = props
+function DesktopNavigation() {
+  const { routes } = useNavigationContext();
 
   const renderLinks = routes
     .filter(({ path }) => path !== '/contact')
