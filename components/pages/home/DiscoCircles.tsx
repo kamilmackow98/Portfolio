@@ -1,9 +1,10 @@
 import { pageMotion } from '@utils/motionVariants'
 import { motion } from 'framer-motion'
+import { ComponentPropsWithoutRef } from 'react'
 
-const Circle = () => {
+const Circle = (props: ComponentPropsWithoutRef<'div'>) => {
   return (
-    <div className="disco-circles__circle">
+    <div {...props}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
@@ -18,17 +19,17 @@ const Circle = () => {
 const DiscoCircles = () => {
   return (
     <motion.div
-      id="disco-circles-wrapper"
-      className='hidden lg:block'
+      className="hidden sm:block"
       variants={pageMotion}
-      initial="initial"
-      animate="animate"
-      exit="exit"
+      id="disco-circles"
     >
       {/* CSS defined up to 11 circles - but performance gets rekt  */}
-      <div className="disco-circles">
+      <div className="disco-circles__content">
         {Array.from(Array(9).keys()).map((_, idx) => (
-          <Circle key={idx} />
+          <Circle
+            className={`disco-circle disco-circle-${idx + 1}`}
+            key={idx}
+          />
         ))}
       </div>
     </motion.div>

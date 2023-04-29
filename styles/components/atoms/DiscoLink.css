@@ -1,11 +1,12 @@
 .disco-link {
   font-family: var(--theme-font--heading), sans-serif;
-  font-size: var(--font-text--margot);
+  /* font-size: var(--font-text--margot); */
   text-transform: uppercase;
-  font-weight: 600;
+  text-align: center;
+  font-weight: 700;
 
   position: relative;
-
+  
   background-color: var(--theme-disco-background);
   border: 1px solid rgba(255, 255, 255, 0.8);
   color: #fff;
