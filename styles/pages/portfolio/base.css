@@ -1,0 +1,7 @@
+#portfolio-page {
+  /*
+    Bug fix for Navigation's backdrop-filter with mix-blend-mode on Project Card
+    https://stackoverflow.com/questions/66204563/backdrop-filter-not-working-when-mix-blend-mode-of-another-element-on-the-page-i
+  */
+  backdrop-filter: opacity(1);
+}

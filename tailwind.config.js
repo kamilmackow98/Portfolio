@@ -9,6 +9,24 @@ module.exports = {
   ],
   theme: {
     fontSize: {
+      margot: [
+        '0.6875rem',
+        {
+          lineHeight: '1rem',
+        },
+      ],
+      xxs: [
+        '0.75rem',
+        {
+          lineHeight: '1rem',
+        },
+      ],
+      '4.5xl': [
+        '2.5rem',
+        {
+          lineHeight: 1,
+        },
+      ],
       '7.5xl': [
         '5.25rem',
         {
@@ -22,6 +40,18 @@ module.exports = {
         },
       ],
       ...fontSize,
+      xs: [
+        '0.8125rem',
+        {
+          lineHeight: '1.125rem',
+        },
+      ],
+      md: [
+        '0.9375rem',
+        {
+          lineHeight: '1.375rem',
+        },
+      ],
     },
     screens: {
       xxs: '420px',
@@ -41,6 +71,7 @@ module.exports = {
       },
       padding: {
         6.5: '1.625rem',
+        4.5: '1.125rem',
       },
     },
     container: {

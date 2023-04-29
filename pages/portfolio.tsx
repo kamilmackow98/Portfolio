@@ -23,7 +23,10 @@ const Portfolio: NextPage<Props> = ({ projects }) => {
     <>
       <CustomHead title="Portfolio" />
 
-      <div id="portfolio-page" className="page-container my-20 lg:my-48">
+      <div
+        className="page-container my-10 sm:my-20 lg:my-48"
+        id="portfolio-page"
+      >
         {renderProjects}
       </div>
     </>

@@ -2,7 +2,7 @@ import { cva, VariantProps } from 'class-variance-authority'
 import Link, { LinkProps } from 'next/link'
 import { ReactNode } from 'react'
 
-const linkStyles = cva(['tracking-wider', 'disco-link'], {
+const linkStyles = cva(['tracking-[0.075em]', 'disco-link'], {
   variants: {
     variant: {
       primary: 'primary',
@@ -15,6 +15,12 @@ const linkStyles = cva(['tracking-wider', 'disco-link'], {
       sm: 'px-6 py-3.5',
       md: 'px-6.5 py-4',
       zero: '',
+    },
+    font: {
+      xxs: 'text-xxs',
+      xs: 'text-xs',
+      none: '',
+      default: 'text-margot',
     },
     rounded: {
       'tl-br': 'rounded rounded-tl-2xl rounded-br-2xl',
@@ -29,6 +35,7 @@ const linkStyles = cva(['tracking-wider', 'disco-link'], {
   defaultVariants: {
     variant: 'default',
     rounded: 'default',
+    font: 'default',
     glowing: false,
     size: 'sm',
   },
@@ -46,6 +53,7 @@ const DiscoLink = (props: Props) => {
     scroll,
     variant,
     size,
+    font,
     rounded,
     glowing,
     ...rest
@@ -54,7 +62,14 @@ const DiscoLink = (props: Props) => {
 
   return (
     <Link
-      className={linkStyles({ className, variant, size, rounded, glowing })}
+      className={linkStyles({
+        className,
+        variant,
+        size,
+        font,
+        rounded,
+        glowing,
+      })}
       scroll={scrollToTop}
       {...rest}
     >

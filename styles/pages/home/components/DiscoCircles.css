@@ -1,9 +1,7 @@
-#disco-circles-wrapper {
-  /* transform: rotateX(60deg) rotateY(-20deg) rotateZ(0deg); */
-  /* transform: rotate3d(1.2, -1, 1.2, 60deg); */
+#disco-circles {
   position: absolute;
-  bottom: 22.5%;
-  right: 0;
+  bottom: 12.5%;
+  right: -25%;
   top: 0;
 
   z-index: -999;
@@ -11,12 +9,7 @@
   width: 60%;
 }
 
-.disco-circles {
-  /* transform: rotate3d(1, -0.75, 0.75, 45deg); */
-  transform: rotate3d(2, -1, 2, 45deg);
-  transform-style: preserve-3d;
-  transform-origin: center;
-
+.disco-circles__content {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -28,7 +21,7 @@
   top: 0;
 }
 
-.disco-circles__circle {
+.disco-circle {
   transform-origin: center center;
   position: absolute;
 
@@ -37,159 +30,252 @@
     height: 100%;
     width: 100%;
   }
+}
 
-  &:nth-child(1) {
+.disco-circle-1 {
+  height: 50px;
+  width: 50px;
+
+  & > svg {
+    filter: drop-shadow(0 0 2px var(--theme-secondary));
+    stroke-dasharray: 250;
+
+    animation: rotate 7.5s linear infinite;
+  }
+}
+
+.disco-circle-2 {
+  height: 60px;
+  width: 60px;
+
+  & > svg {
+    stroke-dasharray: 75;
+
+    animation: rotate 12.5s linear infinite reverse;
+  }
+}
+
+.disco-circle-3 {
+  height: 190px;
+  width: 190px;
+
+  & > svg {
+    filter: drop-shadow(0 0 3px var(--theme-secondary));
+    stroke-dasharray: 240;
+    stroke-width: 0.4;
+
+    animation: rotate 20s linear infinite;
+  }
+}
+
+.disco-circle-4 {
+  height: 180px;
+  width: 180px;
+
+  & > svg {
+    stroke-dasharray: 45;
+    stroke-width: 0.8;
+
+    animation: rotate 30s linear infinite reverse;
+  }
+}
+
+.disco-circle-5 {
+  height: 270px;
+  width: 270px;
+
+  & > svg {
+    stroke: var(--theme-text--color);
+    stroke-dasharray: 1;
+    stroke-opacity: 0.1;
+    stroke-width: 6;
+
+    animation: rotate 40s linear infinite reverse;
+  }
+}
+
+.disco-circle-6 {
+  height: 300px;
+  width: 300px;
+
+  opacity: 0.5;
+
+  & > svg {
+    filter: drop-shadow(0 0 6px var(--theme-secondary));
+    stroke-width: 1;
+
+    animation: rotate 25s linear infinite;
+  }
+}
+
+.disco-circle-7 {
+  height: 420px;
+  width: 420px;
+
+  & > svg {
+    stroke: var(--theme-text--color);
+    stroke-dasharray: 45;
+    stroke-opacity: 0.15;
+    stroke-width: 2;
+
+    animation: rotate 50s linear infinite;
+  }
+}
+
+.disco-circle-8 {
+  height: 320px;
+  width: 320px;
+
+  & > svg {
+    stroke: var(--theme-text--color);
+    stroke-dasharray: 60;
+    stroke-opacity: 0.05;
+    stroke-width: 3;
+
+    animation: rotate 60s linear infinite reverse;
+
+    position: relative;
+  }
+}
+
+/* Last inner circle */
+.disco-circle-9 {
+  height: 495px;
+  width: 495px;
+
+  & > svg {
+    stroke: var(--theme-text--color);
+    stroke-dasharray: 35;
+    stroke-opacity: 0.05;
+    stroke-width: 8;
+
+    animation: rotate 90s linear infinite reverse;
+  }
+}
+
+/* Outer circles */
+.disco-circle-10 {
+  height: 2690px;
+  width: 2690px;
+
+  & > svg {
+    stroke-dasharray: 20;
+    stroke-opacity: 0.1;
+    stroke-width: 1.25;
+
+    animation: rotate 90s linear infinite;
+  }
+}
+
+.disco-circle-11 {
+  height: 2950px;
+  width: 2950px;
+
+  & > svg {
+    stroke-dasharray: 20;
+    stroke-opacity: 0.05;
+    stroke-width: 6;
+
+    animation: rotate 120s linear infinite reverse;
+  }
+}
+
+@media screen(lg) {
+  #disco-circles {
+    bottom: 22.5%;
+    right: -8%;
+
+    z-index: -999;
+
+    width: 60%;
+  }
+
+  .disco-circles__content {
+    transform: rotate3d(2, -1, 2, 45deg);
+    transform-style: preserve-3d;
+    transform-origin: center;
+  }
+
+  .disco-circle-1 {
     transform: translatez(240px);
     height: 80px;
     width: 80px;
-
-    & > svg {
-      filter: drop-shadow(0 0 2px var(--theme-secondary));
-      stroke-dasharray: 250;
-
-      animation: rotate 7.5s linear infinite;
-    }
   }
 
-  &:nth-child(2) {
+  .disco-circle-2 {
     transform: translatez(200px);
     height: 200px;
     width: 200px;
-
-    & > svg {
-      stroke-dasharray: 75;
-
-      animation: rotate 12.5s linear infinite reverse;
-    }
   }
 
-  &:nth-child(3) {
+  .disco-circle-3 {
     transform: translatez(150px);
     height: 300px;
     width: 300px;
-
-    & > svg {
-      filter: drop-shadow(0 0 3px var(--theme-secondary));
-      stroke-dasharray: 240;
-      stroke-width: 0.4;
-
-      animation: rotate 20s linear infinite;
-    }
   }
 
-  &:nth-child(4) {
+  .disco-circle-4 {
     transform: translatez(100px);
     height: 400px;
     width: 400px;
-
-    & > svg {
-      stroke-dasharray: 45;
-      stroke-width: 0.8;
-
-      animation: rotate 30s linear infinite reverse;
-    }
   }
 
-  &:nth-child(5) {
+  .disco-circle-5 {
     transform: translatez(60px);
     height: 500px;
     width: 500px;
 
     & > svg {
-      stroke: var(--theme-text--color);
       stroke-dasharray: 60;
-      stroke-opacity: 0.1;
       stroke-width: 3;
-
-      animation: rotate 40s linear infinite reverse;
     }
   }
 
-  &:nth-child(6) {
+  .disco-circle-6 {
     transform: translatez(40px);
     height: 560px;
     width: 560px;
 
     & > svg {
-      filter: drop-shadow(0 0 3px var(--theme-secondary));
+      filter: drop-shadow(0 0 4px var(--theme-secondary));
       stroke-dasharray: 60;
-      stroke-width: 1.5;
-
-      animation: rotate 25s linear infinite;
     }
   }
 
-  &:nth-child(7) {
+  .disco-circle-7 {
+    transform: translatez(0px);
     height: 670px;
     width: 670px;
 
     & > svg {
-      stroke: var(--theme-text--color);
       stroke-dasharray: 50;
-      stroke-opacity: 0.15;
       stroke-width: 2.25;
-
-      animation: rotate 50s linear infinite;
     }
   }
 
-  &:nth-child(8) {
+  .disco-circle-8 {
     transform: translatez(-50px);
     height: 720px;
     width: 720px;
 
     & > svg {
-      stroke: var(--theme-text--color);
-      stroke-dasharray: 60;
       stroke-opacity: 0.04;
-      stroke-width: 3;
-
-      animation: rotate 60s linear infinite reverse;
-
-      position: relative;
     }
   }
 
-  /* Last inner circle */
-  &:nth-child(9) {
+  .disco-circle-9 {
     transform: translatez(-80px);
     height: 825px;
     width: 825px;
 
     & > svg {
-      stroke: var(--theme-text--color);
       stroke-dasharray: 20;
-      stroke-opacity: 0.05;
-      stroke-width: 8;
-
-      animation: rotate 90s linear infinite reverse;
     }
   }
+}
 
-  /* Outer circles */
-  &:nth-child(10) {
-    height: 2690px;
-    width: 2690px;
-
-    & > svg {
-      stroke-dasharray: 20;
-      stroke-opacity: 0.1;
-      stroke-width: 1.25;
-
-      animation: rotate 90s linear infinite;
-    }
-  }
-
-  &:nth-child(11) {
-    height: 2950px;
-    width: 2950px;
-
-    & > svg {
-      stroke-dasharray: 20;
-      stroke-opacity: 0.05;
-      stroke-width: 6;
-
-      animation: rotate 120s linear infinite reverse;
-    }
+@media screen(xl) {
+  #disco-circles {
+    right: 0;
   }
 }
