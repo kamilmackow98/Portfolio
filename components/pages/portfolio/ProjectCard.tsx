@@ -73,8 +73,8 @@ const titleClasses = cx(
 // TODO : Remove flex-wrap on tags later (once Swiper is used) ?
 
 const ProjectCard = (props: Props) => {
-  const { className, ...rest } = props
-  const { frontmatter, slug } = props.project
+  const { className, project, ...rest } = props
+  const { frontmatter, slug } = project
   const { title, excerpt } = frontmatter
 
   const [imgSrc, setImgSrc] = useState(`/static/projects/${slug}/thumbnail.jpg`)

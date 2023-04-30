@@ -68,7 +68,7 @@ const Project: NextPage<Props> = (project: Props) => {
         </li>
       ))}
 
-      <span id="tags-separator" className="ml-4" />
+      <li id="tags-separator" className="ml-2" />
     </ul>
   )
 
