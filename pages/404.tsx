@@ -4,12 +4,12 @@ import { NextPage } from 'next'
 
 const pageClasses = cx(
   'flex flex-1 justify-center items-center',
-  'my-20 lg:my-48',
+  'my-10 sm:my-20 lg:my-48',
   'page-container',
 )
 const titleClasses = cx(
   'text-white tracking-wider font-medium',
-  'theme-font--heading font-text--xl',
+  'theme-font--heading text-xl',
 )
 
 const Custom404: NextPage = () => {
